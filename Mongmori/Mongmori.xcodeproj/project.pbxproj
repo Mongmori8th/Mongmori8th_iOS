@@ -26,6 +26,7 @@
 		A7A555902B177CE200D5AF7F /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5558F2B177CE200D5AF7F /* TestViewModel.swift */; };
 		A7A555942B177D9600D5AF7F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555932B177D9600D5AF7F /* MapView.swift */; };
 		A7A555962B177E2600D5AF7F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555952B177E2600D5AF7F /* LocationManager.swift */; };
+		A7A5559A2B1782F600D5AF7F /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7A555992B1782F600D5AF7F /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		A7A5558F2B177CE200D5AF7F /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		A7A555932B177D9600D5AF7F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A7A555952B177E2600D5AF7F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A7A555992B1782F600D5AF7F /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		AE87DBA4BA873EFAD2D715E2 /* Pods-Mongmori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mongmori.debug.xcconfig"; path = "Target Support Files/Pods-Mongmori/Pods-Mongmori.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 		A77E60EC2B1772F5004A36BB /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				A7A555992B1782F600D5AF7F /* Config.xcconfig */,
 				A77E61022B177474004A36BB /* Modifiers */,
 				A77E60FF2B1773E5004A36BB /* Lottie */,
 				A77E60FC2B1773AF004A36BB /* Font */,
@@ -297,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A5559A2B1782F600D5AF7F /* Config.xcconfig in Resources */,
 				A74721482B1775B100006BAE /* Test1.json in Resources */,
 				A77E60E52B176F32004A36BB /* Preview Assets.xcassets in Resources */,
 				A77E60E22B176F32004A36BB /* Assets.xcassets in Resources */,
