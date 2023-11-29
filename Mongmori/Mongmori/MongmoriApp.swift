@@ -13,7 +13,8 @@ struct MongmoriApp: App {
         WindowGroup {
 //            ResultsSummaryScreen(locationManager: LocationManager())
 //            DetailResultListView()
-            TestView()
+            ChatBotView()
+//            TestView()
         }
     }
 }

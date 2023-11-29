@@ -31,6 +31,7 @@
 		A7A555A12B179DF500D5AF7F /* TestResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A02B179DF500D5AF7F /* TestResultListView.swift */; };
 		A7A555A32B17AB8800D5AF7F /* DetailResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */; };
 		A7A555A52B17C87F00D5AF7F /* ChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */; };
+		A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		A7A555A02B179DF500D5AF7F /* TestResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultListView.swift; sourceTree = "<group>"; };
 		A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResultListView.swift; sourceTree = "<group>"; };
 		A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotView.swift; sourceTree = "<group>"; };
+		A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		AE87DBA4BA873EFAD2D715E2 /* Pods-Mongmori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mongmori.debug.xcconfig"; path = "Target Support Files/Pods-Mongmori/Pods-Mongmori.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 				A7A555A02B179DF500D5AF7F /* TestResultListView.swift */,
 				A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */,
 				A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */,
+				A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				A7A555962B177E2600D5AF7F /* LocationManager.swift in Sources */,
 				A7A555902B177CE200D5AF7F /* TestViewModel.swift in Sources */,
 				A7A5558C2B177CD200D5AF7F /* TestView.swift in Sources */,
+				A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */,
 				A7A5559D2B178C3500D5AF7F /* ResultsSummaryScreen.swift in Sources */,
 				A7A5558E2B177CD900D5AF7F /* TestModel.swift in Sources */,
 				A77E60F52B177355004A36BB /* DateString.swift in Sources */,

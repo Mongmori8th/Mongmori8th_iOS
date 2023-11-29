@@ -25,35 +25,25 @@ struct ChatBotView: View {
                         .fontWeight(.bold)
                 }
             
-            Spacer()
             
             if touchMessageClicked{
                 Image("test2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 120 ,height: 120)
+                    .padding(.top, 60)
             }
-            Spacer()
             
             
-            VStack {
-                TextField("입력하세요", text: $userInput)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-
-                Button("확인") {
-                    outputText = "입력된 내용: \(userInput)"
-                }
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(10)
-
-                Text(outputText)
-                    .padding()
+            if !touchMessageClicked{
+                ChattingView(touchBool: $touchMessageClicked)
+                    .padding(.top, -20)
+            }else{
+                ChattingView(touchBool: $touchMessageClicked)
+                    .padding(.top, 40)
             }
-            .padding()
-            
+
+
         }
     }
 }
