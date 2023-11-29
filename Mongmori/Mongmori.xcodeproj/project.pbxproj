@@ -7,18 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480A34ECEFB1DE8059417848 /* Pods_Mongmori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583599F2B39FD78E19A0ED54 /* Pods_Mongmori.framework */; };
+		A74721462B17759500006BAE /* TestLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74721452B17759500006BAE /* TestLottieView.swift */; };
+		A74721482B1775B100006BAE /* Test1.json in Resources */ = {isa = PBXBuildFile; fileRef = A74721472B1775B100006BAE /* Test1.json */; };
 		A77E60DE2B176F31004A36BB /* MongmoriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60DD2B176F31004A36BB /* MongmoriApp.swift */; };
 		A77E60E02B176F31004A36BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60DF2B176F31004A36BB /* ContentView.swift */; };
 		A77E60E22B176F32004A36BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A77E60E12B176F32004A36BB /* Assets.xcassets */; };
 		A77E60E52B176F32004A36BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A77E60E42B176F32004A36BB /* Preview Assets.xcassets */; };
+		A77E60F32B17734E004A36BB /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60F22B17734E004A36BB /* Date.swift */; };
+		A77E60F52B177355004A36BB /* DateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60F42B177355004A36BB /* DateString.swift */; };
+		A77E60F82B177383004A36BB /* ColorExtentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60F72B177383004A36BB /* ColorExtentsion.swift */; };
+		A77E60FB2B17739E004A36BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60FA2B17739E004A36BB /* Constants.swift */; };
+		A77E60FE2B1773C8004A36BB /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60FD2B1773C8004A36BB /* FontManager.swift */; };
+		A77E61012B17743E004A36BB /* LottieViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E61002B17743E004A36BB /* LottieViewManager.swift */; };
+		A77E61042B177480004A36BB /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E61032B177480004A36BB /* Modifiers.swift */; };
+		A7A5558C2B177CD200D5AF7F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5558B2B177CD200D5AF7F /* TestView.swift */; };
+		A7A5558E2B177CD900D5AF7F /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5558D2B177CD900D5AF7F /* TestModel.swift */; };
+		A7A555902B177CE200D5AF7F /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5558F2B177CE200D5AF7F /* TestViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		583599F2B39FD78E19A0ED54 /* Pods_Mongmori.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mongmori.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E452600B7F577ECD06DD3E0 /* Pods-Mongmori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mongmori.release.xcconfig"; path = "Target Support Files/Pods-Mongmori/Pods-Mongmori.release.xcconfig"; sourceTree = "<group>"; };
+		A74721452B17759500006BAE /* TestLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLottieView.swift; sourceTree = "<group>"; };
+		A74721472B1775B100006BAE /* Test1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Test1.json; sourceTree = "<group>"; };
 		A77E60DA2B176F31004A36BB /* Mongmori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mongmori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77E60DD2B176F31004A36BB /* MongmoriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongmoriApp.swift; sourceTree = "<group>"; };
 		A77E60DF2B176F31004A36BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A77E60E12B176F32004A36BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A77E60E42B176F32004A36BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A77E60F22B17734E004A36BB /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		A77E60F42B177355004A36BB /* DateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateString.swift; sourceTree = "<group>"; };
+		A77E60F72B177383004A36BB /* ColorExtentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtentsion.swift; sourceTree = "<group>"; };
+		A77E60FA2B17739E004A36BB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A77E60FD2B1773C8004A36BB /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		A77E61002B17743E004A36BB /* LottieViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieViewManager.swift; sourceTree = "<group>"; };
+		A77E61032B177480004A36BB /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		A7A5558B2B177CD200D5AF7F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		A7A5558D2B177CD900D5AF7F /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		A7A5558F2B177CE200D5AF7F /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		AE87DBA4BA873EFAD2D715E2 /* Pods-Mongmori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mongmori.debug.xcconfig"; path = "Target Support Files/Pods-Mongmori/Pods-Mongmori.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +54,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480A34ECEFB1DE8059417848 /* Pods_Mongmori.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BBA3A8936959C9BFC8005D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE87DBA4BA873EFAD2D715E2 /* Pods-Mongmori.debug.xcconfig */,
+				9E452600B7F577ECD06DD3E0 /* Pods-Mongmori.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A77E60D12B176F31004A36BB = {
 			isa = PBXGroup;
 			children = (
 				A77E60DC2B176F31004A36BB /* Mongmori */,
 				A77E60DB2B176F31004A36BB /* Products */,
+				9BBA3A8936959C9BFC8005D4 /* Pods */,
+				E3FE6CA4F94E2F55FF7C10D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +91,8 @@
 		A77E60DC2B176F31004A36BB /* Mongmori */ = {
 			isa = PBXGroup;
 			children = (
+				A77E60EC2B1772F5004A36BB /* Configuration */,
+				A77E60EB2B1772F1004A36BB /* Source */,
 				A77E60DD2B176F31004A36BB /* MongmoriApp.swift */,
 				A77E60DF2B176F31004A36BB /* ContentView.swift */,
 				A77E60E12B176F32004A36BB /* Assets.xcassets */,
@@ -67,6 +109,120 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A77E60EB2B1772F1004A36BB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A77E60ED2B177313004A36BB /* Networking */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		A77E60EC2B1772F5004A36BB /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				A77E61022B177474004A36BB /* Modifiers */,
+				A77E60FF2B1773E5004A36BB /* Lottie */,
+				A77E60FC2B1773AF004A36BB /* Font */,
+				A77E60F92B17738F004A36BB /* Constants */,
+				A77E60F62B177377004A36BB /* Color */,
+				A77E60F12B17733F004A36BB /* Date */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		A77E60ED2B177313004A36BB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A77E60F02B17732D004A36BB /* Views */,
+				A77E60EF2B177321004A36BB /* Models */,
+				A77E60EE2B17731E004A36BB /* ViewModels */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A77E60EE2B17731E004A36BB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A7A5558F2B177CE200D5AF7F /* TestViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A77E60EF2B177321004A36BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7A5558D2B177CD900D5AF7F /* TestModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A77E60F02B17732D004A36BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7A5558B2B177CD200D5AF7F /* TestView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A77E60F12B17733F004A36BB /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				A77E60F22B17734E004A36BB /* Date.swift */,
+				A77E60F42B177355004A36BB /* DateString.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		A77E60F62B177377004A36BB /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				A77E60F72B177383004A36BB /* ColorExtentsion.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		A77E60F92B17738F004A36BB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A77E60FA2B17739E004A36BB /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		A77E60FC2B1773AF004A36BB /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A77E60FD2B1773C8004A36BB /* FontManager.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		A77E60FF2B1773E5004A36BB /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				A77E61002B17743E004A36BB /* LottieViewManager.swift */,
+				A74721452B17759500006BAE /* TestLottieView.swift */,
+				A74721472B1775B100006BAE /* Test1.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		A77E61022B177474004A36BB /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				A77E61032B177480004A36BB /* Modifiers.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		E3FE6CA4F94E2F55FF7C10D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				583599F2B39FD78E19A0ED54 /* Pods_Mongmori.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A77E60E82B176F32004A36BB /* Build configuration list for PBXNativeTarget "Mongmori" */;
 			buildPhases = (
+				68B624E53229AAB7B7DE52E6 /* [CP] Check Pods Manifest.lock */,
 				A77E60D62B176F31004A36BB /* Sources */,
 				A77E60D72B176F31004A36BB /* Frameworks */,
 				A77E60D82B176F31004A36BB /* Resources */,
+				DDA84C53D383E92DD43BC0A4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74721482B1775B100006BAE /* Test1.json in Resources */,
 				A77E60E52B176F32004A36BB /* Preview Assets.xcassets in Resources */,
 				A77E60E22B176F32004A36BB /* Assets.xcassets in Resources */,
 			);
@@ -132,13 +291,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		68B624E53229AAB7B7DE52E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mongmori-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDA84C53D383E92DD43BC0A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mongmori/Pods-Mongmori-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mongmori/Pods-Mongmori-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mongmori/Pods-Mongmori-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A77E60D62B176F31004A36BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A77E60F82B177383004A36BB /* ColorExtentsion.swift in Sources */,
+				A77E61012B17743E004A36BB /* LottieViewManager.swift in Sources */,
+				A7A555902B177CE200D5AF7F /* TestViewModel.swift in Sources */,
+				A7A5558C2B177CD200D5AF7F /* TestView.swift in Sources */,
+				A7A5558E2B177CD900D5AF7F /* TestModel.swift in Sources */,
+				A77E60F52B177355004A36BB /* DateString.swift in Sources */,
+				A77E60FE2B1773C8004A36BB /* FontManager.swift in Sources */,
 				A77E60E02B176F31004A36BB /* ContentView.swift in Sources */,
+				A77E60F32B17734E004A36BB /* Date.swift in Sources */,
+				A74721462B17759500006BAE /* TestLottieView.swift in Sources */,
 				A77E60DE2B176F31004A36BB /* MongmoriApp.swift in Sources */,
+				A77E61042B177480004A36BB /* Modifiers.swift in Sources */,
+				A77E60FB2B17739E004A36BB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +478,7 @@
 		};
 		A77E60E92B176F32004A36BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE87DBA4BA873EFAD2D715E2 /* Pods-Mongmori.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -274,6 +487,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Mongmori/Preview Content\"";
 				DEVELOPMENT_TEAM = 45DLNKDJCF;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -295,6 +509,7 @@
 		};
 		A77E60EA2B176F32004A36BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E452600B7F577ECD06DD3E0 /* Pods-Mongmori.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -303,6 +518,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Mongmori/Preview Content\"";
 				DEVELOPMENT_TEAM = 45DLNKDJCF;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

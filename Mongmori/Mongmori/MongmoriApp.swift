@@ -11,7 +11,7 @@ import SwiftUI
 struct MongmoriApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TestLottieView()
         }
     }
 }
