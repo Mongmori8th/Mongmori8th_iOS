@@ -11,7 +11,7 @@ import SwiftUI
 struct MongmoriApp: App {
     var body: some Scene {
         WindowGroup {
-            MapView(locationManager: LocationManager(), userLatitude: 0.0, userLongitude: 0.0)
+            MapView(locationManager: LocationManager())
         }
     }
 }

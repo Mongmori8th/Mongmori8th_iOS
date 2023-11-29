@@ -15,27 +15,27 @@ import UIKit
 struct MapView: View {
    
     @ObservedObject var locationManager : LocationManager
-    var userLatitude : Double
     
-    var userLongitude : Double
-    
+    var userLatitude: Double {
+        return locationManager.lastLocation?.coordinate.latitude ?? 0.0
+    }
+    var userLongitude: Double {
+        return locationManager.lastLocation?.coordinate.longitude ?? 0.0
+    }
+  
     var body: some View {
         VStack{
-            // MARK: 지도 탭의 상단
+    
             ZStack(alignment: .center){
-                UIMapView(locationManager: LocationManager(), userLatitude: 0.0, userLongitude: 0.0)
+                UIMapView(locationManager: LocationManager(), userLatitude: userLatitude, userLongitude: userLongitude)
+                    .ignoresSafeArea()
+//                    .edgesIgnoringSafeArea(.top)
             }
-            
         }
-        
     }
 }
-
-
-// FIXME: 네이버 지도
-// 네이버 지도를 띄울 수 있게끔 만들어주는 코드들 <- 연구가 필요!! 이해 완료 후 주석 달아보기
 struct UIMapView: UIViewRepresentable,View {
-    //임시
+    
     @ObservedObject var viewModel = MapSceneViewModel()
     @ObservedObject var locationManager : LocationManager
     
@@ -43,7 +43,6 @@ struct UIMapView: UIViewRepresentable,View {
     var userLatitude : Double
     var userLongitude : Double
     
-    // UIView 기반 컴포넌트의 인스턴스 생성하고 필요한 초기화 작업을 수행한 뒤 반환한다.
     func makeUIView(context: Context) -> NMFNaverMapView {
         // MARK: 네이버 맵 지도 생성
         let view = NMFNaverMapView()
@@ -60,8 +59,7 @@ struct UIMapView: UIViewRepresentable,View {
         view.showCompass = false
         // MARK: 위치 정보 받아오기
         view.showLocationButton = true
-        
-        /// 임시 주석
+
         view.mapView.touchDelegate = context.coordinator
         
         view.mapView.positionMode = .direction
@@ -70,8 +68,7 @@ struct UIMapView: UIViewRepresentable,View {
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: userLatitude, lng: userLongitude))
         view.mapView.moveCamera(cameraUpdate)
         
-        // 지도 데이터를 정보를 뽑고 fetchMarkers 배열에 넣어줌
-        
+
         
         return view
     }
