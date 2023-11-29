@@ -13,25 +13,22 @@ import Combine
 import UIKit
 
 struct MapView: View {
-   
+    
     @ObservedObject var locationManager : LocationManager
     
-    var userLatitude: Double {
-        return locationManager.lastLocation?.coordinate.latitude ?? 0.0
-    }
-    var userLongitude: Double {
-        return locationManager.lastLocation?.coordinate.longitude ?? 0.0
-    }
+    var userLatitude: Double
+      
+    var userLongitude: Double
+      
   
     var body: some View {
         VStack{
-    
-            ZStack(alignment: .center){
-                UIMapView(locationManager: LocationManager(), userLatitude: userLatitude, userLongitude: userLongitude)
-                    .ignoresSafeArea()
+//            ZStack(alignment: .center){
+                UIMapView(locationManager: locationManager, userLatitude: userLatitude, userLongitude: userLongitude)
+//                    .ignoresSafeArea()
 //                    .edgesIgnoringSafeArea(.top)
-            }
-        }
+//            }
+        }.frame(width: Screen.maxWidth ,height: Screen.maxHeight * 0.3)
     }
 }
 struct UIMapView: UIViewRepresentable,View {
