@@ -31,7 +31,6 @@
 		A7A555A32B17AB8800D5AF7F /* DetailResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */; };
 		A7A555A52B17C87F00D5AF7F /* ChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */; };
 		A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */; };
-		A7A555A92B18125100D5AF7F /* ResultsSummaryScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A82B18125100D5AF7F /* ResultsSummaryScreen2.swift */; };
 		A7A555AB2B182A5C00D5AF7F /* ResponseChatResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */; };
 		A7A555AD2B1840F200D5AF7F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555AC2B1840F200D5AF7F /* TestView.swift */; };
 /* End PBXBuildFile section */
@@ -64,7 +63,6 @@
 		A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResultListView.swift; sourceTree = "<group>"; };
 		A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotView.swift; sourceTree = "<group>"; };
 		A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
-		A7A555A82B18125100D5AF7F /* ResultsSummaryScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsSummaryScreen2.swift; sourceTree = "<group>"; };
 		A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseChatResultView.swift; sourceTree = "<group>"; };
 		A7A555AC2B1840F200D5AF7F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		AE87DBA4BA873EFAD2D715E2 /* Pods-Mongmori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mongmori.debug.xcconfig"; path = "Target Support Files/Pods-Mongmori/Pods-Mongmori.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				A7A5559C2B178C3500D5AF7F /* ResultsSummaryScreen.swift */,
-				A7A555A82B18125100D5AF7F /* ResultsSummaryScreen2.swift */,
 				A7A555A02B179DF500D5AF7F /* ResultListView.swift */,
 				A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */,
 				A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */,
@@ -397,7 +394,6 @@
 				A77E60F32B17734E004A36BB /* Date.swift in Sources */,
 				A74721462B17759500006BAE /* TestLottieView.swift in Sources */,
 				A77E60DE2B176F31004A36BB /* MongmoriApp.swift in Sources */,
-				A7A555A92B18125100D5AF7F /* ResultsSummaryScreen2.swift in Sources */,
 				A77E61042B177480004A36BB /* Modifiers.swift in Sources */,
 				A77E60FB2B17739E004A36BB /* Constants.swift in Sources */,
 				A7A555A52B17C87F00D5AF7F /* ChatBotView.swift in Sources */,

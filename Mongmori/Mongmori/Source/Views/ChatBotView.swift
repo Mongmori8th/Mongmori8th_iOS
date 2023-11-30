@@ -21,40 +21,45 @@ struct ChatBotView: View {
         NavigationView{
             VStack{
                 VStack{
-                    if messages.count == 1{
-                        Image("Mongri")
+                    VStack{
+                        if messages.count == 1{
+                            Image("Mongri")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 120 ,height: 120)
+                                .padding(.top, 60)
+                        }
+                        
+                        if !(messages.count == 1){
+                            ChattingView(messages: $messages)
+                                .padding(.top, -20)
+                        }else{
+                            ChattingView(messages: $messages)
+                                .padding(.top, 60)
+                        }
+                    }
+                    .frame(width: Screen.maxWidth)
+                    .background(Color.orange_100)
+                    
+                    HStack {
+                        TextField("AI 뭉디에게 메세지를 보내주세요!", text: $newMessage)
+                            .padding(10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(Color.gray, lineWidth: 1.5)
+                            )
+                        Image("chatBotButton")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 120 ,height: 120)
-                            .padding(.top, 60)
+                            .frame(width: 30, height: 30)
+                            .onTapGesture {
+                                sendMessage()
+                            }
                     }
+                    .padding(7)
+                    .padding([.leading,.trailing] ,3)
                     
-                    if !(messages.count == 1){
-                        ChattingView(messages: $messages)
-                            .padding(.top, -20)
-                    }else{
-                        ChattingView(messages: $messages)
-                            .padding(.top, 40)
-                    }
                 }
-                .background(Color.orange_100)
-
-                HStack {
-                    TextField("챗봇에게 메시지 보내기", text: $newMessage)
-                        .padding(10)
-                        .background(
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.gray, lineWidth: 1.5)
-                        )
-                    Image("chatBotButton")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
-                        .onTapGesture {
-                            sendMessage()
-                        }
-                }
-                .padding()
 
             }
             .navigationBarItems(leading: HStack {

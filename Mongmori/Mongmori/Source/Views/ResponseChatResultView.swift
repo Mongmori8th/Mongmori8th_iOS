@@ -41,12 +41,11 @@ struct ResponseMessageView: View {
             }
             
             VStack(alignment: message.sender == " " ? .trailing : .leading, spacing: 2) {
-                
-                
+
                 HStack {
                     RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(.white)
-                        .frame(width: Screen.maxWidth * 0.73, height: Screen.maxHeight * 0.15)
+                        .frame(width: Screen.maxWidth * 0.80, height: Screen.maxHeight * 0.15)
                         .overlay {
                             HStack{
                                 VStack() {

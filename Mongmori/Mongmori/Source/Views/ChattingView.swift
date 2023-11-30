@@ -41,7 +41,7 @@ struct ChattingView: View {
                         ResponseChatResultView()
                     }
                 }
-                .padding(.top, 15)      //이부분 건들이면 시뮬다시
+                .padding(.top, 25)      //이부분 건들이면 시뮬다시
             }
         }
     }
