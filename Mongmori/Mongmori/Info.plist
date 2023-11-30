@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NaverClientSecret</key>
 	<string>$(NAVER_CLIENT_SECRET_CONFIG)</string>
 	<key>Privacy — Location Always and When In Use Usage Description</key>
@@ -10,5 +15,16 @@
 	<string></string>
 	<key>NMFClientId</key>
 	<string>6scd7kzyf1</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>453fec5882ca034101b9f001ca861048</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NanumSquareOTF_acR</string>
+		<string>NanumSquareOTF_acB</string>
+		<string>NanumSquareOTF_acEB</string>
+		<string>Pretendard_Bold</string>
+		<string>Pretendard_Regular</string>
+		<string>Pretendard_SemiBold</string>
+	</array>
 </dict>
 </plist>

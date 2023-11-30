@@ -34,6 +34,17 @@ struct UIMapView: UIViewRepresentable,View {
     
     @ObservedObject var viewModel = MapSceneViewModel()
     @ObservedObject var locationManager : LocationManager
+//    let list :[NMGLatLng] = [
+//        NMGLatLng(lat:  33.4889673, lng: 126.4188189),
+//        NMGLatLng(lat: 33.3899391, lng: 126.3663248),
+//        NMGLatLng(lat: 33.4745416, lng: 126.354882),
+//        NMGLatLng(lat: 33.4877605, lng: 126.3904307),
+//        NMGLatLng(lat: 33.231847, lng: 126.314641),
+//        
+//        NMGLatLng(lat: 33.231847, lng: 126.314641),
+//        NMGLatLng(lat: 33.4877605, lng: 126.354882)
+//        ]
+    
     
     
     var userLatitude : Double
@@ -46,8 +57,8 @@ struct UIMapView: UIViewRepresentable,View {
         view.mapView.positionMode = .direction
         
         /// 숫자가 작을수록 축소 , 숫자가 클수록 확대
-        view.mapView.zoomLevel = 12
-        view.mapView.minZoomLevel = 10
+        view.mapView.zoomLevel = 8
+        view.mapView.minZoomLevel = 2
         view.mapView.maxZoomLevel = 20
         view.mapView.isRotateGestureEnabled = false // 지도 회전 잠금
         
@@ -64,7 +75,29 @@ struct UIMapView: UIViewRepresentable,View {
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: userLatitude, lng: userLongitude))
         view.mapView.moveCamera(cameraUpdate)
         
+        let markerList: [NMFMarker] = [
+            NMFMarker(position: NMGLatLng(lat: 33.4889673, lng: 126.4188189)),
+            NMFMarker(position: NMGLatLng(lat:  33.389939, lng: 126.3663248)),
+            NMFMarker(position: NMGLatLng(lat: 33.4745416, lng: 126.354882)),
+            NMFMarker(position: NMGLatLng(lat: 33.4877605, lng: 126.3904307)),
+            NMFMarker(position: NMGLatLng(lat:  33.231847, lng: 126.314641)),
 
+            NMFMarker(position: NMGLatLng(lat: 33.2318473, lng: 126.314641))
+//            NMFMarker(position: NMGLatLng(lat: 33.4877605, lng: 126.354882)),
+            
+        ]
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+            for i in markerList{
+                let marker = NMFMarker()
+                marker.position = NMGLatLng(lat: i.position.lat, lng: i.position.lng)
+                marker.iconImage = NMFOverlayImage(name: "heroicons_map-pin1")
+                marker.width = 30
+                marker.height = 30
+                marker.mapView = view.mapView
+            }
+        }
+        
         
         return view
     }

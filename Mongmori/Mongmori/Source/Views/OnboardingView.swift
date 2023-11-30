@@ -9,10 +9,16 @@ import SwiftUI
 
 struct OnboardingView: View {
     var body: some View {
-        Text("Hello, World!")
+        Image("onBoarding")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: Screen.maxWidth, height: Screen.maxHeight)
+            .ignoresSafeArea()
     }
 }
 
 #Preview {
     OnboardingView()
 }
+
+
