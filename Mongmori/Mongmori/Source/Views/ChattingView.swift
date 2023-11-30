@@ -63,7 +63,7 @@ struct MessageView: View {
                     .background(Color.white)
                     .foregroundColor(.black)
                     .font(.system(size: 15))
-                    .cornerRadius(10)   
+                    .cornerRadius(20)   
             }
             
         }

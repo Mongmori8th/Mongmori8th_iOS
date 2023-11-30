@@ -11,7 +11,7 @@ import SwiftUI
 struct ResponseChatResultView: View {
     
     @State var messages: Message =
-    Message(sender: "뭉디", content: "AI 뭉디가 아이들과 함께하는 서귀포 1박 2일 여행 일정을 준비했어요", image: "Mongri")
+    Message(sender: "몽모리", content: "AI 몽모리가 아이들과 함께하는 서귀포 1박 2일 여행 일정을 준비했어요.", image: "Mongri")
     
     
     var body: some View {
@@ -43,7 +43,7 @@ struct ResponseMessageView: View {
             VStack(alignment: message.sender == " " ? .trailing : .leading, spacing: 2) {
 
                 HStack {
-                    RoundedRectangle(cornerRadius: 15)
+                    RoundedRectangle(cornerRadius: 20)
                         .foregroundColor(.white)
                         .frame(width: Screen.maxWidth * 0.80, height: Screen.maxHeight * 0.15)
                         .overlay {
@@ -57,7 +57,7 @@ struct ResponseMessageView: View {
                                         //액션
                                     }) {
                                         NavigationLink(destination: ResultsSummaryScreen(locationManager: LocationManager())) {
-                                            RoundedRectangle(cornerRadius: 10)
+                                            RoundedRectangle(cornerRadius: 20)
                                                 .foregroundColor(.orange)
                                                 .frame(width: Screen.maxWidth * 0.67, height: 30)
                                                 .overlay{

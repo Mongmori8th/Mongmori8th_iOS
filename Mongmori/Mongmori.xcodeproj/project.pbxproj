@@ -33,6 +33,7 @@
 		A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */; };
 		A7A555AB2B182A5C00D5AF7F /* ResponseChatResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */; };
 		A7A555AD2B1840F200D5AF7F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555AC2B1840F200D5AF7F /* TestView.swift */; };
+		A7A8C4452B18970200DBFEFF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8C4442B18970200DBFEFF /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseChatResultView.swift; sourceTree = "<group>"; };
 		A7A555AC2B1840F200D5AF7F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		A7A8C4442B18970200DBFEFF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		AE87DBA4BA873EFAD2D715E2 /* Pods-Mongmori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mongmori.debug.xcconfig"; path = "Target Support Files/Pods-Mongmori/Pods-Mongmori.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +190,7 @@
 				A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */,
 				A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */,
 				A7A555AC2B1840F200D5AF7F /* TestView.swift */,
+				A7A8C4442B18970200DBFEFF /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				A77E61042B177480004A36BB /* Modifiers.swift in Sources */,
 				A77E60FB2B17739E004A36BB /* Constants.swift in Sources */,
 				A7A555A52B17C87F00D5AF7F /* ChatBotView.swift in Sources */,
+				A7A8C4452B18970200DBFEFF /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

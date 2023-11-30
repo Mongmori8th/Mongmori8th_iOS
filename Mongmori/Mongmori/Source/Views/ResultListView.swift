@@ -12,14 +12,16 @@ struct ResultListView: View {
     
     var body: some View {
         HStack {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 12)
                 .foregroundColor(.white)
+                .shadow(color: Color.orange_500, radius: 5, x: 0, y: 2)
+                .opacity(0.5)
                 .frame(width: Screen.maxWidth * 0.80, height: Screen.maxHeight * 0.1)
                 .overlay {
                     HStack{
                         Image("MapMarker")
                             .resizable()
-                            .frame(width: 30, height: 30)
+                            .frame(width: 40, height: 40)
                             .padding(.trailing, 20)
                         Text("오전: 애월해안도로")
                             .font(.system(size: 17))
@@ -28,11 +30,14 @@ struct ResultListView: View {
                         } label: {
                             Image("ChevronRightIcon_orange_f")
                                 .resizable()
-                                .frame(width: 30, height: 30)
+                                .frame(width: 40, height: 40)
                         }
                     }
                     
                 }
+//                .shadow(color: Color.orange_500, radius: 5, x: 0, y: 2)
+//                .opacity(0.5)
+                
         }
     }
 }

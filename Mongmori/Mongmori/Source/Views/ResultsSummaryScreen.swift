@@ -53,6 +53,7 @@ struct ResultsSummaryScreen: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("일정요약")
+                        
                         .font(.title2.bold())
                 }
                 ToolbarItem(placement: .navigationBarLeading) {

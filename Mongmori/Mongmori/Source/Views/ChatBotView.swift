@@ -14,7 +14,7 @@ struct ChatBotView: View {
     @State private var newMessage: String = ""
     
     @State var messages: [Message] = [
-        Message(sender: "뭉디", content: "제주 여행 컨설턴트 AI 뭉디가 아이들과 함께할수 있는 일정을 추천해드릴게요.\n\n양식에 맞춰 메세지를 보내주시면 AI뭉디가 일정을 알려드려요!\n\n예시: 애월로 3일 동안 가족여행 갈 거에요", image: "Mongri"),
+        Message(sender: "몽모리", content: "제주 여행 컨설턴트 AI 뭉디가 아이들과 함께할수 있는 일정을 추천해드릴게요.\n\n양식에 맞춰 메세지를 보내주시면 AI 몽모리가 일정을 알려드려요!\n\n예시: 애월로 3일 동안 가족여행 갈 거에요.", image: "Mongri"),
     ]
     
     var body: some View {
@@ -23,11 +23,20 @@ struct ChatBotView: View {
                 VStack{
                     VStack{
                         if messages.count == 1{
-                            Image("Mongri")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 120 ,height: 120)
-                                .padding(.top, 60)
+                            VStack{
+                                Image("Mongri")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 120 ,height: 120)
+                                    .padding(.top, 60)
+                                VStack(alignment: .center){
+                                    Text("키즈존 여행 정보를 알려주는")
+                                    Text("AI 챗봇 몽모리에요.")
+                                }
+                                
+                            }
+                           
+                            
                         }
                         
                         if !(messages.count == 1){
@@ -42,10 +51,10 @@ struct ChatBotView: View {
                     .background(Color.orange_100)
                     
                     HStack {
-                        TextField("AI 뭉디에게 메세지를 보내주세요!", text: $newMessage)
+                        TextField("AI 뭉모리에게 메세지를 보내주세요!", text: $newMessage)
                             .padding(10)
                             .background(
-                                RoundedRectangle(cornerRadius: 15)
+                                RoundedRectangle(cornerRadius: 20)
                                     .stroke(Color.gray, lineWidth: 1.5)
                             )
                         Image("material-symbols_send2")

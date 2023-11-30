@@ -63,11 +63,11 @@ struct DetailResultListView: View {
                     Button {
                         
                     } label: {
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 12)
                             .foregroundColor(clickedButtonLoad ? Color.white : Color.orange)
                             .frame(width: Screen.maxWidth * 0.38, height: 35)
                             .overlay {
-                                RoundedRectangle(cornerRadius: 5)
+                                RoundedRectangle(cornerRadius: 12)
                                     .stroke(clickedButtonLoad ? Color.orange : Color.white, lineWidth: 2)
                                 HStack {
                                     Image(clickedButtonLoad ? "heroicons_map-pin1" : "heroicons_map-pin_white1" )
@@ -87,17 +87,17 @@ struct DetailResultListView: View {
                     Button {
                         
                     } label: {
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 12)
                             .foregroundColor(clickedButtonCall ? Color.white : Color.orange)
                             .frame(width: Screen.maxWidth * 0.38, height: 35)
                             .overlay {
-                                RoundedRectangle(cornerRadius: 5)
+                                RoundedRectangle(cornerRadius: 12)
                                     .stroke(clickedButtonCall ? Color.orange : Color.white, lineWidth: 2)
                                 HStack {
 //                                    Image(clickedButtonCall ?
 //                                          "fluent_call-20-regular" : "Frame_1516")
                                     Image(clickedButtonCall ?
-                                          "Frame_1516" : "fluent_call-20-regular")
+                                          "Frame_1516" : "Vector")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 20, height: 20)
@@ -117,21 +117,23 @@ struct DetailResultListView: View {
                 .navigationBarBackButtonHidden(true)
                 .padding(.top, 20)
                 
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(Color.gray)
-                    .frame(width: Screen.maxWidth * 0.8, height: 130 )
+                RoundedRectangle(cornerRadius: 12)
+                    .foregroundColor(Color.lightGray)
+                    .frame(width: Screen.maxWidth * 0.8, height: 130)
+                    .shadow(color: Color.black.opacity(0.2), radius: 3, y: 2)
                     .overlay{
                         VStack(alignment: .leading){
                             Text("세부 일정")
                                 .fontWeight(.bold)
                                 .font(.title2)
-                                .padding(.bottom, 10)
+                                .padding(.bottom, 12)
                             
                             Text("오후: 애월갯벌 체험과 애월향 산책 \n애월갯벌에서 갯벌 체험후 애월항 산책로에서 휴식")
                         }
                         .offset(x: -15)
                         
                     }
+                    
                 Spacer()
             }
             
