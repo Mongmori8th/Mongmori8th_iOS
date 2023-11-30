@@ -26,7 +26,7 @@ struct ResultListView: View {
                         NavigationLink {
                             DetailResultListView()
                         } label: {
-                            Image("ChevronRightIcon")
+                            Image("ChevronRightIcon_orange_f")
                                 .resizable()
                                 .frame(width: 30, height: 30)
                         }

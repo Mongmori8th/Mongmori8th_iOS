@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Map Marker.png",
+      "filename" : "ChevronRightIcon_orange_f.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Map Marker@2x.png",
+      "filename" : "ChevronRightIcon_orange_f@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Map Marker@3x.png",
+      "filename" : "ChevronRightIcon_orange_f@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

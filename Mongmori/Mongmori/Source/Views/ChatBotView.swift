@@ -48,7 +48,7 @@ struct ChatBotView: View {
                                 RoundedRectangle(cornerRadius: 15)
                                     .stroke(Color.gray, lineWidth: 1.5)
                             )
-                        Image("chatBotButton")
+                        Image("material-symbols_send2")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)

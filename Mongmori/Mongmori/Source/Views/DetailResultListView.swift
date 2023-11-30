@@ -30,10 +30,11 @@ struct DetailResultListView: View {
                         .padding(.bottom, 7)
                     
                     HStack{
-                        Image("test2")
+                        Image("IntelliSenseEventIcon_final1")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20,height: 20)
+                            .offset(y: -3)
                         Text("제주시 조천읍 남조로 2023")
                             .font(.system(size: 15))
                             .fontWeight(.bold)
@@ -42,10 +43,11 @@ struct DetailResultListView: View {
                     }
                     
                     HStack{
-                        Image("test2")
+                        Image("IntelliSenseEventIcon_final1")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20,height: 20)
+                            .offset(y: -8)
                         
                         Text("나와의 거리 102km")
                             .font(.system(size: 15))
@@ -59,17 +61,19 @@ struct DetailResultListView: View {
                 
                 HStack{
                     Button {
+                        
                     } label: {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(clickedButtonLoad ? Color.white : Color.orange)
-                            .frame(width: Screen.maxWidth * 0.38, height: 35 )
-                            .overlay{
-                                HStack{
-                                    Image("test2")
+                            .frame(width: Screen.maxWidth * 0.38, height: 35)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(clickedButtonLoad ? Color.orange : Color.white, lineWidth: 2)
+                                HStack {
+                                    Image(clickedButtonLoad ? "heroicons_map-pin1" : "heroicons_map-pin_white1" )
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 20,height: 20)
-                                    
+                                        .frame(width: 20, height: 20)
                                     Text("길찾기")
                                         .bold()
                                         .foregroundColor(clickedButtonLoad ? Color.orange : Color.white)
@@ -77,79 +81,81 @@ struct DetailResultListView: View {
                                 .onTapGesture {
                                     clickedButtonLoad.toggle()
                                 }
-                                
                             }
                     }
                     
                     Button {
+                        
                     } label: {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(clickedButtonCall ? Color.white : Color.orange)
-                            .frame(width: Screen.maxWidth * 0.37, height: 35 )
-                            .overlay{
-                                HStack{
-                                    Image("test2")
+                            .frame(width: Screen.maxWidth * 0.38, height: 35)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(clickedButtonCall ? Color.orange : Color.white, lineWidth: 2)
+                                HStack {
+//                                    Image(clickedButtonCall ?
+//                                          "fluent_call-20-regular" : "Frame_1516")
+                                    Image(clickedButtonCall ?
+                                          "Frame_1516" : "fluent_call-20-regular")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 20,height: 20)
-                                    
+                                        .frame(width: 20, height: 20)
                                     Text("전화하기")
                                         .bold()
-                                        .foregroundColor(.white)
+                                        .foregroundColor(clickedButtonCall ? Color.orange : Color.white)
                                 }
                                 .onTapGesture {
                                     clickedButtonCall.toggle()
                                 }
-                                
                             }
                     }
+                    
+                    
                 }
                 .padding(.bottom, 20)
+                .navigationBarBackButtonHidden(true)
+                .padding(.top, 20)
+                
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color.gray)
+                    .frame(width: Screen.maxWidth * 0.8, height: 130 )
+                    .overlay{
+                        VStack(alignment: .leading){
+                            Text("세부 일정")
+                                .fontWeight(.bold)
+                                .font(.title2)
+                                .padding(.bottom, 10)
+                            
+                            Text("오후: 애월갯벌 체험과 애월향 산책 \n애월갯벌에서 갯벌 체험후 애월항 산책로에서 휴식")
+                        }
+                        .offset(x: -15)
+                        
+                    }
+                Spacer()
+            }
+            
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("일정요약")
+                        .font(.title2.bold())
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        self.presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image("BackPageIcon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25)
+                        
+                    }
+                }
                 
             }
-            .navigationBarBackButtonHidden(true)
-            .padding(.top, 20)
-            
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(Color.gray)
-                .frame(width: Screen.maxWidth * 0.8, height: 130 )
-                .overlay{
-                    VStack(alignment: .leading){
-                        Text("세부 일정")
-                            .fontWeight(.bold)
-                            .font(.title2)
-                            .padding(.bottom, 10)
-                        
-                        Text("오후: 애월갯벌 체험과 애월향 산책 \n애월갯벌에서 갯벌 체험후 애월항 산책로에서 휴식")
-                    }
-                    .offset(x: -15)
-                    
-                }
-                Spacer()
-        }
-        
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text("일정요약")
-                    .font(.title2.bold())
-            }
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image("BackPageIcon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 25, height: 25)
-                    
-                }
-            }
-            
         }
     }
 }
-
 #Preview {
     DetailResultListView()
 }
-
