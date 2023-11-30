@@ -26,5 +26,7 @@ extension Color {
     // MARK: - EX)
     static let peach = Color(hex: "#ff8882")
     static let scrollViewBackGround = Color(hex: "#F0F0F0")
+    static let orange_100 = Color(hex: "#FEE9D7")
+    
     
 }

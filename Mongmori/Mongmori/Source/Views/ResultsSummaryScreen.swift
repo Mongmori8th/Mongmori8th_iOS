@@ -20,46 +20,58 @@ struct ResultsSummaryScreen: View {
     }
     
     var body: some View {
-        VStack {
-            MapView(locationManager: LocationManager(), userLatitude: userLatitude, userLongitude: userLongitude)
-            
-            HStack {
-                Text("뭉니의 일정 요약")
-                    .fontWeight(.bold)
-                    .font(.system(size: 20))
-                Spacer()
-            }
-            .padding(10)
-            
-            ScrollView{
-                ForEach(1..<3) { index in
-                    
+        NavigationView{
+            ZStack{
+                Rectangle()
+                    .fill(Color.orange)
+                    .frame(width: 2, height: 400)
+                    .offset(x: 0, y: 210)
+                    .zIndex(1) // Rectangle의 zIndex를 조절
+                VStack {
+                    MapView(locationManager: LocationManager(), userLatitude: userLatitude, userLongitude: userLongitude)
+                        
                     HStack {
-                        Text("Day\(index): ~~~~~~~~~")
+                        Text("AI 뭉니의 일정 요약")
                             .fontWeight(.bold)
-                            .font(.system(size: 15))
+                            .font(.system(size: 20))
+                            .padding(.leading,10)
                         Spacer()
                     }
-                    .padding(.leading, 10)
+                    .padding(10)
                     
-                    
-                    ForEach(1..<6) { index in
-                        TestResultListView(index: index)
+                    ScrollView{
+                        ForEach(1..<3) { index in
+                            VStack(alignment: .leading){
+                                Text("Day\(index): ~~~~~~~~~")
+                                    .fontWeight(.bold)
+                                    .font(.system(size: 15))
+                                    .offset(x:25, y:20)
+                                ForEach(1..<6) { index in
+                                    if index == 6 {
+                                        Rectangle()
+                                            .offset(x: 0, y: 0)
+                                            .fill(Color.blue)
+                                            .frame(width: 3, height: 400)
+                                    }
+                                    ResultListView(index: index)
+                                        .offset(y: -5)
+                                }
+                                
+                                
+                            }
+                            
+                            
+                          
+                        }
+                        
                     }
-//                    Rectangle()
-//                        .fill(Color.black)
-//                        .frame(width: Screen.maxWidth , height: 3)
-//                        .padding(.bottom, 10)
+                    
                 }
-
+                .zIndex(2)
             }
-            
-            //            Rectangle()
-            //                .fill(Color.black)
-            //                .frame(width: 3, height: 300)
-            //                .offset(x: -170, y: -80)
-            //                .zIndex(2) // Rectangle의 zIndex를 조절
         }
+        
+        
     }
     
 }
@@ -67,4 +79,3 @@ struct ResultsSummaryScreen: View {
 //#Preview {
 //    ResultsSummaryScreen()
 //}
-

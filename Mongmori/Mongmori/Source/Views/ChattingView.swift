@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Message: Identifiable {
+struct Message: Hashable{
     var id = UUID()
     var sender: String
     var content: String
@@ -16,18 +16,14 @@ struct Message: Identifiable {
 
 struct ChattingView: View {
     
-    @State private var messages: [Message] = [
-        Message(sender: "뭉디", content: "뭉디입니다. 아이들과 함께 할 수 있는 일정을 추천해드릴게요.\n\n양식에 맞춰 메세지를 보내주시면 AI뭉디가 일정을 알려드려요!\n\n장소:\n일정:\n\n양식에 맞춰 작성해주세요.", image: "test2"),
-    ]
-    @Binding var touchBool: Bool
-
-    @State private var newMessage: String = ""
-
+    @Binding var messages: [Message]
+    
     var body: some View {
+        
         VStack {
             ScrollView {
-                LazyVStack(alignment: .leading, spacing: 10) {
-                    ForEach(messages) { message in
+                VStack(alignment: .leading, spacing: 10) {
+                    ForEach(messages, id: \.self) { message in
                         HStack(alignment: .top){
                             Image(message.image ?? "")
                                 .resizable()
@@ -36,68 +32,42 @@ struct ChattingView: View {
                                 .padding(.trailing, -5)
                                 .offset(y: 15)
                             MessageView(message: message)
+                            //응답 받은걸 어떻게 넣어야함
                         }
                         
                     }
+                    // 서버 통신
+                    if (messages.count % 2 == 0){
+                        ResponseChatResultView()
+                    }
                 }
-                .padding()
+                .padding(.top, 15)      //이부분 건들이면 시뮬다시
             }
-            
-            HStack {
-                TextField("챗봇에게 메시지 보내기", text: $newMessage)
-                    .padding(10)
-                    .background(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(Color.blue, lineWidth: 1.5)
-                    )
-                    .padding()
-                    
-
-                Button("▶︎") {
-                    sendMessage()
-                    touchBool.toggle()
-                }
-                .padding(10)
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(10)
-            }
-            .padding()
         }
     }
-
-    func sendMessage() {
-        if !newMessage.isEmpty {
-            messages.append(Message(sender: "나", content: newMessage, image: ""))
-            newMessage = ""
-        }
-    }
+    
 }
 
 struct MessageView: View {
     var message: Message
-
+    
     var body: some View {
         HStack {
-            if message.sender == "나" {
+            if message.sender == " " {
                 Spacer()
             }
-
-            VStack(alignment: message.sender == "나" ? .trailing : .leading, spacing: 2) {
-                Text(message.sender)
-                    .font(.caption)
-                    .foregroundColor(.gray)
-
+            
+            VStack(alignment: message.sender == " " ? .trailing : .leading, spacing: 2) {
                 Text(message.content)
-                    .padding(8)
-                    .background(message.sender == "나" ? Color.blue : Color.gray.opacity(0.8))
-                    .foregroundColor(message.sender == "나" ? .white : .black)
-                    .cornerRadius(10)
+                    .padding(10)
+                    .background(Color.white)
+                    .foregroundColor(.black)
+                    .font(.system(size: 15))
+                    .cornerRadius(10)   
             }
-            .background(message.sender == "나" ? Color.clear : Color.white)
+            
         }
         .padding(.horizontal)
     }
 }
-
 

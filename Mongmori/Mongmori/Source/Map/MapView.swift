@@ -25,8 +25,7 @@ struct MapView: View {
         VStack{
 //            ZStack(alignment: .center){
                 UIMapView(locationManager: locationManager, userLatitude: userLatitude, userLongitude: userLongitude)
-//                    .ignoresSafeArea()
-//                    .edgesIgnoringSafeArea(.top)
+//                .padding([.leading,.trailing, .top] , 20)
 //            }
         }.frame(width: Screen.maxWidth ,height: Screen.maxHeight * 0.3)
     }
@@ -55,7 +54,7 @@ struct UIMapView: UIViewRepresentable,View {
         // MARK: 네이버 지도 나침판, 현재 유저 위치 GPS 버튼
         view.showCompass = false
         // MARK: 위치 정보 받아오기
-        view.showLocationButton = true
+        view.showLocationButton = false
 
         view.mapView.touchDelegate = context.coordinator
         
