@@ -23,6 +23,9 @@ struct DayPlan: Hashable {
 
 struct ResultsSummaryScreen: View {
     
+    @Binding var place: String
+    @Binding var duration: String
+    
     let input = """
     Day 1:
     오전: 협재해수욕장에서 아이와 해수욕을 즐깁니다.
@@ -56,8 +59,7 @@ struct ResultsSummaryScreen: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var locationManager : LocationManager
     
-    @Binding var testStr: String
-    @State private var showText = true
+    @State private var showLoading = true
     
     
     var userLatitude: Double {
@@ -69,18 +71,8 @@ struct ResultsSummaryScreen: View {
     
     var body: some View {
         
-        if showText{
-            Image("loadingImage")
-                .resizable()
-                .frame(width: 400, height: 400)
-                .offset(y: -20)
-                .onAppear{
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        withAnimation {
-                            self.showText = false
-                        }
-                    }
-                }
+        if showLoading{
+            LoadingView(place: $place, duration: $duration, showLoading: $showLoading)
                 .navigationBarBackButtonHidden(true)
         }else{
             VStack {
@@ -92,11 +84,13 @@ struct ResultsSummaryScreen: View {
                         VStack(alignment: .leading){
                             if index == 0 {
                                 Text("Day \(index+1) : 애월해안도로와 애월 바다마을")
-                                    .font(.poppins(.NanumSquareOTF_acEB, size: 18))
+                                    .font(.system(size: 20))
+                                    .fontWeight(.bold)
                                     .offset(x: 5, y: -10)
                             }else{
                                 Text("Day \(index+1) : 자연 속 자전거 타기, 노래 부르기")
-                                    .font(.poppins(.NanumSquareOTF_acEB, size: 18))
+                                    .font(.system(size: 20))
+                                    .fontWeight(.bold)
                                     .offset(x: 5, y: -10)
                             }
         
@@ -124,6 +118,8 @@ struct ResultsSummaryScreen: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("일정요약")
+//                        .fontWeight(.bold)
+//                        .font(.system(size: 20))
                         .font(.poppins(.NanumSquareOTF_acEB, size: 20))
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -133,7 +129,7 @@ struct ResultsSummaryScreen: View {
                         Image("BackPageIcon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 25)
+                            .frame(width: 20, height: 20)
                         
                     }
                 }
@@ -145,7 +141,7 @@ struct ResultsSummaryScreen: View {
     }
     
 }
-//
+
 //#Preview {
-//    ResultsSummaryScreen(locationManager: LocationManager(), testStr: <#Binding<String>#>)
+//    ResultsSummaryScreen(place: "애월", duration: "3", presentationMode: Binding<PresentationMode>, locationManager: LocationManager(), showLoading: false)
 //}

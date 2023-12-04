@@ -76,4 +76,3 @@ func changeToString(n: Int) -> String{
 //#Preview {
 //    ResultListView(index: "")
 //}
-

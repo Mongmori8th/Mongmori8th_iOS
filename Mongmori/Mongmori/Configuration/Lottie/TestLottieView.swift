@@ -9,9 +9,31 @@ import SwiftUI
 import Lottie
 
 struct TestLottieView: View {
+    
     var body: some View {
-        LottieViewManager(filename: "loadingLottie")
-
+        VStack(alignment: .leading){
+            HStack{
+                LottieViewManager(filename: "loadingLottie")
+                    .frame(width: 50,height: 50)
+                Text("여행 지역 분석 중")
+                Spacer()
+            }
+            
+            HStack{
+                
+                LottieViewManager(filename: "loadingLottie")
+                    .frame(width: 50,height: 50)
+                Text("여행 일정 확인 중")
+                Spacer()
+            }
+            
+            HStack{
+                LottieViewManager(filename: "loadingLottie")
+                    .frame(width: 50,height: 50)
+                Text("AI 몽모리 추천 여행지 생성 중")
+                Spacer()
+            }
+        }
     }
 }
 

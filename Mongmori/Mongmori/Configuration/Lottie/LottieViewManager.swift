@@ -19,8 +19,8 @@ struct LottieViewManager: UIViewRepresentable {
     
     var filename: String
     var animationView = LottieAnimationView()
-    
-    
+
+
     class Coordinator: NSObject {
         var parent: LottieViewManager
         
@@ -44,10 +44,10 @@ struct LottieViewManager: UIViewRepresentable {
             animationView.widthAnchor.constraint(equalTo: view.widthAnchor),
             animationView.heightAnchor.constraint(equalTo: view.heightAnchor)
         ])
-        
 
-        animationView.loopMode = .loop
+        animationView.loopMode = .repeat(3)
         animationView.play()
+     
         return view
     }
     

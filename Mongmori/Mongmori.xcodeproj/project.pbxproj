@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		480A34ECEFB1DE8059417848 /* Pods_Mongmori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583599F2B39FD78E19A0ED54 /* Pods_Mongmori.framework */; };
+		A744D1282B1DF77C00F99657 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744D1272B1DF77C00F99657 /* LoadingView.swift */; };
+		A744D12A2B1DFB7300F99657 /* loadingLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = A744D1292B1DFB7200F99657 /* loadingLottie.json */; };
+		A744D12D2B1E0FEB00F99657 /* TestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744D12C2B1E0FEB00F99657 /* TestListView.swift */; };
+		A744D1302B1E24D300F99657 /* TestResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744D12F2B1E24D300F99657 /* TestResultListView.swift */; };
+		A744D1322B1E3A5400F99657 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744D1312B1E3A5400F99657 /* ChatViewModel.swift */; };
 		A74721462B17759500006BAE /* TestLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74721452B17759500006BAE /* TestLottieView.swift */; };
 		A777AEC42B18B0BA00EF1999 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A777AEC32B18B0BA00EF1999 /* Prompt.swift */; };
 		A77E60DE2B176F31004A36BB /* MongmoriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60DD2B176F31004A36BB /* MongmoriApp.swift */; };
@@ -32,22 +37,25 @@
 		A7A555A52B17C87F00D5AF7F /* ChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */; };
 		A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */; };
 		A7A555AB2B182A5C00D5AF7F /* ResponseChatResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */; };
-		A7A555AD2B1840F200D5AF7F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555AC2B1840F200D5AF7F /* TestView.swift */; };
 		A7A8C4452B18970200DBFEFF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8C4442B18970200DBFEFF /* OnboardingView.swift */; };
 		A7FF2EC42B18BA420029ACC0 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FF2EC32B18BA420029ACC0 /* WebView.swift */; };
 		A7FF2EC82B18C4EB0029ACC0 /* PromptTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FF2EC72B18C4EB0029ACC0 /* PromptTestView.swift */; };
-		A7FF2ECB2B18D3290029ACC0 /* loadingLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ECA2B18D3290029ACC0 /* loadingLottie.json */; };
 		A7FF2ED32B1917000029ACC0 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED02B1916FF0029ACC0 /* Pretendard-Regular.otf */; };
 		A7FF2ED42B1917000029ACC0 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED12B1916FF0029ACC0 /* Pretendard-SemiBold.otf */; };
 		A7FF2ED52B1917000029ACC0 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED22B1917000029ACC0 /* Pretendard-Bold.otf */; };
 		A7FF2ED72B19280A0029ACC0 /* NanumSquareOTF_acB.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED62B19280A0029ACC0 /* NanumSquareOTF_acB.otf */; };
-		A7FF2EDA2B19280F0029ACC0 /* NanumSquareOTF_acEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED82B19280F0029ACC0 /* NanumSquareOTF_acEB.otf */; };
 		A7FF2EDB2B19280F0029ACC0 /* NanumSquareOTF_acR.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED92B19280F0029ACC0 /* NanumSquareOTF_acR.otf */; };
+		A7FF2EDD2B1ACA440029ACC0 /* NanumSquareOTF_acEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2EDC2B1ACA440029ACC0 /* NanumSquareOTF_acEB.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		583599F2B39FD78E19A0ED54 /* Pods_Mongmori.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mongmori.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E452600B7F577ECD06DD3E0 /* Pods-Mongmori.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mongmori.release.xcconfig"; path = "Target Support Files/Pods-Mongmori/Pods-Mongmori.release.xcconfig"; sourceTree = "<group>"; };
+		A744D1272B1DF77C00F99657 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A744D1292B1DFB7200F99657 /* loadingLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingLottie.json; sourceTree = "<group>"; };
+		A744D12C2B1E0FEB00F99657 /* TestListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestListView.swift; sourceTree = "<group>"; };
+		A744D12F2B1E24D300F99657 /* TestResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultListView.swift; sourceTree = "<group>"; };
+		A744D1312B1E3A5400F99657 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		A74721452B17759500006BAE /* TestLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLottieView.swift; sourceTree = "<group>"; };
 		A777AEC32B18B0BA00EF1999 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		A77E60DA2B176F31004A36BB /* Mongmori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mongmori.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,17 +82,15 @@
 		A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotView.swift; sourceTree = "<group>"; };
 		A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseChatResultView.swift; sourceTree = "<group>"; };
-		A7A555AC2B1840F200D5AF7F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		A7A8C4442B18970200DBFEFF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A7FF2EC32B18BA420029ACC0 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A7FF2EC72B18C4EB0029ACC0 /* PromptTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptTestView.swift; sourceTree = "<group>"; };
-		A7FF2ECA2B18D3290029ACC0 /* loadingLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingLottie.json; sourceTree = "<group>"; };
 		A7FF2ED02B1916FF0029ACC0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		A7FF2ED12B1916FF0029ACC0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		A7FF2ED22B1917000029ACC0 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		A7FF2ED62B19280A0029ACC0 /* NanumSquareOTF_acB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acB.otf; sourceTree = "<group>"; };
-		A7FF2ED82B19280F0029ACC0 /* NanumSquareOTF_acEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acEB.otf; sourceTree = "<group>"; };
 		A7FF2ED92B19280F0029ACC0 /* NanumSquareOTF_acR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acR.otf; sourceTree = "<group>"; };
+		A7FF2EDC2B1ACA440029ACC0 /* NanumSquareOTF_acEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acEB.otf; sourceTree = "<group>"; };
 		AE87DBA4BA873EFAD2D715E2 /* Pods-Mongmori.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mongmori.debug.xcconfig"; path = "Target Support Files/Pods-Mongmori/Pods-Mongmori.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +113,28 @@
 				9E452600B7F577ECD06DD3E0 /* Pods-Mongmori.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A744D12B2B1E0FB100F99657 /* ListViews */ = {
+			isa = PBXGroup;
+			children = (
+				A7A5559C2B178C3500D5AF7F /* ResultsSummaryScreen.swift */,
+				A7A555A02B179DF500D5AF7F /* ResultListView.swift */,
+				A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */,
+				A744D12C2B1E0FEB00F99657 /* TestListView.swift */,
+				A744D12F2B1E24D300F99657 /* TestResultListView.swift */,
+			);
+			path = ListViews;
+			sourceTree = "<group>";
+		};
+		A744D12E2B1E10D100F99657 /* ChatViews */ = {
+			isa = PBXGroup;
+			children = (
+				A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */,
+				A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */,
+				A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */,
+			);
+			path = ChatViews;
 			sourceTree = "<group>";
 		};
 		A77E60D12B176F31004A36BB = {
@@ -186,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				A7A5558F2B177CE200D5AF7F /* TestViewModel.swift */,
+				A744D1312B1E3A5400F99657 /* ChatViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -202,16 +231,12 @@
 		A77E60F02B17732D004A36BB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A7A5559C2B178C3500D5AF7F /* ResultsSummaryScreen.swift */,
-				A7A555A02B179DF500D5AF7F /* ResultListView.swift */,
-				A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */,
-				A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */,
-				A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */,
-				A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */,
+				A744D12E2B1E10D100F99657 /* ChatViews */,
+				A744D12B2B1E0FB100F99657 /* ListViews */,
 				A7A8C4442B18970200DBFEFF /* OnboardingView.swift */,
 				A7FF2EC32B18BA420029ACC0 /* WebView.swift */,
-				A7A555AC2B1840F200D5AF7F /* TestView.swift */,
 				A7FF2EC72B18C4EB0029ACC0 /* PromptTestView.swift */,
+				A744D1272B1DF77C00F99657 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,13 +269,13 @@
 		A77E60FC2B1773AF004A36BB /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				A77E60FD2B1773C8004A36BB /* FontManager.swift */,
+				A7FF2ED62B19280A0029ACC0 /* NanumSquareOTF_acB.otf */,
+				A7FF2EDC2B1ACA440029ACC0 /* NanumSquareOTF_acEB.otf */,
+				A7FF2ED92B19280F0029ACC0 /* NanumSquareOTF_acR.otf */,
 				A7FF2ED22B1917000029ACC0 /* Pretendard-Bold.otf */,
 				A7FF2ED02B1916FF0029ACC0 /* Pretendard-Regular.otf */,
-				A7FF2ED62B19280A0029ACC0 /* NanumSquareOTF_acB.otf */,
 				A7FF2ED12B1916FF0029ACC0 /* Pretendard-SemiBold.otf */,
-				A7FF2ED82B19280F0029ACC0 /* NanumSquareOTF_acEB.otf */,
-				A7FF2ED92B19280F0029ACC0 /* NanumSquareOTF_acR.otf */,
-				A77E60FD2B1773C8004A36BB /* FontManager.swift */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -260,7 +285,7 @@
 			children = (
 				A77E61002B17743E004A36BB /* LottieViewManager.swift */,
 				A74721452B17759500006BAE /* TestLottieView.swift */,
-				A7FF2ECA2B18D3290029ACC0 /* loadingLottie.json */,
+				A744D1292B1DFB7200F99657 /* loadingLottie.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -351,14 +376,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7A5559A2B1782F600D5AF7F /* Config.xcconfig in Resources */,
+				A7FF2EDD2B1ACA440029ACC0 /* NanumSquareOTF_acEB.otf in Resources */,
 				A7FF2EDB2B19280F0029ACC0 /* NanumSquareOTF_acR.otf in Resources */,
+				A744D12A2B1DFB7300F99657 /* loadingLottie.json in Resources */,
 				A77E60E52B176F32004A36BB /* Preview Assets.xcassets in Resources */,
-				A7FF2EDA2B19280F0029ACC0 /* NanumSquareOTF_acEB.otf in Resources */,
 				A7FF2ED52B1917000029ACC0 /* Pretendard-Bold.otf in Resources */,
 				A7FF2ED72B19280A0029ACC0 /* NanumSquareOTF_acB.otf in Resources */,
 				A7FF2ED32B1917000029ACC0 /* Pretendard-Regular.otf in Resources */,
 				A7FF2ED42B1917000029ACC0 /* Pretendard-SemiBold.otf in Resources */,
-				A7FF2ECB2B18D3290029ACC0 /* loadingLottie.json in Resources */,
 				A77E60E22B176F32004A36BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,15 +439,16 @@
 			files = (
 				A77E60F82B177383004A36BB /* ColorExtentsion.swift in Sources */,
 				A7A555A12B179DF500D5AF7F /* ResultListView.swift in Sources */,
-				A7A555AD2B1840F200D5AF7F /* TestView.swift in Sources */,
 				A77E61012B17743E004A36BB /* LottieViewManager.swift in Sources */,
 				A7A555962B177E2600D5AF7F /* LocationManager.swift in Sources */,
 				A7A555902B177CE200D5AF7F /* TestViewModel.swift in Sources */,
 				A7A555AB2B182A5C00D5AF7F /* ResponseChatResultView.swift in Sources */,
 				A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */,
+				A744D1302B1E24D300F99657 /* TestResultListView.swift in Sources */,
 				A7A5559D2B178C3500D5AF7F /* ResultsSummaryScreen.swift in Sources */,
 				A7FF2EC42B18BA420029ACC0 /* WebView.swift in Sources */,
 				A7A5558E2B177CD900D5AF7F /* TestModel.swift in Sources */,
+				A744D12D2B1E0FEB00F99657 /* TestListView.swift in Sources */,
 				A77E60F52B177355004A36BB /* DateString.swift in Sources */,
 				A77E60FE2B1773C8004A36BB /* FontManager.swift in Sources */,
 				A7FF2EC82B18C4EB0029ACC0 /* PromptTestView.swift in Sources */,
@@ -431,7 +457,9 @@
 				A7A555A32B17AB8800D5AF7F /* DetailResultListView.swift in Sources */,
 				A77E60F32B17734E004A36BB /* Date.swift in Sources */,
 				A74721462B17759500006BAE /* TestLottieView.swift in Sources */,
+				A744D1282B1DF77C00F99657 /* LoadingView.swift in Sources */,
 				A77E60DE2B176F31004A36BB /* MongmoriApp.swift in Sources */,
+				A744D1322B1E3A5400F99657 /* ChatViewModel.swift in Sources */,
 				A77E61042B177480004A36BB /* Modifiers.swift in Sources */,
 				A77E60FB2B17739E004A36BB /* Constants.swift in Sources */,
 				A7A555A52B17C87F00D5AF7F /* ChatBotView.swift in Sources */,
@@ -576,11 +604,13 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mongmori/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -609,11 +639,13 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mongmori/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -638,7 +670,7 @@
 				A77E60E72B176F32004A36BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		A77E60E82B176F32004A36BB /* Build configuration list for PBXNativeTarget "Mongmori" */ = {
 			isa = XCConfigurationList;
@@ -647,7 +679,7 @@
 				A77E60EA2B176F32004A36BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

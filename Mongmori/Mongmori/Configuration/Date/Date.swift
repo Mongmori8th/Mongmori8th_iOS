@@ -38,8 +38,13 @@ extension Date {
         return dateFormatter.date(from: string)
     }
     func getFormattedTime(from date: Date) -> String {
-         let formatter = DateFormatter()
-         formatter.dateFormat = "yyyy.MM.dd hh:mm:ss"
-         return formatter.string(from: date)
-     }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM.dd"
+        return formatter.string(from: date)
+    }
+    func getDayOfWeek(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: date)
+    }
 }
