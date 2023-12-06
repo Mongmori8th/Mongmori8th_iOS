@@ -97,4 +97,4 @@ Pods/
 Mongmori/Podfile.lock
 
 *.xcconfig
-Data/
+Data/*
