@@ -13,7 +13,6 @@ struct LoadingView: View {
     @Binding var duration: String
     @Binding var showLoading: Bool
 
-    
     @State var loadingView1: Bool = true
     @State var loadingView2: Bool = false
     @State var loadingView3: Bool = false
