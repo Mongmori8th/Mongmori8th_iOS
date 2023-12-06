@@ -38,7 +38,6 @@
 		A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */; };
 		A7A555AB2B182A5C00D5AF7F /* ResponseChatResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */; };
 		A7A8C4452B18970200DBFEFF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8C4442B18970200DBFEFF /* OnboardingView.swift */; };
-		A7FF2EC42B18BA420029ACC0 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FF2EC32B18BA420029ACC0 /* WebView.swift */; };
 		A7FF2EC82B18C4EB0029ACC0 /* PromptTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FF2EC72B18C4EB0029ACC0 /* PromptTestView.swift */; };
 		A7FF2ED32B1917000029ACC0 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED02B1916FF0029ACC0 /* Pretendard-Regular.otf */; };
 		A7FF2ED42B1917000029ACC0 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED12B1916FF0029ACC0 /* Pretendard-SemiBold.otf */; };
@@ -83,7 +82,6 @@
 		A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseChatResultView.swift; sourceTree = "<group>"; };
 		A7A8C4442B18970200DBFEFF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		A7FF2EC32B18BA420029ACC0 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A7FF2EC72B18C4EB0029ACC0 /* PromptTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptTestView.swift; sourceTree = "<group>"; };
 		A7FF2ED02B1916FF0029ACC0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		A7FF2ED12B1916FF0029ACC0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -234,7 +232,6 @@
 				A744D12E2B1E10D100F99657 /* ChatViews */,
 				A744D12B2B1E0FB100F99657 /* ListViews */,
 				A7A8C4442B18970200DBFEFF /* OnboardingView.swift */,
-				A7FF2EC32B18BA420029ACC0 /* WebView.swift */,
 				A7FF2EC72B18C4EB0029ACC0 /* PromptTestView.swift */,
 				A744D1272B1DF77C00F99657 /* LoadingView.swift */,
 			);
@@ -446,7 +443,6 @@
 				A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */,
 				A744D1302B1E24D300F99657 /* TestResultListView.swift in Sources */,
 				A7A5559D2B178C3500D5AF7F /* ResultsSummaryScreen.swift in Sources */,
-				A7FF2EC42B18BA420029ACC0 /* WebView.swift in Sources */,
 				A7A5558E2B177CD900D5AF7F /* TestModel.swift in Sources */,
 				A744D12D2B1E0FEB00F99657 /* TestListView.swift in Sources */,
 				A77E60F52B177355004A36BB /* DateString.swift in Sources */,

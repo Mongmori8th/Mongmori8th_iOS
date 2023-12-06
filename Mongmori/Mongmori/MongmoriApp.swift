@@ -13,20 +13,21 @@ struct MongmoriApp: App {
     @State var showView : Bool = true
     var body: some Scene {
         WindowGroup {
-            if showView{
-                OnboardingView()
-                    .onAppear{
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            withAnimation {
-                                showView = false
-                            }
-                        }
-                    }
-            }else{
-                ChatBotView()
-            }
+//            if showView{
+//                OnboardingView()
+//                    .onAppear{
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                            withAnimation {
+//                                showView = false
+//                            }
+//                        }
+//                    }
+//            }else{
+//                ChatBotView()
+//            }
             
-//            ChatBotView()
+            ChatBotView()
+            
 //            TestListView(locationManager: LocationManager())
             
         }
