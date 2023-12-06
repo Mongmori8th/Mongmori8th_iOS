@@ -8,8 +8,6 @@
 	<array>
 		<string>kakaonavi</string>
 	</array>
-	<key>NMFClientId</key>
-	<string>6scd7kzyf1</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -17,6 +15,10 @@
 	</dict>
 	<key>NaverClientSecret</key>
 	<string>$(NAVER_CLIENT_SECRET_CONFIG)</string>
+	<key>NaverClientID</key>
+	<string>$(NAVER_CLIENT_ID_CONFIG)</string>
+	<key>NMFClientId</key>
+	<string>$(NAVER_CLIENT_ID_CONFIG)</string>
 	<key>Privacy — Location Always and When In Use Usage Description</key>
 	<string></string>
 	<key>UIAppFonts</key>

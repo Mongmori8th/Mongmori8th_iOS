@@ -26,8 +26,8 @@ struct MongmoriApp: App {
 //                ChatBotView()
 //            }
             
-            ChatBotView()
-            
+//            ChatBotView()
+            APITestView()
 //            TestListView(locationManager: LocationManager())
             
         }

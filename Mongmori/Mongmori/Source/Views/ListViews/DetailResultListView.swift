@@ -10,52 +10,13 @@ import KakaoSDKNavi
 // MARK: - 리스트 상세 결과값
 
 struct DetailResultListView: View {
+    
+    @StateObject var detailResultViewModel = DetailResultViewModel()
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var clickedButtonLoad: Bool = true
     @State var clickedButtonCall: Bool = true
-    
-    func callButtonTapped(n: String){
-        let tmp = "0647830959"
-        let telephone = "tel://"
-        let formattedString = telephone + tmp
-        //        let formattedString = telephone + numberString
-        guard let url = URL(string: formattedString) else { return }
-        UIApplication.shared.open(url)
-        print("url:\(url)")
-        
-    }
-    
-    func openAppStore() {
-        // 앱의 iTunes 링크 (예시: KakaoNavi 앱)
-        let appStoreURLString = "https://apps.apple.com/kr/app/kakaonavi/id417698849"
-        
-        // URL 객체 생성
-        guard let appStoreURL = URL(string: appStoreURLString) else {
-            return
-        }
-        
-        // 앱 스토어 열기
-        if UIApplication.shared.canOpenURL(appStoreURL) {
-            UIApplication.shared.open(appStoreURL, options: [:], completionHandler: nil)
-        }
-    }
-    
-    func test(){
-        let title = "1"
-        let longitutde = 126.9425
-        let latitude = 33.458056
-        
-        let destination = NaviLocation(name: title, x: String(longitutde), y: String(latitude))
-        let option = NaviOption(coordType: .WGS84)
-        
-        guard let shareUrl = NaviApi.shared.shareUrl(destination: destination, option: option) else {
-            return
-        }
-        
-        UIApplication.shared.open(shareUrl, options: [:], completionHandler: nil)
-        
-    }
-    
+ 
     var index: Int
     
     var body: some View {
@@ -90,7 +51,6 @@ struct DetailResultListView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 20,height: 20)
-                        .offset(y: -3)
                     Text("제주특별자치도 제주시 한림읍 한림로 329-10")
                         .font(.poppins(.Pretendard_Regular, size: 16))  //.font(.system(size: 16))
                     Spacer()
@@ -102,7 +62,7 @@ struct DetailResultListView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 20,height: 20)
-                        .offset(y: -8)
+
                     
                     Text("나와의 거리 16km")
                         .font(.poppins(.Pretendard_Regular, size: 16))  //.font(.system(size: 16))
@@ -142,7 +102,7 @@ struct DetailResultListView: View {
                             }
                             .onTapGesture {
                                 clickedButtonLoad.toggle()
-                                test()
+//                                kakaoNavi()   고치기
                             }
                         }
                 }
@@ -172,7 +132,7 @@ struct DetailResultListView: View {
                             }
                             .onTapGesture {
                                 clickedButtonCall.toggle()
-                                callButtonTapped(n: "")
+                                detailResultViewModel.callButtonTapped(number: "")   //고치기  //데이터넣기
                             }
                         }
                 }
@@ -254,7 +214,9 @@ struct DetailResultListView: View {
             
         }
     }
-    //#Preview {
-    //    DetailResultListView()
-    //}
+
 }
+
+//#Preview {
+//    DetailResultListView()
+//}
