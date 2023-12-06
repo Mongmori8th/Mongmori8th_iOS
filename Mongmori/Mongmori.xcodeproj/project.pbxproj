@@ -29,6 +29,7 @@
 		A7A161F02B20B7FD0013E6F2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A161EF2B20B7FD0013E6F2 /* APIService.swift */; };
 		A7A161F22B20C44F0013E6F2 /* DetailResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A161F12B20C44F0013E6F2 /* DetailResultViewModel.swift */; };
 		A7A161FA2B20D0910013E6F2 /* DetailResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A161F92B20D0910013E6F2 /* DetailResultModel.swift */; };
+		A7A161FD2B20D51C0013E6F2 /* TestJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A161FC2B20D51C0013E6F2 /* TestJson.swift */; };
 		A7A5558E2B177CD900D5AF7F /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5558D2B177CD900D5AF7F /* TestModel.swift */; };
 		A7A555902B177CE200D5AF7F /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5558F2B177CE200D5AF7F /* TestViewModel.swift */; };
 		A7A555942B177D9600D5AF7F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555932B177D9600D5AF7F /* MapView.swift */; };
@@ -75,6 +76,7 @@
 		A7A161EF2B20B7FD0013E6F2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A7A161F12B20C44F0013E6F2 /* DetailResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResultViewModel.swift; sourceTree = "<group>"; };
 		A7A161F92B20D0910013E6F2 /* DetailResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResultModel.swift; sourceTree = "<group>"; };
+		A7A161FC2B20D51C0013E6F2 /* TestJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJson.swift; sourceTree = "<group>"; };
 		A7A5558D2B177CD900D5AF7F /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		A7A5558F2B177CE200D5AF7F /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		A7A555932B177D9600D5AF7F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		A77E60EC2B1772F5004A36BB /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				A7A161FB2B20D5140013E6F2 /* Data */,
 				A77E61022B177474004A36BB /* Modifiers */,
 				A77E60FF2B1773E5004A36BB /* Lottie */,
 				A77E60FC2B1773AF004A36BB /* Font */,
@@ -310,6 +313,14 @@
 				A7A161EF2B20B7FD0013E6F2 /* APIService.swift */,
 			);
 			path = APIService;
+			sourceTree = "<group>";
+		};
+		A7A161FB2B20D5140013E6F2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A7A161FC2B20D51C0013E6F2 /* TestJson.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		A7A555912B177D7900D5AF7F /* Map */ = {
@@ -453,6 +464,7 @@
 			files = (
 				A77E60F82B177383004A36BB /* ColorExtentsion.swift in Sources */,
 				A7A555A12B179DF500D5AF7F /* ResultListView.swift in Sources */,
+				A7A161FD2B20D51C0013E6F2 /* TestJson.swift in Sources */,
 				A7A161F02B20B7FD0013E6F2 /* APIService.swift in Sources */,
 				A77E61012B17743E004A36BB /* LottieViewManager.swift in Sources */,
 				A7A555962B177E2600D5AF7F /* LocationManager.swift in Sources */,
