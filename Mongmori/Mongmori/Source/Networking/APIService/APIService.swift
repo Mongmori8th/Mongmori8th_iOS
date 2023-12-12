@@ -13,18 +13,19 @@ import Combine
 // MARK: - 네이버 Directions 5 API 사용 -> 사용자 위치부터 목적지까지의 거리 구하기
 final class APIService : ObservableObject{
     
-    @Published var directionsResult: Search?
+    @Published var directionsResult: DirectionsModel?
     @Published var resultDistance: String?
     
-    
+    private var cancellables: Set<AnyCancellable> = []
     
     var fetchDirectionsSuccess = PassthroughSubject<Void, Never>()
     var subscription = Set<AnyCancellable>()
     
+    
     // MARK: - 사용자 목적지 받아서 API 요청 받기
     func fetchNaverAPIDirections(startLocation: (Double, Double), endLocation: (Double, Double)) {
-        let start = "\(startLocation.0),\(startLocation.1)"
-        let goal = "\(endLocation.0),\(endLocation.1)"
+        let start = "\(startLocation.1),\(startLocation.0)"
+        let goal = "\(endLocation.1),\(endLocation.0)"
         
         let parameters: [String: Any] = [
             "start": start,
@@ -40,19 +41,15 @@ final class APIService : ObservableObject{
         
         let request = AF.request("https://naveropenapi.apigw.ntruss.com/map-direction/v1/driving", method: .get, parameters: parameters, headers: headers)
         
-        debugPrint(request)
-        
         request.validate()
-            .responseDecodable(of: Search.self) { response in
-
+            .responseDecodable(of: DirectionsModel.self) { response in
+                
                 switch response.result {
                 case .success(let data):
                     self.directionsResult = data
                     self.objectWillChange.send()
-//                    print(data.route.trafast[0].summary.duration)
                     self.resultDistance = self.getDistance(meters: data.route.trafast[0].summary.distance)
                     self.fetchDirectionsSuccess.send()
-                    print(#function)
                 case .failure(let error):
                     print("Error: \(error)")
                 }
@@ -63,7 +60,8 @@ final class APIService : ObservableObject{
         let result = String((meters / 1000))
         return result
     }
-   
+    
+    
     
 }
 
@@ -82,4 +80,3 @@ enum NaverAPIEnum {
         }
     }
 }
-

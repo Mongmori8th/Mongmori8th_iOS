@@ -11,28 +11,29 @@ import SwiftUI
 @main
 struct MongmoriApp: App {
     @State var showView : Bool = true
+    
+
     var body: some Scene {
         WindowGroup {
-//            if showView{
-//                OnboardingView()
-//                    .onAppear{
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                            withAnimation {
-//                                showView = false
-//                            }
-//                        }
-//                    }
-//            }else{
-//                ChatBotView()
-//            }
+            if showView{
+                OnboardingView()
+                    .preferredColorScheme(.light)
+                    .onAppear{
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation {
+                                showView = false
+                            }
+                        }
+                    }
+            }else{
+                ChatBotView().preferredColorScheme(.light)
+            }
             
 //            ChatBotView()
-            APITestView()
-//            TestListView(locationManager: LocationManager())
+//            NaverNaviView()
             
         }
+        
     }
 }
-
-
 

@@ -28,14 +28,14 @@ struct LoadingView: View {
                 .frame(width: 350, height: 350)
             
             VStack(alignment: .center){
-                VStack(alignment: .leading){
+                VStack(alignment: .center){
                     Text("AI 몽모리가 아이들과 함께하는 \(place) \(duration)박\(Int(duration)!+1)일")
                         .font(.poppins(.Pretendard_Regular, size: 14))
                     Text("여행 일정을 세세하게 계획 중이에요!")
                         .font(.poppins(.Pretendard_Regular, size: 14))
                 }
                 
-                VStack(alignment: .leading){
+                VStack(alignment: .center){
                     
                     if loadingView1{
                         HStack{
@@ -51,7 +51,7 @@ struct LoadingView: View {
                             Text("여행 지역 분석 중")
                             Spacer()
                         }.onAppear{
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                 withAnimation {
                                     loadingCheckView1 = true
                                 }
@@ -84,7 +84,7 @@ struct LoadingView: View {
                             Text("여행 일정 확인 중")
                             Spacer()
                         }.onAppear{
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                 withAnimation {
                                     loadingCheckView2 = true
                                 }
@@ -113,7 +113,7 @@ struct LoadingView: View {
                             Text("AI 몽모리 추천 여행지 생성 중")
                             Spacer()
                         }.onAppear{
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                 withAnimation {
                                     loadingCheckView3 = true
                                 }
@@ -128,7 +128,7 @@ struct LoadingView: View {
                         }
                     }
                 }
-                .offset(x: 60)
+                .offset(x: 70)
                 
             }
             .offset(y: -30)

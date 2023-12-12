@@ -7,12 +7,19 @@
 
 import Foundation
 
-struct DetailResultModel: Codable,Hashable {
-    let data: [Datum]
-}
-
-// MARK: - Datum
-struct Datum: Codable,Hashable{
-    let name, lat, lon, placeURL: String
-    let phonNumber, address: String
+struct JejuSpot : Identifiable,Codable,Hashable{
+    let id = UUID()
+    let name: String?
+    let lat: Double?
+    let lon: Double?
+    let url: String?
+    let phoneNumber: String?
+    let address: String?
+    let introduction: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case name, lat, lon, url, introduction
+        case phoneNumber = "phone_number"
+        case address
+    }
 }

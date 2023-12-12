@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Search: Codable {
+struct DirectionsModel: Codable {
     let code: Int
     let message, currentDateTime: String
     let route: Route

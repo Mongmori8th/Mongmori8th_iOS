@@ -8,54 +8,51 @@
 import Foundation
 import UIKit
 import KakaoSDKNavi
+import Combine
+import Alamofire
+import WebKit
 
 final class DetailResultViewModel: ObservableObject {
     
+    @Published var jejuTourList: [JejuSpot] = []
+    
+    private var cancellables: Set<AnyCancellable> = []
+    
     // MARK: - 전화번호
-
+    
     func callButtonTapped(number: String){
-        let tmp = number
-        let telephone = "tel://"
-        let formattedString = telephone + tmp
-        //        let formattedString = telephone + numberString
-        guard let url = URL(string: formattedString) else { return }
-        UIApplication.shared.open(url)
-        print("url:\(url)")
-        
-    }
-    
-    // MARK: - 카카오네비
-
-    func kakaoNavi(){
-        let title = "1"
-        let longitutde = 126.9425
-        let latitude = 33.458056
-        
-        let destination = NaviLocation(name: title, x: String(longitutde), y: String(latitude))
-        let option = NaviOption(coordType: .WGS84)
-        
-        guard let shareUrl = NaviApi.shared.shareUrl(destination: destination, option: option) else {
-            return
+        if number != nil{
+            let tmp = number
+            let telephone = "tel://"
+            let formattedString = telephone + tmp
+            //        let formattedString = telephone + numberString
+            guard let url = URL(string: formattedString) else { return }
+            UIApplication.shared.open(url)
+        }else{
+            let formattedString = "전화번호 정보가 없습니다."
+            guard let url = URL(string: formattedString) else { return }
+            UIApplication.shared.open(url)
         }
         
-        UIApplication.shared.open(shareUrl, options: [:], completionHandler: nil)
+        
         
     }
-    
-    func testJson(jsonString: String) -> DetailResultModel{
-        if let jsonData = jsonString.data(using: .utf8) {
-            do {
-                let testJSON = try JSONDecoder().decode(DetailResultModel.self, from: jsonData)
-                return testJSON
-                
-            }
-            catch {
-                print("디코딩 에러: \(error)")
-            }
-        }
-        return DetailResultModel(data: [Datum(name: "", lat: "", lon: "", placeURL: "", phonNumber: "", address: "")])
-    }
 
-    
+    func fetchJsonData() {
+        
+        let address = Bundle.main.infoDictionary?["JsonDataURL"] as! String
+        let requestURL = "http://" + address + "//api/jeju-tourist-spots/?format=json"
+        
+        guard let url = URL(string: requestURL) else { return }
+        
+        AF.request(url)
+            .publishDecodable(type: [JejuSpot].self)
+            .sink(receiveCompletion: { _ in }) { response in
+                if let jejuTourList = response.value {
+                    self.jejuTourList = jejuTourList
+                }
+            }
+            .store(in: &cancellables)
+    }
 }
 

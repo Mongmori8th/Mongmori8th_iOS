@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ChatBotView: View {
     
+    @StateObject var chatVM = ChatViewModel()
+    @StateObject var detailResultVM = DetailResultViewModel()
+    @StateObject var locationManager = LocationManager()
     
     @State private var newMessage: String = ""
     @State private var isButtonEnabled = false  // 메세지 버튼 활성화
-    
-    @State private var questionExists = false
     
     @State var place: String = ""
     @State var duration: String = ""
@@ -23,8 +24,6 @@ struct ChatBotView: View {
     @State var messages: [Message] = [
         Message(sender: "몽모리", content: "제주 여행 컨설턴트 AI 몽모리가 아이들과 함께할 수 있는 일정을 추천해드릴게요.\n\n양식에 맞춰 메세지를 보내주시면 AI 몽모리가 일정을 알려드려요!\n\n예시: 애월로 3일 동안 가족여행 갈 거예요.", image: "Mongri"),
     ]
-    
-    var promptViewModel = PromptViewModel()
     
     private func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -55,9 +54,8 @@ struct ChatBotView: View {
                             .offset(y: -80)
                         }
                         Spacer()
-                        ChattingView(scrollViewID: $scrollViewID, place: $place, duration: $duration, messages: $messages)
+                        ChattingView(chatVM: chatVM, locationManager: locationManager, jejuSpot: detailResultVM.jejuTourList, scrollViewID: $scrollViewID, place: $place, duration: $duration, messages: $messages)
                             .onAppear {
-                                // 특정 ID 값을 사용하여 scrollTo 호출
                                 proxy.scrollTo(scrollViewID, anchor: .bottom)
                             }
                     }
@@ -79,12 +77,14 @@ struct ChatBotView: View {
                     if !newMessage.isEmpty{
                         Button {
                             if isStringValid(str: newMessage){
-                                sendMessage()
+                                let result = chatVM.sendMessage(messages: messages, newMessage: newMessage, place: self.place, duration: self.duration)
+                                messages = result.0
+                                newMessage = result.1
                             }else{
-                                sendErrorMessage()
+                                messages = chatVM.sendErrorMessage(messages: messages)
                             }
                         } label: {
-                            Image("material-symbols_send2")
+                            Image("send")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 30, height: 30)
@@ -92,12 +92,14 @@ struct ChatBotView: View {
                     }
 //                    .disabled(!isButtonEnabled)
                     
-                    
                 }
                 .padding(7)
-                .padding([.leading,.trailing] ,17)  // leading,trailing = 24
+                .padding([.leading,.trailing] ,17)
                 
                 
+            }
+            .onAppear{
+                detailResultVM.fetchJsonData()
             }
             .navigationBarItems(leading: HStack {
                 Image("Mongri")
@@ -117,32 +119,10 @@ struct ChatBotView: View {
         
     }
     
-    func sendErrorMessage(){
-    
-       
-//        "안녕하세요! AI 몽모리에요. 작성해주신 형식이 올바르지 않아서 일정을 추천해 드리지 못했어요. 다시 한 번 장소와 날짜를 정확히 입력해 주세요.\n예시: '애월로 3일 동안', '제주시로 5일간'처럼 구체적으로 적어주시면 더욱 정확한 여행 일정을 추천해 드릴게요!"
-                
-        messages.append(Message(sender: "몽모리", content: "작성해주신 형식이 올바르지 않아서 일정을 추천해 드리지 못했어요. 다시 한 번 장소와 날짜를 정확히 입력해 주세요! \n\n예시: '애월로 3일 동안', '제주시로 5일간'처럼 구체적으로 적어주시면 더욱 정확한 여행 일정을 추천해 드릴게요!", image: "Mongri"))
-    
-    }
-    
-    func sendMessage() {
-        
-        if !newMessage.isEmpty {
-            messages.append(Message(sender: "", content: newMessage, image: " "))
-            
-            messages.append(Message(sender: "몽모리", content: "str", image: "Mongri",button: true))
-            newMessage = ""
-            // 네트워크 통신하기 newMessage 보내기
-        }
-        questionExists.toggle()
-    }
-    
-    
     func isStringValid(str: String) -> Bool{
         
         // 바꾸기
-        let str = "애월로 3일"
+//        let str = "애월로 1일"
         
         // 정규식 패턴
         let placePattern = #"([가-힣]+로)"#
@@ -152,8 +132,8 @@ struct ChatBotView: View {
         let isDurationValid = str.range(of: durationPattern, options: .regularExpression) != nil
         
         if isPlaceValid && isDurationValid{
-            var place = str.range(of: placePattern, options: .regularExpression)
-            var duration = str.range(of: durationPattern, options: .regularExpression)
+            let place = str.range(of: placePattern, options: .regularExpression)
+            let duration = str.range(of: durationPattern, options: .regularExpression)
             
             self.place = String(String(str[place!]).dropLast())
             self.duration = String(String(str[duration!]).dropLast())
@@ -167,7 +147,6 @@ struct ChatBotView: View {
         }
         
     }
-    
 }
 
 #Preview {

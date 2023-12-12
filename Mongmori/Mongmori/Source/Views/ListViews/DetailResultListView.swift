@@ -11,25 +11,70 @@ import KakaoSDKNavi
 
 struct DetailResultListView: View {
     
-    @StateObject var detailResultViewModel = DetailResultViewModel()
+    let jejuSpot : [JejuSpot]
+    
+    @ObservedObject var detailResultVM = DetailResultViewModel()
+    @ObservedObject var naverApiVM = APIService()
+    @ObservedObject var locationManager : LocationManager
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var clickedButtonLoad: Bool = true
     @State var clickedButtonCall: Bool = true
- 
+    @State var isShowSheet: Bool = false
+    
+    
     var index: Int
+    var keyword: String
+    
+    func showDetailData(){
+        for i in 0..<jejuSpot.count{
+            if jejuSpot[i].name == keyword{
+                
+                dataIndex = i
+
+//                jejuImage = parsingImageURL(url: jejuSpot[i].url ?? "")
+                jejuImage = jejuSpot[i].url ?? ""
+                
+                textName = jejuSpot[i].name ?? ""
+                
+                textAddress = jejuSpot[i].address ?? ""
+                
+                let userLat = locationManager.lastLocation?.coordinate.latitude
+                let userLon = locationManager.lastLocation?.coordinate.longitude
+                
+                naverApiVM.fetchNaverAPIDirections(startLocation: (userLat!,userLon!), endLocation: (jejuSpot[i].lat! , jejuSpot[i].lon! ))
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                    textDistance = naverApiVM.resultDistance ?? ""
+                }
+                textDescription = jejuSpot[i].introduction ?? ""
+                
+            }
+        }
+    }
+
+    
+    @State var jejuImage = ""        //화면에 보여주는 여행지
+    @State var textName = ""        //화면에 보여주는 여행지
+    @State var textAddress = ""     //화면에 보여주는 주소
+    @State var textDistance = ""    //화면에 보여주는 거리
+    @State var dataIndex = 0        //해당하는 데이터 Index
+    @State var textDescription = ""        //해당하는 데이터 설명란
     
     var body: some View {
         VStack{
-            Image("detailImage1")
-                .resizable()
-            //                    .aspectRatio(contentMode: .fit)
-                .frame(width: Screen.maxWidth ,height: 250)
-            
+            AsyncImage(url: URL(string: jejuImage ?? "")) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(width: Screen.maxWidth ,height: 250)
             // MARK: - 여행지 이름
             VStack(alignment: .leading){
                 HStack{
-                    Text("협재해수욕장")
+                    Text(textName)
                         .font(.poppins(.NanumSquareOTF_acEB, size: 20)) //.font(.system(size: 20))  .fontWeight(.bold)
                     Spacer()
                 }
@@ -47,24 +92,24 @@ struct DetailResultListView: View {
             // MARK: - 여행지 주소 및 거리 표시
             VStack{
                 HStack{
-                    Image("IntelliSenseEventIcon_final1")
+                    Image("flag")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 20,height: 20)
-                    Text("제주특별자치도 제주시 한림읍 한림로 329-10")
+                    Text(textAddress)
                         .font(.poppins(.Pretendard_Regular, size: 16))  //.font(.system(size: 16))
                     Spacer()
                 }
 
                 
                 HStack{
-                    Image("IntelliSenseEventIcon_final1")
+                    Image("flag")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 20,height: 20)
 
                     
-                    Text("나와의 거리 16km")
+                    Text(textDistance+"Km")
                         .font(.poppins(.Pretendard_Regular, size: 16))  //.font(.system(size: 16))
                     Spacer()
                 }
@@ -91,7 +136,7 @@ struct DetailResultListView: View {
                             RoundedRectangle(cornerRadius: 12)
                                 .stroke(clickedButtonLoad ? Color.orange_500 : Color.white, lineWidth: 2)
                             HStack {
-                                Image(clickedButtonLoad ? "heroicons_map-pin1" : "heroicons_map-pin_white1" )
+                                Image(clickedButtonLoad ? "mapPinOrangeFill" : "mapPinLight" )
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 20, height: 20)
@@ -102,7 +147,7 @@ struct DetailResultListView: View {
                             }
                             .onTapGesture {
                                 clickedButtonLoad.toggle()
-//                                kakaoNavi()   고치기
+                                isShowSheet.toggle()
                             }
                         }
                 }
@@ -121,7 +166,7 @@ struct DetailResultListView: View {
                             HStack {
                                 
                                 Image(clickedButtonCall ?
-                                      "Frame_1516" : "Vector")
+                                      "phoneOrangeFill" : "phoneLight")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 20, height: 20)
@@ -132,7 +177,7 @@ struct DetailResultListView: View {
                             }
                             .onTapGesture {
                                 clickedButtonCall.toggle()
-                                detailResultViewModel.callButtonTapped(number: "")   //고치기  //데이터넣기
+                                detailResultVM.callButtonTapped(number: jejuSpot[dataIndex].phoneNumber ?? "")
                             }
                         }
                 }
@@ -157,21 +202,37 @@ struct DetailResultListView: View {
                     .overlay{
                         VStack(alignment: .leading){
                             VStack{
-                                Text("세부 일정")
-                                    .font(.poppins(.NanumSquareOTF_acB, size: 16))           // .font(.system(size: 16)) //.fontWeight(.bold)
-                                    .padding(
-                                        EdgeInsets(
-                                            top: 20,
-                                            leading: 0,
-                                            bottom: 16,
-                                            trailing: 10
+                                HStack{
+                                    Text("세부 정보")
+                                        .font(.poppins(.NanumSquareOTF_acB, size: 16))           // .font(.system(size: 16)) //.fontWeight(.bold)
+                                        .padding(
+                                            EdgeInsets(
+                                                top: 20,
+                                                leading: 0,
+                                                bottom: 16,
+                                                trailing: 10
+                                            )
                                         )
-                                    )
+                                    Spacer()
+                                }
+                                
                             }
+                            .padding(.leading,16)
                             VStack{
-                                Text("오전: 협재해수욕장에서 아이와 해수욕을 즐깁니다.")   //  .font(.system(size: 14))  //.fontWeight(.regular)
-                                    .font(.poppins(.Pretendard_Regular, size: 12))
+                                HStack{
+                                    if textDescription != nil{
+                                        Text(textDescription)   //  .font(.system(size: 14))  //.fontWeight(.regular)
+                                            .font(.poppins(.Pretendard_Regular, size: 12))
+                                    }else{
+                                        Text("정보를 불러올 수 없습니다.")   //  .font(.system(size: 14))  //.fontWeight(.regular)
+                                            .font(.poppins(.Pretendard_Regular, size: 12))
+                                    }
+                                   
+                                    Spacer()
+                                }
+                               
                             }
+                            .padding(.leading,16)
                             .padding(.bottom, 18)
                             Spacer()
                         }
@@ -192,19 +253,24 @@ struct DetailResultListView: View {
             Spacer()
             
         }
+        .sheet(isPresented: $isShowSheet) {
+            NaverNaviView(locationManager: locationManager, endLat: jejuSpot[index].lat!, endLon: jejuSpot[index].lon!, place: textName)
+                .presentationDetents([.large])
+        }
+        .onAppear{
+            showDetailData()
+        }
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("일정상세")
-                //                            .font(.system(size: 20))
-                //                            .fontWeight(.bold)
+                Text("일정상세")         //  .font(.system(size: 20))  .fontWeight(.bold)
                     .font(.poppins(.NanumSquareOTF_acEB, size: 20))
             }
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
                     self.presentationMode.wrappedValue.dismiss()
                 } label: {
-                    Image("BackPageIcon")
+                    Image("arrowLeft")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 20, height: 20)

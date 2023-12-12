@@ -10,12 +10,16 @@ import SwiftUI
 
 struct ResponseChatResultView: View {
     
+    @ObservedObject var chatVM : ChatViewModel
+    @ObservedObject var locationManager : LocationManager
+    
+    let jejuSpot : [JejuSpot]
+    
     @Binding var place: String
     @Binding var duration: String
     @Binding var messages: [Message]
-    
     @State private var showText = false
- 
+    
     var body: some View {
         HStack(alignment: .top){
             
@@ -34,7 +38,7 @@ struct ResponseChatResultView: View {
                 Button(action: {
                     
                 }) {
-                    NavigationLink(destination: ResultsSummaryScreen(place: $place, duration: $duration, locationManager: LocationManager())){
+                    NavigationLink(destination: ResultsSummaryScreen(place: $place, duration: $duration, chatVM: chatVM, locationManager: locationManager, responseData: chatVM.tourResponse!, jejuSpot: jejuSpot)){
                         RoundedRectangle(cornerRadius: 12)
                             .foregroundColor(Color.orange_500)
                             .frame(width: Screen.maxWidth * 0.72, height: 30)

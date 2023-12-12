@@ -7,29 +7,18 @@
 
 import SwiftUI
 
-struct Message: Hashable{
-    var id = UUID()
-    var sender: String?
-    var content: String
-    var image: String?
-    var button: Bool?
-}
-
 struct ChattingView: View {
     
-    @State var showProgress: Bool = true
+    @ObservedObject var chatVM : ChatViewModel
+    @ObservedObject var locationManager : LocationManager
     
+    let jejuSpot : [JejuSpot]
+    
+    @State var showProgress: Bool = true
     @Binding var scrollViewID: UUID
     @Binding var place: String
     @Binding var duration: String
     @Binding var messages: [Message]
-    
-    private func minHeight(count: Int) -> CGFloat {
-        let contentHeight = CGFloat(messages.count) * 110
-        return min(contentHeight, 600)
-    }
-    
-    
     
     var body: some View {
         
@@ -38,22 +27,10 @@ struct ChattingView: View {
                 ForEach(messages, id: \.self) { message in
                     
                     if message.button == true{
-                        if showProgress{
-                            ProgressView()
-                                .onAppear{
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                                        withAnimation {
-                                            showProgress = false
-                                        }
-                                    }
-                                }
-                                .offset(y: 20)
+                        if chatVM.tourResponse != nil{
+                            ResponseChatResultView(chatVM: chatVM, locationManager: locationManager, jejuSpot: jejuSpot, place: $place, duration: $duration, messages: $messages)
                         }else{
-                            ResponseChatResultView(place: $place, duration: $duration, messages: $messages)
-//                                .onAppear{
-//                                    showProgress = true
-//                                }
-                            
+                            ProgressView()
                         }
                     }else{
                         MessageView(message: message)
@@ -69,7 +46,7 @@ struct ChattingView: View {
             }
             
         }
-        .frame(height: messages.count == 1 ? 150 : minHeight(count: messages.count)) // 바꾸끼
+        .frame(height: messages.count == 1 ? 150 : chatVM.minHeight(count: messages.count, messages: messages)) // 바꾸끼
         .padding(.bottom, 12)
         
         
@@ -116,16 +93,3 @@ struct MessageView: View {
 #Preview {
     MessageView(message: Message(sender: "몽모리", content: "제주 여행 컨설턴트 AI 몽모리가 아이들과 함께할 수 있는 일정을 추천해드릴게요.\n\n양식에 맞춰 메세지를 보내주시면 AI 몽모리가 일정을 알려드려요!\n\n예시: 애월로 3일 동안 가족여행 갈 거예요.", image: "Mongri"))
 }
-
-//ScrollViewReader { proxy in
-//    ScrollView {
-//        Button(
-//            action: { withAnimation { proxy.scrollTo(bottomID) } },
-//            label: { Image(systemName: "chevron.down").foregroundColor(Color(.systemGray2)) })
-//            .id(topID)
-//
-//        ...
-//
-//        HStack {}.id(bottomID)
-//    }
-//}
