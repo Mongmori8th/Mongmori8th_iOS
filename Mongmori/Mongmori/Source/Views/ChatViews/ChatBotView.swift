@@ -14,12 +14,13 @@ struct ChatBotView: View {
     @StateObject var locationManager = LocationManager()
     
     @State private var newMessage: String = ""
-    @State private var isButtonEnabled = false  // 메세지 버튼 활성화
     
     @State var place: String = ""
     @State var duration: String = ""
-    
+
     @State var scrollViewID = UUID()
+    
+    @FocusState private var textfieldFocused: Bool
     
     @State var messages: [Message] = [
         Message(sender: "몽모리", content: "제주 여행 컨설턴트 AI 몽모리가 아이들과 함께할 수 있는 일정을 추천해드릴게요.\n\n양식에 맞춰 메세지를 보내주시면 AI 몽모리가 일정을 알려드려요!\n\n예시: 애월로 3일 동안 가족여행 갈 거예요.", image: "Mongri"),
@@ -30,7 +31,7 @@ struct ChatBotView: View {
     }
     
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack{
                 VStack {
                     ScrollViewReader { proxy in
@@ -70,8 +71,13 @@ struct ChatBotView: View {
                         .padding(10)
                         .background(
                             RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.gray, lineWidth: 1.5)
+                                .stroke(Color.grey_200, lineWidth: 1.5)
                         )
+                        .focused($textfieldFocused)
+                        .onLongPressGesture(minimumDuration: 0.0) {
+                            textfieldFocused = true
+                        }
+                        .autocorrectionDisabled()
                     
 //                    
                     if !newMessage.isEmpty{
@@ -90,7 +96,6 @@ struct ChatBotView: View {
                                 .frame(width: 30, height: 30)
                         }
                     }
-//                    .disabled(!isButtonEnabled)
                     
                 }
                 .padding(7)
@@ -124,7 +129,6 @@ struct ChatBotView: View {
         // 바꾸기
 //        let str = "애월로 1일"
         
-        // 정규식 패턴
         let placePattern = #"([가-힣]+로)"#
         let durationPattern = #"(\d+일)"#
         

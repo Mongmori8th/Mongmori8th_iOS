@@ -35,33 +35,59 @@ struct ResponseChatResultView: View {
                     .font(.poppins(.Pretendard_Regular, size: 14))
                     .padding([.top,.leading,.trailing],12)
                 
-                Button(action: {
-                    
-                }) {
-                    NavigationLink(destination: ResultsSummaryScreen(place: $place, duration: $duration, chatVM: chatVM, locationManager: locationManager, responseData: chatVM.tourResponse!, jejuSpot: jejuSpot)){
-                        RoundedRectangle(cornerRadius: 12)
-                            .foregroundColor(Color.orange_500)
-                            .frame(width: Screen.maxWidth * 0.72, height: 30)
-                            .overlay{
-                                HStack{
-                                    Text("일정 보러가기")
-                                        .font(.poppins(. NanumSquareOTF_acEB, size: 14))
+                NavigationLink {
+                    ResultsSummaryScreen(place: $place, duration: $duration, chatVM: chatVM, locationManager: locationManager, responseData: chatVM.tourResponse!, jejuSpot: jejuSpot)
+                } label: {
+                    RoundedRectangle(cornerRadius: 12)
+                        .foregroundColor(Color.orange_500)
+                        .frame(width: Screen.maxWidth * 0.72, height: 30)
+                        .overlay{
+                            HStack{
+                                Text("일정 보러가기")
+                                    .font(.poppins(. NanumSquareOTF_acEB, size: 14))
 //                                                            .font(.system(size: 16))
 //                                                            .fontWeight(.heavy)
-                                        .foregroundColor(.white)
-                                    Image("ChevronRightIcon_white_F")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 20, height: 20)
-                                }
-                                .padding([.top,.bottom],8)
-                                .padding([.leading,.trailing],20)
-                               
+                                    .foregroundColor(.white)
+                                Image("ChevronRightIcon_white_F")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
                             }
-                    }
+                            .padding([.top,.bottom],8)
+                            .padding([.leading,.trailing],20)
+                           
+                        }
                 }
                 .padding([.bottom,.leading,.trailing],12)
                 .padding(.top,10)
+                
+//                Button(action: {
+//                    
+//                }) {
+//                    NavigationLink(destination: ResultsSummaryScreen(place: $place, duration: $duration, chatVM: chatVM, locationManager: locationManager, responseData: chatVM.tourResponse!, jejuSpot: jejuSpot)){
+//                        RoundedRectangle(cornerRadius: 12)
+//                            .foregroundColor(Color.orange_500)
+//                            .frame(width: Screen.maxWidth * 0.72, height: 30)
+//                            .overlay{
+//                                HStack{
+//                                    Text("일정 보러가기")
+//                                        .font(.poppins(. NanumSquareOTF_acEB, size: 14))
+////                                                            .font(.system(size: 16))
+////                                                            .fontWeight(.heavy)
+//                                        .foregroundColor(.white)
+//                                    Image("ChevronRightIcon_white_F")
+//                                        .resizable()
+//                                        .aspectRatio(contentMode: .fit)
+//                                        .frame(width: 20, height: 20)
+//                                }
+//                                .padding([.top,.bottom],8)
+//                                .padding([.leading,.trailing],20)
+//                               
+//                            }
+//                    }
+//                }
+//                .padding([.bottom,.leading,.trailing],12)
+//                .padding(.top,10)
                 
         
             }

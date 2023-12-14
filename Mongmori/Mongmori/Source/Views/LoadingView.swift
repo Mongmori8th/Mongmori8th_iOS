@@ -55,10 +55,9 @@ struct LoadingView: View {
                                 withAnimation {
                                     loadingCheckView1 = true
                                 }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                     withAnimation {
                                         loadingView2 = true
-                                        
                                     }
                                 }
                             }
@@ -88,7 +87,7 @@ struct LoadingView: View {
                                 withAnimation {
                                     loadingCheckView2 = true
                                 }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                     withAnimation {
                                         loadingView3 = true
                                         
@@ -117,7 +116,7 @@ struct LoadingView: View {
                                 withAnimation {
                                     loadingCheckView3 = true
                                 }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                     withAnimation {
                                         showLoading = false
                                         
@@ -137,6 +136,7 @@ struct LoadingView: View {
             
             Spacer()
         }
+
         
         
     }

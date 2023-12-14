@@ -256,6 +256,11 @@ struct DetailResultListView: View {
         .sheet(isPresented: $isShowSheet) {
             NaverNaviView(locationManager: locationManager, endLat: jejuSpot[index].lat!, endLon: jejuSpot[index].lon!, place: textName)
                 .presentationDetents([.large])
+                .onAppear{
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                        isShowSheet = false
+                    }
+                }
         }
         .onAppear{
             showDetailData()

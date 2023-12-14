@@ -96,7 +96,6 @@ struct UIMapView: UIViewRepresentable,View {
     }
     
     func makeCoordinator() -> Coordinator {
-        //임시
         return Coordinator(viewModel: self.viewModel)
     }
     

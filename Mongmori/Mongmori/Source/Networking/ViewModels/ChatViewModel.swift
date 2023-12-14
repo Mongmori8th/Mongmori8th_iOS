@@ -45,7 +45,7 @@ final class ChatViewModel: ObservableObject {
     
     func sendErrorMessage(messages: [Message]) -> [Message]{
         var tmpMessages = messages
-        tmpMessages.append(Message(sender: "몽모리", content: "작성해주신 형식이 올바르지 않아서 일정을 추천해 드리지 못했어요. 다시 한 번 장소와 날짜를 정확히 입력해 주세요! \n\n예시: '애월로 3일 동안', '제주시로 5일간'처럼 구체적으로 적어주시면 더욱 정확한 여행 일정을 추천해 드릴게요!", image: "Mongri"))
+        tmpMessages.append(Message(sender: "몽모리", content: "작성해 주신 형식이 올바르지 않아서 일정을 추천해 드리지 못했어요..! 다시 한번 장소와 날짜를 정확히 입력해 주세요! \n\n예시: '애월로 3일 동안' , '제주시로 5일간'\n'지역'로 '기간'일로 작성해주시면  더욱 정확한 여행 일정을 추천해 드릴게요!", image: "Mongri"))
         return tmpMessages
     }
     
@@ -56,7 +56,7 @@ final class ChatViewModel: ObservableObject {
         if !tmpMessages.isEmpty {
             tmpMessages.append(Message(sender: "", content: tmpNewMessages, image: " "))
             
-            if fetchGPTData(place: place, duration: duration){ // 통신 단계 고치기
+            if fetchGPTData(place: place, duration: duration){
                 tmpMessages.append(Message(sender: "몽모리", content: "str", image: "Mongri", button: true))
             }
             
@@ -67,7 +67,7 @@ final class ChatViewModel: ObservableObject {
     }
     
     func minHeight(count: Int, messages: [Message]) -> CGFloat {
-        let contentHeight = CGFloat(messages.count) * 110
+        let contentHeight = CGFloat(messages.count) * 120
         return min(contentHeight, 600)
     }
     
@@ -97,8 +97,12 @@ final class ChatViewModel: ObservableObject {
             } else {
                 let components = line.components(separatedBy: ":").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
                 if components.count == 2 {
-                    currentDayActivities.append("\(components[0]) - \(components[1])")
-                    currentPlace.append(components[1])
+                    
+                    let resultString = components[1].replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")
+                    
+                    currentDayActivities.append("\(components[0]) - \(resultString)")
+                    currentPlace.append(resultString)
+
                 }
             }
         }
@@ -112,5 +116,24 @@ final class ChatViewModel: ObservableObject {
         return dayPlans
     }
     
+    func translationDay(str: String) -> String{
+        switch str{
+        case "Monday":
+            return "월"
+        case "Tuesday":
+            return "화"
+        case "Wednesday":
+            return "수"
+        case "Thursday":
+            return "목"
+        case "Friday":
+            return "금"
+        case "Thursday":
+            return "토"
+        default:
+            return "일"
+        }
+    }
 
 }
+

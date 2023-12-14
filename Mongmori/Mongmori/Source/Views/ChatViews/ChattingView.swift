@@ -59,6 +59,7 @@ struct MessageView: View {
     var message: Message
     
     var body: some View {
+        
         HStack(alignment: .top){
             if message.sender == "" {
                 Spacer()
@@ -71,17 +72,21 @@ struct MessageView: View {
             }
             
             VStack(alignment: message.sender == "" ? .trailing : .leading) {
+                
                 Text(message.content)
                     .font(.poppins(.Pretendard_Regular, size: 14))
                     .padding(12)
                     .background(Color.white) // 챗봇, 유저 뒷배경
                     .cornerRadius(12)
-                
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.grey_200, lineWidth: 1.5) // 테두리 색 및 두께 조절
+                    )
             }
         }
         .padding(
             EdgeInsets(
-                top: 0,
+                top: 1,
                 leading: message.sender == "" ? 0 : 14,
                 bottom: 12,
                 trailing: message.sender == "" ? 24 : 24
@@ -90,6 +95,6 @@ struct MessageView: View {
     }
 }
 
-#Preview {
-    MessageView(message: Message(sender: "몽모리", content: "제주 여행 컨설턴트 AI 몽모리가 아이들과 함께할 수 있는 일정을 추천해드릴게요.\n\n양식에 맞춰 메세지를 보내주시면 AI 몽모리가 일정을 알려드려요!\n\n예시: 애월로 3일 동안 가족여행 갈 거예요.", image: "Mongri"))
-}
+//#Preview {
+//    MessageView(message: Message(sender: "몽모리", content: "제주 여행 컨설턴트 AI 몽모리가 아이들과 함께할 수 있는 일정을 추천해드릴게요.\n\n양식에 맞춰 메세지를 보내주시면 AI 몽모리가 일정을 알려드려요!\n\n예시: 애월로 3일 동안 가족여행 갈 거예요.", image: "Mongri"))
+//}

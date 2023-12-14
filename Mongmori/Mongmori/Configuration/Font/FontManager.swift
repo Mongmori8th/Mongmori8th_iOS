@@ -28,7 +28,7 @@ extension Font {
             case .NanumSquareOTF_acR:
                 return "NanumSquareOTF_acR"
             case .Pretendard_Bold:
-                return "Pretendard-Bold"
+                return "Pretendard_Bold"
             case .Pretendard_Regular:
                 return "Pretendard_Regular"
             case .Pretendard_SemiBold:

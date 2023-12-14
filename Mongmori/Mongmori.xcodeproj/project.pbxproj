@@ -28,12 +28,10 @@
 		A7A161F02B20B7FD0013E6F2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A161EF2B20B7FD0013E6F2 /* APIService.swift */; };
 		A7A161F22B20C44F0013E6F2 /* DetailResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A161F12B20C44F0013E6F2 /* DetailResultViewModel.swift */; };
 		A7A161FA2B20D0910013E6F2 /* DetailResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A161F92B20D0910013E6F2 /* DetailResultModel.swift */; };
-		A7A161FD2B20D51C0013E6F2 /* TestJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A161FC2B20D51C0013E6F2 /* TestJson.swift */; };
 		A7A5558E2B177CD900D5AF7F /* GptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5558D2B177CD900D5AF7F /* GptModel.swift */; };
 		A7A555942B177D9600D5AF7F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555932B177D9600D5AF7F /* MapView.swift */; };
 		A7A555962B177E2600D5AF7F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555952B177E2600D5AF7F /* LocationManager.swift */; };
 		A7A5559A2B1782F600D5AF7F /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A7A555992B1782F600D5AF7F /* Config.xcconfig */; };
-		A7A5559D2B178C3500D5AF7F /* ResultsSummaryScreenFinish.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A5559C2B178C3500D5AF7F /* ResultsSummaryScreenFinish.swift */; };
 		A7A555A32B17AB8800D5AF7F /* DetailResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */; };
 		A7A555A52B17C87F00D5AF7F /* ChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */; };
 		A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */; };
@@ -42,9 +40,9 @@
 		A7BB12322B28825000CD66C4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB12312B28825000CD66C4 /* Message.swift */; };
 		A7BB12342B28900600CD66C4 /* NaverNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB12332B28900600CD66C4 /* NaverNaviView.swift */; };
 		A7BB12362B2892D900CD66C4 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB12352B2892D900CD66C4 /* WebView.swift */; };
-		A7FF2ED32B1917000029ACC0 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED02B1916FF0029ACC0 /* Pretendard-Regular.otf */; };
-		A7FF2ED42B1917000029ACC0 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED12B1916FF0029ACC0 /* Pretendard-SemiBold.otf */; };
-		A7FF2ED52B1917000029ACC0 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED22B1917000029ACC0 /* Pretendard-Bold.otf */; };
+		A7FF2ED32B1917000029ACC0 /* Pretendard_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED02B1916FF0029ACC0 /* Pretendard_Regular.otf */; };
+		A7FF2ED42B1917000029ACC0 /* Pretendard_SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED12B1916FF0029ACC0 /* Pretendard_SemiBold.otf */; };
+		A7FF2ED52B1917000029ACC0 /* Pretendard_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED22B1917000029ACC0 /* Pretendard_Bold.otf */; };
 		A7FF2ED72B19280A0029ACC0 /* NanumSquareOTF_acB.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED62B19280A0029ACC0 /* NanumSquareOTF_acB.otf */; };
 		A7FF2EDB2B19280F0029ACC0 /* NanumSquareOTF_acR.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED92B19280F0029ACC0 /* NanumSquareOTF_acR.otf */; };
 		A7FF2EDD2B1ACA440029ACC0 /* NanumSquareOTF_acEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2EDC2B1ACA440029ACC0 /* NanumSquareOTF_acEB.otf */; };
@@ -74,13 +72,11 @@
 		A7A161EF2B20B7FD0013E6F2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A7A161F12B20C44F0013E6F2 /* DetailResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResultViewModel.swift; sourceTree = "<group>"; };
 		A7A161F92B20D0910013E6F2 /* DetailResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResultModel.swift; sourceTree = "<group>"; };
-		A7A161FC2B20D51C0013E6F2 /* TestJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJson.swift; sourceTree = "<group>"; };
 		A7A5558D2B177CD900D5AF7F /* GptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GptModel.swift; sourceTree = "<group>"; };
 		A7A555932B177D9600D5AF7F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A7A555952B177E2600D5AF7F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A7A555992B1782F600D5AF7F /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A7A5559B2B17838200D5AF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		A7A5559C2B178C3500D5AF7F /* ResultsSummaryScreenFinish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsSummaryScreenFinish.swift; sourceTree = "<group>"; };
 		A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResultListView.swift; sourceTree = "<group>"; };
 		A7A555A42B17C87F00D5AF7F /* ChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotView.swift; sourceTree = "<group>"; };
 		A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
@@ -89,9 +85,9 @@
 		A7BB12312B28825000CD66C4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A7BB12332B28900600CD66C4 /* NaverNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverNaviView.swift; sourceTree = "<group>"; };
 		A7BB12352B2892D900CD66C4 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		A7FF2ED02B1916FF0029ACC0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
-		A7FF2ED12B1916FF0029ACC0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
-		A7FF2ED22B1917000029ACC0 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		A7FF2ED02B1916FF0029ACC0 /* Pretendard_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pretendard_Regular.otf; sourceTree = "<group>"; };
+		A7FF2ED12B1916FF0029ACC0 /* Pretendard_SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pretendard_SemiBold.otf; sourceTree = "<group>"; };
+		A7FF2ED22B1917000029ACC0 /* Pretendard_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pretendard_Bold.otf; sourceTree = "<group>"; };
 		A7FF2ED62B19280A0029ACC0 /* NanumSquareOTF_acB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acB.otf; sourceTree = "<group>"; };
 		A7FF2ED92B19280F0029ACC0 /* NanumSquareOTF_acR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acR.otf; sourceTree = "<group>"; };
 		A7FF2EDC2B1ACA440029ACC0 /* NanumSquareOTF_acEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTF_acEB.otf; sourceTree = "<group>"; };
@@ -125,7 +121,6 @@
 				A744D12C2B1E0FEB00F99657 /* ResultsSummaryScreen.swift */,
 				A744D12F2B1E24D300F99657 /* ResultListView.swift */,
 				A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */,
-				A7A5559C2B178C3500D5AF7F /* ResultsSummaryScreenFinish.swift */,
 			);
 			path = ListViews;
 			sourceTree = "<group>";
@@ -193,7 +188,6 @@
 		A77E60EC2B1772F5004A36BB /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				A7A161FB2B20D5140013E6F2 /* Data */,
 				A77E61022B177474004A36BB /* Modifiers */,
 				A77E60FF2B1773E5004A36BB /* Lottie */,
 				A77E60FC2B1773AF004A36BB /* Font */,
@@ -279,9 +273,9 @@
 				A7FF2ED62B19280A0029ACC0 /* NanumSquareOTF_acB.otf */,
 				A7FF2EDC2B1ACA440029ACC0 /* NanumSquareOTF_acEB.otf */,
 				A7FF2ED92B19280F0029ACC0 /* NanumSquareOTF_acR.otf */,
-				A7FF2ED22B1917000029ACC0 /* Pretendard-Bold.otf */,
-				A7FF2ED02B1916FF0029ACC0 /* Pretendard-Regular.otf */,
-				A7FF2ED12B1916FF0029ACC0 /* Pretendard-SemiBold.otf */,
+				A7FF2ED22B1917000029ACC0 /* Pretendard_Bold.otf */,
+				A7FF2ED02B1916FF0029ACC0 /* Pretendard_Regular.otf */,
+				A7FF2ED12B1916FF0029ACC0 /* Pretendard_SemiBold.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -310,14 +304,6 @@
 				A7A161EF2B20B7FD0013E6F2 /* APIService.swift */,
 			);
 			path = APIService;
-			sourceTree = "<group>";
-		};
-		A7A161FB2B20D5140013E6F2 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				A7A161FC2B20D51C0013E6F2 /* TestJson.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		A7A555912B177D7900D5AF7F /* Map */ = {
@@ -402,10 +388,10 @@
 				A7FF2EDB2B19280F0029ACC0 /* NanumSquareOTF_acR.otf in Resources */,
 				A744D12A2B1DFB7300F99657 /* loadingLottie.json in Resources */,
 				A77E60E52B176F32004A36BB /* Preview Assets.xcassets in Resources */,
-				A7FF2ED52B1917000029ACC0 /* Pretendard-Bold.otf in Resources */,
+				A7FF2ED52B1917000029ACC0 /* Pretendard_Bold.otf in Resources */,
 				A7FF2ED72B19280A0029ACC0 /* NanumSquareOTF_acB.otf in Resources */,
-				A7FF2ED32B1917000029ACC0 /* Pretendard-Regular.otf in Resources */,
-				A7FF2ED42B1917000029ACC0 /* Pretendard-SemiBold.otf in Resources */,
+				A7FF2ED32B1917000029ACC0 /* Pretendard_Regular.otf in Resources */,
+				A7FF2ED42B1917000029ACC0 /* Pretendard_SemiBold.otf in Resources */,
 				A77E60E22B176F32004A36BB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,7 +446,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A77E60F82B177383004A36BB /* ColorExtentsion.swift in Sources */,
-				A7A161FD2B20D51C0013E6F2 /* TestJson.swift in Sources */,
 				A7A161F02B20B7FD0013E6F2 /* APIService.swift in Sources */,
 				A77E61012B17743E004A36BB /* LottieViewManager.swift in Sources */,
 				A7BB12342B28900600CD66C4 /* NaverNaviView.swift in Sources */,
@@ -468,7 +453,6 @@
 				A7A555AB2B182A5C00D5AF7F /* ResponseChatResultView.swift in Sources */,
 				A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */,
 				A744D1302B1E24D300F99657 /* ResultListView.swift in Sources */,
-				A7A5559D2B178C3500D5AF7F /* ResultsSummaryScreenFinish.swift in Sources */,
 				A7A5558E2B177CD900D5AF7F /* GptModel.swift in Sources */,
 				A744D12D2B1E0FEB00F99657 /* ResultsSummaryScreen.swift in Sources */,
 				A77E60F52B177355004A36BB /* DateString.swift in Sources */,

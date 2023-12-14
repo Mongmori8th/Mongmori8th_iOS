@@ -37,23 +37,23 @@ struct ResultListView: View {
                             Text("\(str)")
                                 .font(.custom("Pretendard_Regular", size: 15))
                                 .frame(maxWidth: .infinity, alignment: .leading)
-//                                .truncationMode(.tail)
-                                .padding([.bottom,.top], 5)
-                            if description != nil{
-                                Text("\(description)")
-                                    .font(.custom("Pretendard_Regular", size: 15))
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-    //                                .truncationMode(.tail)
-                            }else{
+                                .truncationMode(.tail)
+                            if description == ""{
                                 Text("정보를 불러올 수 없습니다.")
                                     .font(.custom("Pretendard_Regular", size: 15))
                                     .frame(maxWidth: .infinity, alignment: .leading)
-    //                                .truncationMode(.tail)
+                                    .truncationMode(.tail)
+                            }else{
+                                Text("\(description)")
+                                    .font(.custom("Pretendard_Regular", size: 15))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .truncationMode(.tail)
                             }
                             
                             Spacer()
                         }
                         .padding([.leading,.trailing], 12)
+                        .padding([.top], 15)
                         
                         NavigationLink {
                             DetailResultListView(jejuSpot: jejuSpot, locationManager: locationManager, index: index, keyword: place)
@@ -81,5 +81,6 @@ struct ResultListView: View {
         }
     }
 }
+
 
 
