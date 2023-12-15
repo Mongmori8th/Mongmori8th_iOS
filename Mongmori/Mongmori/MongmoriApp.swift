@@ -15,19 +15,18 @@ struct MongmoriApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            if showView{
-//                OnboardingView()
-//                    .onAppear{
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                            withAnimation {
-//                                showView = false
-//                            }
-//                        }
-//                    }
-//            }else{
+            if showView{
+                OnboardingView()
+                    .onAppear{
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation {
+                                showView = false
+                            }
+                        }
+                    }
+            }else{
                 ChatBotView()
-                
-//            }
+            }
             
 //            ChatBotView()
 //            NaverNaviView()
