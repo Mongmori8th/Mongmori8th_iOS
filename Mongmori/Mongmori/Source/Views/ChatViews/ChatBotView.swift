@@ -104,8 +104,7 @@ struct ChatBotView: View {
                 }
                 .padding(.top, 18)
                 .padding([.leading,.trailing] ,17)
-                .keyboardAwarePadding(paddingHeight: 4)
-                
+//                .keyboardAwarePadding(paddingHeight: 4)
                 
             }
             .onAppear{
@@ -153,7 +152,6 @@ struct ChatBotView: View {
         
         
         if isPlaceValid{
-            #imageLiteral(resourceName: "simulator_screenshot_D31D3EFA-17CC-49C7-9AA3-C4200136B8AD.png")
             let place = str.range(of: placePattern, options: .regularExpression)
             //            let duration = str.range(of: durationPattern, options: .regularExpression)
             //            self.duration = String(String(str[duration!]).dropLast())

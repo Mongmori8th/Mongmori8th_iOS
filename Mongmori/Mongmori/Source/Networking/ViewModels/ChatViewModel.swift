@@ -45,7 +45,7 @@ final class ChatViewModel: ObservableObject {
     
     func sendErrorMessage(messages: [Message]) -> [Message]{
         var tmpMessages = messages
-        tmpMessages.append(Message(sender: "몽모리", content: "작성해 주신 형식이 올바르지 않아서 일정을 추천해 드리지 못했어요..! 다시 한번 장소와 날짜를 정확히 입력해 주세요! \n\n예시: '애월로 3일 동안' , '제주시로 5일간'\n'지역'로 '기간'일로 작성해주시면  더욱 정확한 여행 일정을 추천해 드릴게요!", image: "Mongri"))
+        tmpMessages.append(Message(sender: "몽모리", content: "작성해 주신 형식이 올바르지 않아서 일정을 추천해 드리지 못했어요..! 다시 한번 장소와 날짜를 정확히 입력해 주세요! \n\n예시:\n'애월로 12월 17일부터 12월 19일까지',\n'제주시로 1월 3일부터 1월 6일까지'\n'지역' 로 '기간' 일로 작성해주시면  더욱 정확한 여행 일정을 추천해 드릴게요!", image: "Mongri"))
         return tmpMessages
     }
     
