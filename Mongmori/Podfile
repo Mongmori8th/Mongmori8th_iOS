@@ -10,5 +10,4 @@ target 'Mongmori' do
   pod 'NMapsMap'
   pod 'lottie-ios'
   pod 'Alamofire'
-  pod ‘KakaoSDKNavi’, ‘~> 2.11.3’
 end

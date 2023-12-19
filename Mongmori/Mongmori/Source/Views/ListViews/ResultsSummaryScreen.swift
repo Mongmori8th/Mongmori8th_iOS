@@ -12,21 +12,27 @@ struct ResultsSummaryScreen: View {
     
     @Binding var place: String
     @Binding var duration: String
+    @Binding var currentDate: Date
+    
     
     @State var hegihtIndex: Int = 0
-    
-    
-    @State private var currentDate: Date = Date()
-    
+    @State var textDate: Date = Date()
     
     @StateObject var naverApiVM = APIService()
     @ObservedObject var chatVM : ChatViewModel
+    @ObservedObject var detailResultVM : DetailResultViewModel
+    
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var locationManager : LocationManager
     
     @State private var showLoading = true
     @State private var responsePlace: Set<String> = Set()
+    
+    @State var isShowingPhotoSpotMapVIew: Bool = false // 주변 게시물 보여주는 Bool
+    @State var modalPlace: String = ""
+    @State var modalLat: Double = 0.0
+    @State var modalLon: Double = 0.0
     
     
     var userLatitude: Double {
@@ -42,13 +48,13 @@ struct ResultsSummaryScreen: View {
     
     var body: some View {
         
-        //         바꾸기
+        //                 바꾸기
         if showLoading{
             LoadingView(place: $place, duration: $duration, showLoading: $showLoading)
                 .navigationBarBackButtonHidden(true)
         }else{
             VStack {
-                MapView(locationManager: locationManager, userLatitude: userLatitude, userLongitude: userLongitude, jejuSpot: jejuSpot, responsePlace: $responsePlace)
+                MapView(locationManager: locationManager, userLatitude: userLatitude, userLongitude: userLongitude, jejuSpot: jejuSpot, isShowingPhotoSpotMapVIew: $isShowingPhotoSpotMapVIew,  modalPlace: $modalPlace, modalLat: $modalLat, modalLon: $modalLon, responsePlace: $responsePlace)
                 
                 ScrollView{
                     ForEach(Array(chatVM.parseTourResponse(data: responseData).enumerated()), id: \.element.day) { (index, dayPlan) in
@@ -59,9 +65,9 @@ struct ResultsSummaryScreen: View {
                                 HStack{
                                     Text("Day\(dayPlan.day)")
                                         .font(.poppins(.NanumSquareOTF_acEB, size: 18))
-                                    let currentDate = Calendar.current.date(byAdding: .day, value: index, to: currentDate) ?? currentDate //날짜 증가
-                                    
-                                    Text(Date().getFormattedTime(from: currentDate)+"/\(chatVM.translationDay(str: Date().getDayOfWeek(from: currentDate)))")
+                                    //                                    .kerning(22)
+                                        .lineSpacing(7)
+                                    Text(chatVM.translationDate(date: currentDate, increase: dayPlan.day))
                                         .fontWeight(.bold)
                                         .foregroundStyle(Color.gray)
                                     
@@ -76,6 +82,7 @@ struct ResultsSummaryScreen: View {
                                                 hegihtIndex = dayPlan.activities.count
                                                 responsePlace.insert(dayPlan.place[index])
                                             }
+                                            .padding([.top] ,16)
                                     }
                                     
                                 }
@@ -93,13 +100,13 @@ struct ResultsSummaryScreen: View {
                     // MARK: - 전구 뷰
                     RoundedRectangle(cornerRadius: 12)
                         .foregroundColor(.lightGray2)
-                        .frame(width: Screen.maxWidth * 0.8, height: Screen.maxHeight * 0.15)
+                        .frame(width: Screen.maxWidth * 0.8, height: Screen.maxHeight * 0.18)
                         .overlay {
                             VStack(){
                                 HStack{
                                     Image("bulb")
                                         .resizable()
-                                        .frame(width: 25, height: 25)
+                                        .frame(width: 44, height: 44)
                                     Spacer()
                                 }
                                 .padding(.bottom, 12)
@@ -109,9 +116,9 @@ struct ResultsSummaryScreen: View {
                             }
                             .padding(
                                 EdgeInsets(
-                                    top: 10,
+                                    top: 16,
                                     leading: 16,
-                                    bottom: 10,
+                                    bottom: 16,
                                     trailing: 16
                                 )
                             )
@@ -120,7 +127,7 @@ struct ResultsSummaryScreen: View {
                             EdgeInsets(
                                 top: 10,
                                 leading: 24,
-                                bottom: 0,
+                                bottom: 10,
                                 trailing: 24
                             )
                         )
@@ -129,6 +136,32 @@ struct ResultsSummaryScreen: View {
                 
                 
                 
+            }
+            .fullScreenCover(isPresented: $isShowingPhotoSpotMapVIew) {
+                //                .sheet(isPresented: $isShowingPhotoSpotMapVIew) {
+                NavigationView{
+                    DetailResultListModalView(jejuSpot: jejuSpot, detailResultVM: detailResultVM, naverApiVM: naverApiVM, locationManager: locationManager, modalLat: $modalLat, modalLon: $modalLon, index: 0, keyword: modalPlace)
+                    //                    .navigationBarHidden(false)
+                        .toolbar {
+                            ToolbarItem(placement: .principal) {
+                                Text("일정요약")
+                                    .font(.poppins(.NanumSquareOTF_acEB, size: 20)) //.fontWeight(.bold).font(.system(size: 20))
+                            }
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button {
+                                    isShowingPhotoSpotMapVIew = false
+                                } label: {
+                                    Image("arrowLeft")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 20, height: 20)
+                                    
+                                }
+                            }
+                            
+                        }
+                }
+                //                    .presentationDetents([.large])
             }
             .background(Color.white)
             .navigationBarTitleDisplayMode(.inline)

@@ -1,36 +1,28 @@
 PODS:
-  - Alamofire (5.8.0)
-  - KakaoSDKCommon/Common (2.11.3)
-  - KakaoSDKNavi (2.11.3):
-    - KakaoSDKCommon/Common (= 2.11.3)
-  - lottie-ios (4.3.3)
+  - Alamofire (5.8.1)
+  - lottie-ios (4.3.4)
   - NMapsGeometry (1.0.1)
   - NMapsMap (3.17.0):
     - NMapsGeometry
 
 DEPENDENCIES:
   - Alamofire
-  - KakaoSDKNavi (~> 2.11.3)
   - lottie-ios
   - NMapsMap
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - KakaoSDKCommon
-    - KakaoSDKNavi
     - lottie-ios
     - NMapsGeometry
     - NMapsMap
 
 SPEC CHECKSUMS:
-  Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
-  KakaoSDKCommon: b4235203f67a5b6ee2df75eaf9bbc863c6d92e09
-  KakaoSDKNavi: 5168499579e915cf87c5f715b8de3c0706e310a3
-  lottie-ios: 25e7b2675dad5c3ddad369ac9baab03560c5bfdd
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  lottie-ios: 3d98679b41fa6fd6aff2352b3953dbd3df8a397e
   NMapsGeometry: 53c573ead66466681cf123f99f698dc8071a4b83
   NMapsMap: a5b909a31b6f3d27a670f6eb2ddc913c38975474
 
-PODFILE CHECKSUM: d818a63fa0f4d84fb5b0c5ea8ffd7a73f2d1f8f2
+PODFILE CHECKSUM: 26782e9311905ee17b53594c55f6ea8b5fd6efb7
 
 COCOAPODS: 1.11.3

@@ -17,13 +17,11 @@
 		A77E60DE2B176F31004A36BB /* MongmoriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60DD2B176F31004A36BB /* MongmoriApp.swift */; };
 		A77E60E22B176F32004A36BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A77E60E12B176F32004A36BB /* Assets.xcassets */; };
 		A77E60E52B176F32004A36BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A77E60E42B176F32004A36BB /* Preview Assets.xcassets */; };
-		A77E60F32B17734E004A36BB /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60F22B17734E004A36BB /* Date.swift */; };
-		A77E60F52B177355004A36BB /* DateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60F42B177355004A36BB /* DateString.swift */; };
 		A77E60F82B177383004A36BB /* ColorExtentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60F72B177383004A36BB /* ColorExtentsion.swift */; };
 		A77E60FB2B17739E004A36BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60FA2B17739E004A36BB /* Constants.swift */; };
 		A77E60FE2B1773C8004A36BB /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60FD2B1773C8004A36BB /* FontManager.swift */; };
 		A77E61012B17743E004A36BB /* LottieViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E61002B17743E004A36BB /* LottieViewManager.swift */; };
-		A77E61042B177480004A36BB /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E61032B177480004A36BB /* Modifiers.swift */; };
+		A79E8A9D2B2E9EC200C7BFBC /* DetailResultListModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E8A9C2B2E9EC200C7BFBC /* DetailResultListModalView.swift */; };
 		A7A161EB2B20B4660013E6F2 /* DirectionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A161EA2B20B4660013E6F2 /* DirectionsModel.swift */; };
 		A7A161F02B20B7FD0013E6F2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A161EF2B20B7FD0013E6F2 /* APIService.swift */; };
 		A7A161F22B20C44F0013E6F2 /* DetailResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A161F12B20C44F0013E6F2 /* DetailResultViewModel.swift */; };
@@ -61,13 +59,11 @@
 		A77E60DD2B176F31004A36BB /* MongmoriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongmoriApp.swift; sourceTree = "<group>"; };
 		A77E60E12B176F32004A36BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A77E60E42B176F32004A36BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A77E60F22B17734E004A36BB /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		A77E60F42B177355004A36BB /* DateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateString.swift; sourceTree = "<group>"; };
 		A77E60F72B177383004A36BB /* ColorExtentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtentsion.swift; sourceTree = "<group>"; };
 		A77E60FA2B17739E004A36BB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A77E60FD2B1773C8004A36BB /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		A77E61002B17743E004A36BB /* LottieViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieViewManager.swift; sourceTree = "<group>"; };
-		A77E61032B177480004A36BB /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		A79E8A9C2B2E9EC200C7BFBC /* DetailResultListModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResultListModalView.swift; sourceTree = "<group>"; };
 		A7A161EA2B20B4660013E6F2 /* DirectionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsModel.swift; sourceTree = "<group>"; };
 		A7A161EF2B20B7FD0013E6F2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A7A161F12B20C44F0013E6F2 /* DetailResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResultViewModel.swift; sourceTree = "<group>"; };
@@ -121,6 +117,7 @@
 				A744D12C2B1E0FEB00F99657 /* ResultsSummaryScreen.swift */,
 				A744D12F2B1E24D300F99657 /* ResultListView.swift */,
 				A7A555A22B17AB8800D5AF7F /* DetailResultListView.swift */,
+				A79E8A9C2B2E9EC200C7BFBC /* DetailResultListModalView.swift */,
 			);
 			path = ListViews;
 			sourceTree = "<group>";
@@ -188,12 +185,10 @@
 		A77E60EC2B1772F5004A36BB /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				A77E61022B177474004A36BB /* Modifiers */,
 				A77E60FF2B1773E5004A36BB /* Lottie */,
 				A77E60FC2B1773AF004A36BB /* Font */,
 				A77E60F92B17738F004A36BB /* Constants */,
 				A77E60F62B177377004A36BB /* Color */,
-				A77E60F12B17733F004A36BB /* Date */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -241,15 +236,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A77E60F12B17733F004A36BB /* Date */ = {
-			isa = PBXGroup;
-			children = (
-				A77E60F22B17734E004A36BB /* Date.swift */,
-				A77E60F42B177355004A36BB /* DateString.swift */,
-			);
-			path = Date;
-			sourceTree = "<group>";
-		};
 		A77E60F62B177377004A36BB /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,14 +274,6 @@
 				A744D1292B1DFB7200F99657 /* loadingLottie.json */,
 			);
 			path = Lottie;
-			sourceTree = "<group>";
-		};
-		A77E61022B177474004A36BB /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-				A77E61032B177480004A36BB /* Modifiers.swift */,
-			);
-			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		A7A161EE2B20B7EA0013E6F2 /* APIService */ = {
@@ -452,21 +430,19 @@
 				A7A555962B177E2600D5AF7F /* LocationManager.swift in Sources */,
 				A7A555AB2B182A5C00D5AF7F /* ResponseChatResultView.swift in Sources */,
 				A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */,
+				A79E8A9D2B2E9EC200C7BFBC /* DetailResultListModalView.swift in Sources */,
 				A744D1302B1E24D300F99657 /* ResultListView.swift in Sources */,
 				A7A5558E2B177CD900D5AF7F /* GptModel.swift in Sources */,
 				A744D12D2B1E0FEB00F99657 /* ResultsSummaryScreen.swift in Sources */,
-				A77E60F52B177355004A36BB /* DateString.swift in Sources */,
 				A77E60FE2B1773C8004A36BB /* FontManager.swift in Sources */,
 				A7BB12322B28825000CD66C4 /* Message.swift in Sources */,
 				A7A555942B177D9600D5AF7F /* MapView.swift in Sources */,
 				A7A555A32B17AB8800D5AF7F /* DetailResultListView.swift in Sources */,
-				A77E60F32B17734E004A36BB /* Date.swift in Sources */,
 				A74721462B17759500006BAE /* TestLottieView.swift in Sources */,
 				A744D1282B1DF77C00F99657 /* LoadingView.swift in Sources */,
 				A77E60DE2B176F31004A36BB /* MongmoriApp.swift in Sources */,
 				A7BB12362B2892D900CD66C4 /* WebView.swift in Sources */,
 				A744D1322B1E3A5400F99657 /* ChatViewModel.swift in Sources */,
-				A77E61042B177480004A36BB /* Modifiers.swift in Sources */,
 				A7A161F22B20C44F0013E6F2 /* DetailResultViewModel.swift in Sources */,
 				A7A161FA2B20D0910013E6F2 /* DetailResultModel.swift in Sources */,
 				A77E60FB2B17739E004A36BB /* Constants.swift in Sources */,

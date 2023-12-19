@@ -67,7 +67,7 @@ final class ChatViewModel: ObservableObject {
     }
     
     func minHeight(count: Int, messages: [Message]) -> CGFloat {
-        let contentHeight = CGFloat(messages.count) * 120
+        let contentHeight = CGFloat(messages.count) * 140
         return min(contentHeight, 600)
     }
     
@@ -115,6 +115,7 @@ final class ChatViewModel: ObservableObject {
         
         return dayPlans
     }
+
     
     func translationDay(str: String) -> String{
         switch str{
@@ -128,12 +129,38 @@ final class ChatViewModel: ObservableObject {
             return "목"
         case "Friday":
             return "금"
-        case "Thursday":
+        case "Saturday":
             return "토"
         default:
             return "일"
         }
     }
+    
+    func translationDate(date: Date, increase: Int) -> String{
+        let increasingDate = date.addingTimeInterval(TimeInterval(((+24 * 60 * 60) * increase)))
+        let formattedDate = getFormattedDate(from: increasingDate)
+        
+        let dayKR = translationDay(str: getDayOfWeek(from: increasingDate.addingTimeInterval(-24 * 60 * 60)))
+//        let dayKR = translationDay(str: getDayOfWeek(from: increasingDate))
+        return formattedDate + "/" + dayKR
+    }
+    
+    func getFormattedDate(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM.dd"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter.string(from: date)
+    }
+    
+    func getDayOfWeek(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: date)
+    }
+
+    
+    
+
 
 }
 

@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import KakaoSDKNavi
 import Combine
 import Alamofire
 import WebKit

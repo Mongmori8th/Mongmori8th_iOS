@@ -31,8 +31,12 @@ struct LoadingView: View {
                 VStack(alignment: .center){
                     Text("AI 몽모리가 아이들과 함께하는 \(place) \(duration)박\(Int(duration)!+1)일")
                         .font(.poppins(.Pretendard_Regular, size: 14))
+//                        .kerning(18)
+                        .lineSpacing(6)
                     Text("여행 일정을 세세하게 계획 중이에요!")
                         .font(.poppins(.Pretendard_Regular, size: 14))
+//                        .kerning(18)
+                        .lineSpacing(6)
                 }
                 
                 VStack(alignment: .center){

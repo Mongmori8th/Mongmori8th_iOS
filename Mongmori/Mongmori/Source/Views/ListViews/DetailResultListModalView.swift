@@ -1,40 +1,32 @@
 //
-//  DetailResultListView.swift
+//  DetailResultListModalView.swift
 //  Mongmori
 //
-//  Created by 지정훈 on 11/30/23.
+//  Created by 지정훈 on 12/17/23.
 //
 
 import SwiftUI
 
-// MARK: - 리스트 상세 결과값
-
-struct DetailResultListView: View {
+struct DetailResultListModalView: View {
     
     let jejuSpot : [JejuSpot]
     
-    @ObservedObject var detailResultVM = DetailResultViewModel()
-    @ObservedObject var naverApiVM = APIService()
+    @ObservedObject var detailResultVM : DetailResultViewModel
+    @ObservedObject var naverApiVM : APIService
     @ObservedObject var locationManager : LocationManager
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     @State var clickedButtonLoad: Bool = true
     @State var clickedButtonCall: Bool = true
     @State var isShowSheet: Bool = false
     
-    @State var jejuImage = ""      //화면에 보여주는 여행지
-    @State var textName = ""        //화면에 보여주는 여행지
-    @State var textAddress = ""     //화면에 보여주는 주소
-    @State var textDistance = ""    //화면에 보여주는 거리
-    @State var dataIndex = 0        //해당하는 데이터 Index
-    @State var textDescription = ""        //해당하는 데이터 설명란
+    @Binding var modalLat: Double
+    @Binding var modalLon: Double
     
     var index: Int
     var keyword: String
     
     func showDetailData(){
-        
         for i in 0..<jejuSpot.count{
             if jejuSpot[i].name == keyword{
                 
@@ -61,9 +53,15 @@ struct DetailResultListView: View {
     }
     
     
+    @State var jejuImage = ""        //화면에 보여주는 여행지
+    @State var textName = ""        //화면에 보여주는 여행지
+    @State var textAddress = ""     //화면에 보여주는 주소
+    @State var textDistance = ""    //화면에 보여주는 거리
+    @State var dataIndex = 0        //해당하는 데이터 Index
+    @State var textDescription = ""        //해당하는 데이터 설명란
+    
     var body: some View {
         VStack{
-            
             
             Rectangle()
                 .fill(Color.clear)
@@ -177,7 +175,6 @@ struct DetailResultListView: View {
 //                .padding(.trailing, 10)
                 .padding(.trailing, 8)
                 
-                
                 Button {
                     
                 } label: {
@@ -280,6 +277,7 @@ struct DetailResultListView: View {
                             Spacer()
                         }
                         
+                        
                     }
             }
             .padding(
@@ -295,9 +293,11 @@ struct DetailResultListView: View {
             
         }
         .sheet(isPresented: $isShowSheet) {
-            NaverNaviView(locationManager: locationManager, endLat: jejuSpot[index].lat!, endLon: jejuSpot[index].lon!, place: textName)
+            
+            NaverNaviView(locationManager: locationManager, endLat: modalLat, endLon: modalLon, place: textName)
                 .presentationDetents([.large])
                 .onAppear{
+                    print("$isShowSheet")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
                         isShowSheet = false
                     }
@@ -307,29 +307,8 @@ struct DetailResultListView: View {
             showDetailData()
         }
         .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text("일정상세")         //  .font(.system(size: 20))  .fontWeight(.bold)
-                    .font(.poppins(.NanumSquareOTF_acEB, size: 20))
-            }
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image("arrowLeft")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
-                    
-                }
-            }
-            
-        }
     }
     
 }
 
-//#Preview {
-//    DetailResultListView()
-//}
 

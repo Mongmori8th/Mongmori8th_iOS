@@ -11,6 +11,7 @@ struct ChattingView: View {
     
     @ObservedObject var chatVM : ChatViewModel
     @ObservedObject var locationManager : LocationManager
+    @ObservedObject var detailResultVM : DetailResultViewModel
     
     let jejuSpot : [JejuSpot]
     
@@ -19,6 +20,7 @@ struct ChattingView: View {
     @Binding var place: String
     @Binding var duration: String
     @Binding var messages: [Message]
+    @Binding var currentDate: Date
     
     var body: some View {
         
@@ -28,7 +30,7 @@ struct ChattingView: View {
                     
                     if message.button == true{
                         if chatVM.tourResponse != nil{
-                            ResponseChatResultView(chatVM: chatVM, locationManager: locationManager, jejuSpot: jejuSpot, place: $place, duration: $duration, messages: $messages)
+                            ResponseChatResultView(chatVM: chatVM, locationManager: locationManager, detailResultVM: detailResultVM, jejuSpot: jejuSpot, place: $place, duration: $duration, messages: $messages, currentDate: $currentDate)
                         }else{
                             ProgressView()
                         }
@@ -46,7 +48,7 @@ struct ChattingView: View {
             }
             
         }
-        .frame(height: messages.count == 1 ? 150 : chatVM.minHeight(count: messages.count, messages: messages)) // 바꾸끼
+        .frame(height: messages.count == 1 ? 210 : chatVM.minHeight(count: messages.count, messages: messages)) // 바꾸끼
         .padding(.bottom, 12)
         
         
@@ -75,6 +77,8 @@ struct MessageView: View {
                 
                 Text(message.content)
                     .font(.poppins(.Pretendard_Regular, size: 14))
+//                    .kerning(18)
+                    .lineSpacing(6)
                     .padding(12)
                     .background(Color.white) // 챗봇, 유저 뒷배경
                     .cornerRadius(12)

@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 @main
 struct MongmoriApp: App {
     @State var showView : Bool = true
@@ -27,9 +26,6 @@ struct MongmoriApp: App {
             }else{
                 ChatBotView()
             }
-            
-//            ChatBotView()
-//            NaverNaviView()
             
         }
         

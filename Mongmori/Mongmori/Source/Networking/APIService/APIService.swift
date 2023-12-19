@@ -24,6 +24,7 @@ final class APIService : ObservableObject{
     
     // MARK: - 사용자 목적지 받아서 API 요청 받기
     func fetchNaverAPIDirections(startLocation: (Double, Double), endLocation: (Double, Double)) {
+        
         let start = "\(startLocation.1),\(startLocation.0)"
         let goal = "\(endLocation.1),\(endLocation.0)"
         

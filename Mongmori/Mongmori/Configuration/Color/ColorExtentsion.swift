@@ -31,10 +31,12 @@ extension Color {
     static let orange_100 = Color(hex: "#FEE9D7")
     static let orange_500 = Color(hex: "#F57D14")
     
+    static let grey_10 = Color(hex: "#F7F7F7")
+    static let grey_50 = Color(hex: "#F2F2F2")
     static let grey_200 = Color(hex: "#CCCCCC")
     static let grey_300 = Color(hex: "#444444")
     
-    static let lightGray = Color(hex: "#F7F7F7")
+    
     static let lightGray2 = Color(red: 0, green: 0, blue: 0, opacity: 0.03)
     
     
