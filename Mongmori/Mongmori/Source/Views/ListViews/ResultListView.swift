@@ -27,7 +27,7 @@ struct ResultListView: View {
                 .frame(width: Screen.maxWidth * 0.8, height: 80)
                 .overlay(
                     HStack{
-                        Image("map")
+                        Image("MapMarker")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 40, height: 40)

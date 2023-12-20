@@ -68,7 +68,7 @@ struct UIMapView: UIViewRepresentable,View {
         view.showLocationButton = false
         view.showZoomControls = true
             
-        view.mapView.touchDelegate = context.coordinator
+//        view.mapView.touchDelegate = context.coordinator
         
         view.mapView.positionMode = .direction
         
@@ -121,9 +121,9 @@ struct UIMapView: UIViewRepresentable,View {
         
     }
     
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(viewModel: self.viewModel)
-    }
+//    func makeCoordinator() -> Coordinator {
+//        return Coordinator(viewModel: self.viewModel)
+//    }
     
     
     
@@ -131,17 +131,17 @@ struct UIMapView: UIViewRepresentable,View {
 
 class Coordinator: NSObject, NMFMapViewTouchDelegate, NMFMapViewCameraDelegate, NMFMapViewOptionDelegate {
 
-    @ObservedObject var viewModel: MapSceneViewModel
-    @Published var latitude : Double
-    @Published var longitude : Double
-    @Published var point : CGPoint
+//    @ObservedObject var viewModel: MapSceneViewModel
+//    @Published var latitude : Double
+//    @Published var longitude : Double
+//    @Published var point : CGPoint
     
-    init(viewModel: MapSceneViewModel) {
-        self.viewModel = viewModel
-        self.latitude = 0.0
-        self.longitude = 0.0
-        self.point = CGPoint(x: 0, y: 0)
-    }
+//    init(viewModel: MapSceneViewModel) {
+//        self.viewModel = viewModel
+//        self.latitude = 0.0
+//        self.longitude = 0.0
+//        self.point = CGPoint(x: 0, y: 0)
+//    }
    
     var cancellable = Set<AnyCancellable>()
     

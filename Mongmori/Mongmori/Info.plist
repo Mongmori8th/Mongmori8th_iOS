@@ -42,5 +42,7 @@
 		<string>Pretendard_Regular.otf</string>
 		<string>Pretendard_SemiBold.otf</string>
 	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>

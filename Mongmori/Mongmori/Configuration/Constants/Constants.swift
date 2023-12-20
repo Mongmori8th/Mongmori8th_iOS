@@ -31,15 +31,19 @@ struct KeyboardAwareModifier: ViewModifier {
     }
 
     func body(content: Content) -> some View {
-        content
-            .padding(.bottom, currentHeight + paddingHeight)
-            .onAppear(perform: subscribeToKeyboardEvents)
+        GeometryReader { geometry in
+            content
+                .padding(.bottom, max(currentHeight - paddingHeight, 0))
+                .onAppear(perform: {
+                    subscribeToKeyboardEvents(with: geometry)
+                })
+        }
     }
 
-    private func subscribeToKeyboardEvents() {
+    private func subscribeToKeyboardEvents(with geometry: GeometryProxy) {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
-            if let keyboardSize = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
-                self.currentHeight = keyboardSize.height
+            if let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.intersection(geometry.frame(in: .global)) {
+                self.currentHeight = keyboardFrame.height
             }
         }
 
@@ -48,6 +52,7 @@ struct KeyboardAwareModifier: ViewModifier {
         }
     }
 }
+
 
 
 

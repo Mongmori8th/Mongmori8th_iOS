@@ -140,7 +140,7 @@ struct ResultsSummaryScreen: View {
             .fullScreenCover(isPresented: $isShowingPhotoSpotMapVIew) {
                 //                .sheet(isPresented: $isShowingPhotoSpotMapVIew) {
                 NavigationView{
-                    DetailResultListModalView(jejuSpot: jejuSpot, detailResultVM: detailResultVM, naverApiVM: naverApiVM, locationManager: locationManager, modalLat: $modalLat, modalLon: $modalLon, index: 0, keyword: modalPlace)
+                    DetailResultListModalView(jejuSpot: jejuSpot, detailResultVM: detailResultVM, naverApiVM: naverApiVM, locationManager: locationManager, modalLat: $modalLat, modalLon: $modalLon, keyword: $modalPlace)
                     //                    .navigationBarHidden(false)
                         .toolbar {
                             ToolbarItem(placement: .principal) {

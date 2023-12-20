@@ -35,6 +35,7 @@
 		A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */; };
 		A7A555AB2B182A5C00D5AF7F /* ResponseChatResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */; };
 		A7A8C4452B18970200DBFEFF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8C4442B18970200DBFEFF /* OnboardingView.swift */; };
+		A7B2F20E2B32BB0900B29BCF /* ModalLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B2F20D2B32BB0900B29BCF /* ModalLoadingView.swift */; };
 		A7BB12322B28825000CD66C4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB12312B28825000CD66C4 /* Message.swift */; };
 		A7BB12342B28900600CD66C4 /* NaverNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB12332B28900600CD66C4 /* NaverNaviView.swift */; };
 		A7BB12362B2892D900CD66C4 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB12352B2892D900CD66C4 /* WebView.swift */; };
@@ -78,6 +79,7 @@
 		A7A555A62B17D7DC00D5AF7F /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
 		A7A555AA2B182A5C00D5AF7F /* ResponseChatResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseChatResultView.swift; sourceTree = "<group>"; };
 		A7A8C4442B18970200DBFEFF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A7B2F20D2B32BB0900B29BCF /* ModalLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalLoadingView.swift; sourceTree = "<group>"; };
 		A7BB12312B28825000CD66C4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A7BB12332B28900600CD66C4 /* NaverNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverNaviView.swift; sourceTree = "<group>"; };
 		A7BB12352B2892D900CD66C4 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				A744D12B2B1E0FB100F99657 /* ListViews */,
 				A7A8C4442B18970200DBFEFF /* OnboardingView.swift */,
 				A744D1272B1DF77C00F99657 /* LoadingView.swift */,
+				A7B2F20D2B32BB0900B29BCF /* ModalLoadingView.swift */,
 				A7BB12332B28900600CD66C4 /* NaverNaviView.swift */,
 				A7BB12352B2892D900CD66C4 /* WebView.swift */,
 			);
@@ -437,6 +440,7 @@
 				A77E60FE2B1773C8004A36BB /* FontManager.swift in Sources */,
 				A7BB12322B28825000CD66C4 /* Message.swift in Sources */,
 				A7A555942B177D9600D5AF7F /* MapView.swift in Sources */,
+				A7B2F20E2B32BB0900B29BCF /* ModalLoadingView.swift in Sources */,
 				A7A555A32B17AB8800D5AF7F /* DetailResultListView.swift in Sources */,
 				A74721462B17759500006BAE /* TestLottieView.swift in Sources */,
 				A744D1282B1DF77C00F99657 /* LoadingView.swift in Sources */,
@@ -600,7 +604,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mongmori.Mongmori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -638,7 +642,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mongmori.Mongmori;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

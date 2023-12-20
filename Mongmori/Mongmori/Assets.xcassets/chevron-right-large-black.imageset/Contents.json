@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "map.png",
+      "filename" : "chevron-right-small44-black.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "map@2x.png",
+      "filename" : "chevron-right-small-black.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "map@3x.png",
+      "filename" : "chevron-right-large-black.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Frame 1516.png",
+      "filename" : "chevron-right-small44-light-1.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Frame 1516@2x.png",
+      "filename" : "chevron-right-small-light-1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Frame 1516@3x.png",
+      "filename" : "chevron-right-large-light-1.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

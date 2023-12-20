@@ -18,18 +18,14 @@ struct ChatBotView: View {
     @State var place: String = ""
     @State var duration: String = ""
     @State var currentDate: Date = Date()
-    
     @State var scrollViewID = UUID()
+    @State private var viewOffset: CGFloat = 0
     
     @FocusState private var textfieldFocused: Bool
     
     @State var messages: [Message] = [
         Message(sender: "몽모리", content: "제주 여행 컨설턴트 AI 몽모리가 아이들과 함께할 수 있는 일정을 추천해드릴게요.\n\n양식에 맞춰 메세지를 보내주시면 AI 몽모리가 일정을 알려드려요!\n\n장소: 서귀포로\n일정: 12월 18일부터 12월 20일까지", image: "Mongri"),
     ]
-    
-    private func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
     
     var body: some View {
         NavigationStack{
@@ -102,13 +98,16 @@ struct ChatBotView: View {
                     }
                     
                 }
-                .padding(.top, 18)
+                .padding(.top, 7)
                 .padding([.leading,.trailing] ,17)
-//                .keyboardAwarePadding(paddingHeight: 4)
-                
             }
+            .offset(y: -viewOffset) // 뷰의 오프셋을 설정하여 키보드와 함께 이동
             .onAppear{
+                subscribeToKeyboardEvents()
                 detailResultVM.fetchJsonData()
+            }
+            .onTapGesture {
+                hideKeyboard()
             }
             .navigationBarItems(leading: HStack {
                 Image("Mongri")
@@ -117,32 +116,50 @@ struct ChatBotView: View {
                     .frame(width: 40, height: 40)
                 Text("몽모리 in Jeju")
                     .font(.poppins(.NanumSquareOTF_acEB, size: 18))
-                //                        .kerning(22)
                     .lineSpacing(7)
                 
                 Spacer()
                 
-            })
-            .padding(.top, 3)
-            //                .keyboardAwarePadding(paddingHeight: 10)
-            .onTapGesture {
-                hideKeyboard()
-            }
+            } .padding(.top, 3))
+           
+            //            .keyboardAwarePadding(paddingHeight: 15)
             
         }
         
     }
     
-    func isStringValid(str: String) -> Bool{
-        
+    // MARK: - 세부 기능 설정 코드
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    private func subscribeToKeyboardEvents() {
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { notification in
+                if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+                    let keyboardHeight = keyboardFrame.height
+                    let textFieldBottom = UIScreen.main.bounds.height - self.textFieldBottomPosition
+                    let offset = max(0, keyboardHeight - textFieldBottom)
+                    self.viewOffset = offset
+                }
+            }
+
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
+                self.viewOffset = 0
+            }
+        }
+
+    private var textFieldBottomPosition: CGFloat {
+        return UIScreen.main.bounds.height - 280
+    }
+    
+    private func isStringValid(str: String) -> Bool{
         // 바꾸기
         //        let str = "애월로 2일"
-//        let str = "애월로 12월 18일부터 12월 20일까지 아이와 함께 여행할 거예요!"
+//        let str = "애월로 12월 18일부터 12월 26일까지 아이와 함께 여행할 거예요!"
         
         let placePattern = #"([가-힣]+로)"#
         //        let durationPattern = #"(\d+일)"#
         
-        let durationPattern = #"(\d{1,2})월 (\d{1,2})일부터 (\d{1,2})월 (\d{1,2})일까지"#
+        let durationPattern = #"(\d{1,2})월 (\d{1,2})일부터 (\d{1,2})월 (\d{1,2})일"#
         let regex = try! NSRegularExpression(pattern: durationPattern, options: [])
         let matches = regex.matches(in: str, options: [], range: NSRange(location: 0, length: str.utf16.count))
         

@@ -20,11 +20,11 @@ struct DetailResultListModalView: View {
     @State var clickedButtonCall: Bool = true
     @State var isShowSheet: Bool = false
     
+    @State var showLoading: Bool = true
+    
     @Binding var modalLat: Double
     @Binding var modalLon: Double
-    
-    var index: Int
-    var keyword: String
+    @Binding var keyword: String
     
     func showDetailData(){
         for i in 0..<jejuSpot.count{
@@ -32,18 +32,18 @@ struct DetailResultListModalView: View {
                 
                 dataIndex = i
                 
-                textName = jejuSpot[i].name ?? ""
-                textAddress = jejuSpot[i].address ?? ""
-                textDescription = jejuSpot[i].introduction ?? ""
-                
                 let userLat = locationManager.lastLocation?.coordinate.latitude
                 let userLon = locationManager.lastLocation?.coordinate.longitude
                 
                 naverApiVM.fetchNaverAPIDirections(startLocation: (userLat!,userLon!), endLocation: (jejuSpot[i].lat! , jejuSpot[i].lon! ))
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                     textDistance = naverApiVM.resultDistance ?? ""
                 }
+                
+                textName = jejuSpot[i].name ?? ""
+                textAddress = jejuSpot[i].address ?? ""
+                textDescription = jejuSpot[i].introduction ?? ""
                 
                 jejuImage = jejuSpot[i].url!
                 break
@@ -61,8 +61,8 @@ struct DetailResultListModalView: View {
     @State var textDescription = ""        //해당하는 데이터 설명란
     
     var body: some View {
+        
         VStack{
-            
             Rectangle()
                 .fill(Color.clear)
                 .frame(width: Screen.maxWidth, height: 250)
@@ -83,7 +83,7 @@ struct DetailResultListModalView: View {
                 HStack{
                     Text(textName)
                         .font(.poppins(.NanumSquareOTF_acEB, size: 18))
-//                        .kerning(22)
+                    //                        .kerning(22)
                         .lineSpacing(7)
                     Spacer()
                 }
@@ -140,7 +140,7 @@ struct DetailResultListModalView: View {
                 } label: {
                     RoundedRectangle(cornerRadius: 16)
                         .foregroundColor(clickedButtonLoad ? Color.white : Color.orange_500)
-//                        .frame(width: Screen.maxWidth * 0.38, height: 45)
+                    //                        .frame(width: Screen.maxWidth * 0.38, height: 45)
                         .frame(width: 157, height: 40)
                         .overlay {
                             RoundedRectangle(cornerRadius: 16)
@@ -172,7 +172,7 @@ struct DetailResultListModalView: View {
                             }
                         }
                 }
-//                .padding(.trailing, 10)
+                //                .padding(.trailing, 10)
                 .padding(.trailing, 8)
                 
                 Button {
@@ -180,7 +180,7 @@ struct DetailResultListModalView: View {
                 } label: {
                     RoundedRectangle(cornerRadius: 16)
                         .foregroundColor(clickedButtonCall ? Color.white : Color.orange_500)
-//                        .frame(width: Screen.maxWidth * 0.38, height: 45)
+                    //                        .frame(width: Screen.maxWidth * 0.38, height: 45)
                         .frame(width: 157, height: 40)
                         .overlay {
                             RoundedRectangle(cornerRadius: 16)
@@ -214,7 +214,7 @@ struct DetailResultListModalView: View {
                             }
                         }
                 }
-//                .padding(.leading, 10)
+                //                .padding(.leading, 10)
                 
                 
                 
@@ -231,7 +231,7 @@ struct DetailResultListModalView: View {
             VStack{
                 RoundedRectangle(cornerRadius: 12)
                     .foregroundColor(Color.grey_10)
-//                    .frame(width: Screen.maxWidth * 0.85, height: 130)
+                //                    .frame(width: Screen.maxWidth * 0.85, height: 130)
                     .frame(width: 327, height: 162)
                     .overlay{
                         VStack(alignment: .leading){
@@ -242,7 +242,7 @@ struct DetailResultListModalView: View {
                                         .frame(width: 44, height: 44)
                                     Text("세부 정보")
                                         .font(.poppins(.NanumSquareOTF_acB, size: 17))
-//                                        .kerning(26)
+                                    //                                        .kerning(26)
                                         .lineSpacing(8)
                                         .offset(x: -5)
                                     Spacer()
@@ -307,6 +307,7 @@ struct DetailResultListModalView: View {
             showDetailData()
         }
         .navigationBarBackButtonHidden(true)
+        
     }
     
 }
