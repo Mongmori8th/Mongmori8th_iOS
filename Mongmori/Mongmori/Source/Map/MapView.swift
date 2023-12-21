@@ -26,11 +26,37 @@ struct MapView: View {
     @Binding var modalLat: Double
     @Binding var modalLon: Double
     @Binding var responsePlace : Set<String>
+    @Binding var showAlert: Bool
     
     var body: some View {
-        VStack{
+        ZStack(alignment: .bottomLeading) {
             UIMapView(locationManager: locationManager, userLatitude: userLatitude, userLongitude: userLongitude, jejuSpot: jejuSpot, responsePlace: $responsePlace, isShowingPhotoSpotMapVIew: $isShowingPhotoSpotMapVIew, modalPlace: $modalPlace, modalLat: $modalLat, modalLon: $modalLon)
+                .zIndex(1)
+
+            
+            Image(systemName: "location")
+                .foregroundColor(Color.black)
+                .frame(width: 35, height: 35)
+                .background(Color.white)
+                .cornerRadius(5)
+                .background(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color.black, lineWidth: 1.5)
+                )
+                .zIndex(2)
+                .offset(x: 15, y: -40)
+                .onTapGesture {
+                    if locationManager.locationStatus == .denied{
+                        showAlert.toggle()
+                    }else{
+                        // 현재 위치 더 보여주기??
+//                        print("위치허용해서 버튼이 Alert 안 보임")
+                    }
+                    
+                }
+            
         }.frame(width: Screen.maxWidth ,height: Screen.maxHeight * 0.3)
+
     }
 }
 struct UIMapView: UIViewRepresentable,View {
@@ -54,6 +80,9 @@ struct UIMapView: UIViewRepresentable,View {
     func makeUIView(context: Context) -> NMFNaverMapView {
         
         let view = NMFNaverMapView()
+        
+        view.mapView.touchDelegate = context.coordinator
+        
         view.showZoomControls = false
         view.mapView.positionMode = .direction
         
@@ -68,7 +97,6 @@ struct UIMapView: UIViewRepresentable,View {
         view.showLocationButton = false
         view.showZoomControls = true
             
-//        view.mapView.touchDelegate = context.coordinator
         
         view.mapView.positionMode = .direction
         
@@ -117,40 +145,25 @@ struct UIMapView: UIViewRepresentable,View {
     }
     
     func updateUIView(_ uiView: NMFNaverMapView, context: Context) {
-        
-        
     }
     
-//    func makeCoordinator() -> Coordinator {
-//        return Coordinator(viewModel: self.viewModel)
-//    }
+    func makeCoordinator() -> Coordinator {
+        return Coordinator()
+    }
     
     
     
 }
 
 class Coordinator: NSObject, NMFMapViewTouchDelegate, NMFMapViewCameraDelegate, NMFMapViewOptionDelegate {
-
-//    @ObservedObject var viewModel: MapSceneViewModel
-//    @Published var latitude : Double
-//    @Published var longitude : Double
-//    @Published var point : CGPoint
-    
-//    init(viewModel: MapSceneViewModel) {
-//        self.viewModel = viewModel
-//        self.latitude = 0.0
-//        self.longitude = 0.0
-//        self.point = CGPoint(x: 0, y: 0)
-//    }
-   
-    var cancellable = Set<AnyCancellable>()
-    
-    
+        
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
+//        print(#function)
     }
-    
+
 }
 
 class MapSceneViewModel: ObservableObject {
     
 }
+

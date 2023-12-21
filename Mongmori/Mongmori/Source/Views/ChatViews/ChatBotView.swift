@@ -154,7 +154,7 @@ struct ChatBotView: View {
     private func isStringValid(str: String) -> Bool{
         // 바꾸기
         //        let str = "애월로 2일"
-//        let str = "애월로 12월 18일부터 12월 26일까지 아이와 함께 여행할 거예요!"
+//        let str = "애월로 12월 18일부터 12월 18일까지 아이와 함께 여행할 거예요!"
         
         let placePattern = #"([가-힣]+로)"#
         //        let durationPattern = #"(\d+일)"#

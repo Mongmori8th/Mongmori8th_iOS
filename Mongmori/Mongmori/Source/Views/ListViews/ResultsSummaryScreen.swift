@@ -34,6 +34,7 @@ struct ResultsSummaryScreen: View {
     @State var modalLat: Double = 0.0
     @State var modalLon: Double = 0.0
     
+    @State var showAlert: Bool = false
     
     var userLatitude: Double {
         return locationManager.lastLocation?.coordinate.latitude ?? 0.0
@@ -54,7 +55,7 @@ struct ResultsSummaryScreen: View {
                 .navigationBarBackButtonHidden(true)
         }else{
             VStack {
-                MapView(locationManager: locationManager, userLatitude: userLatitude, userLongitude: userLongitude, jejuSpot: jejuSpot, isShowingPhotoSpotMapVIew: $isShowingPhotoSpotMapVIew,  modalPlace: $modalPlace, modalLat: $modalLat, modalLon: $modalLon, responsePlace: $responsePlace)
+                MapView(locationManager: locationManager, userLatitude: userLatitude, userLongitude: userLongitude, jejuSpot: jejuSpot, isShowingPhotoSpotMapVIew: $isShowingPhotoSpotMapVIew,  modalPlace: $modalPlace, modalLat: $modalLat, modalLon: $modalLon, responsePlace: $responsePlace, showAlert: $showAlert)
                 
                 ScrollView{
                     ForEach(Array(chatVM.parseTourResponse(data: responseData).enumerated()), id: \.element.day) { (index, dayPlan) in
@@ -184,6 +185,27 @@ struct ResultsSummaryScreen: View {
                     }
                 }
                 
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("현재 위치 설정"),
+                    message: Text("현재 위치를 찾기 위해서 권한이 필요해요.\n설정에서 위치 권한을 허용해 주세요"),
+                    primaryButton: .destructive(
+                        Text("설정"),
+                        action: {
+                            if let locationSettingsURL = URL(string: UIApplication.openSettingsURLString + "LOCATION_SERVICES") {
+                                UIApplication.shared.open(locationSettingsURL)
+                            }
+                            showAlert = false
+                        }
+                    ),
+                    secondaryButton: .cancel(
+                        Text("취소"),
+                        action: {
+                            showAlert = false
+                        }
+                    )
+                )
             }
             
         }//
