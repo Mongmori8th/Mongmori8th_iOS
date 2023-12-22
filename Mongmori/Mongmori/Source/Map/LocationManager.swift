@@ -8,12 +8,14 @@
 import Foundation
 import CoreLocation
 import Combine
-
+//
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     private let locationManager = CLLocationManager()
     @Published var locationStatus: CLAuthorizationStatus?
     @Published var lastLocation: CLLocation?
+    @Published var shouldShowView: Bool = false
+    
 
     override init() {
         super.init()
@@ -39,6 +41,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         locationStatus = status
+        shouldShowView = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])  {
@@ -47,3 +50,4 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         
     }
 }
+

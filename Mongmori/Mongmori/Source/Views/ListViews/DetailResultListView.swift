@@ -243,8 +243,7 @@ struct DetailResultListView: View {
                                             .frame(width: 44, height: 44)
                                         Text("세부 정보")
                                             .font(.poppins(.NanumSquareOTF_acB, size: 17))
-                                        //                                        .kerning(26)
-                                            .lineSpacing(8)
+                                            .lineSpacing(5)
                                             .offset(x: -5)
                                         Spacer()
                                     }
@@ -265,6 +264,7 @@ struct DetailResultListView: View {
                                         if textDescription != nil{
                                             Text(textDescription)
                                                 .font(.poppins(.Pretendard_Regular, size: 17))
+                                                .lineSpacing(8)
                                         }else{
                                             Text("정보를 불러올 수 없습니다.")
                                                 .font(.poppins(.Pretendard_Regular, size: 17))

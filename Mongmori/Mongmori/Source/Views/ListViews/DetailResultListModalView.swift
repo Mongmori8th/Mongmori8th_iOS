@@ -264,6 +264,7 @@ struct DetailResultListModalView: View {
                                     if textDescription != nil{
                                         Text(textDescription)
                                             .font(.poppins(.Pretendard_Regular, size: 17))
+                                            .lineSpacing(8)
                                     }else{
                                         Text("정보를 불러올 수 없습니다.")
                                             .font(.poppins(.Pretendard_Regular, size: 17))

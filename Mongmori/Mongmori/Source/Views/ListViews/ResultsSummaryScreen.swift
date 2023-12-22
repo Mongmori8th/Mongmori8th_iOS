@@ -101,7 +101,7 @@ struct ResultsSummaryScreen: View {
                     // MARK: - 전구 뷰
                     RoundedRectangle(cornerRadius: 12)
                         .foregroundColor(.lightGray2)
-                        .frame(width: Screen.maxWidth * 0.8, height: Screen.maxHeight * 0.18)
+                        .frame(width: Screen.maxWidth * 0.8, height: Screen.maxHeight * 0.22)
                         .overlay {
                             VStack(){
                                 HStack{
@@ -114,6 +114,7 @@ struct ResultsSummaryScreen: View {
                                 //                                Text("이렇게 거리 순서와 함께 넘버링된 일정을 참고 하여 즐거운 여행되시길 바랍니다!")
                                 Text("AI 몽모리가 추천해 드린 다양한 관광지를 방문하고 현지 음식을 맛보며 즐거운 시간 보내길 바라며, 안전하게 여행을 마치고 아이와 함께 행복한 추억을 가지고 돌아오세요! ")
                                     .font(.poppins(.Pretendard_Bold, size: 14))
+                                    .lineSpacing(8)
                             }
                             .padding(
                                 EdgeInsets(

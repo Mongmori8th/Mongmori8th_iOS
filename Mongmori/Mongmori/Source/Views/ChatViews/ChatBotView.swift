@@ -12,6 +12,7 @@ struct ChatBotView: View {
     @StateObject var chatVM = ChatViewModel()
     @StateObject var detailResultVM = DetailResultViewModel()
     @StateObject var locationManager = LocationManager()
+//    @ObservedObject var locationManager : LocationManager
     
     @State private var newMessage: String = ""
     
@@ -20,6 +21,7 @@ struct ChatBotView: View {
     @State var currentDate: Date = Date()
     @State var scrollViewID = UUID()
     @State private var viewOffset: CGFloat = 0
+    @State var shouldShowView: Bool = false
     
     @FocusState private var textfieldFocused: Bool
     
@@ -28,101 +30,105 @@ struct ChatBotView: View {
     ]
     
     var body: some View {
-        NavigationStack{
-            
-            VStack{
-                VStack {
-                    ScrollViewReader { proxy in
-                        Spacer()
-                        if messages.count == 1 {
-                            VStack {
-                                Image("Mongri")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 120, height: 120)
-                                    .padding(.top, 50)
-                                
-                                VStack(alignment: .center) {
-                                    Text("키즈존 여행 정보를 알려주는")
-                                        .font(.poppins(.NanumSquareOTF_acB, size: 12))
-                                        .padding(5)
-                                    Text("AI 챗봇 몽모리에요.")
-                                        .font(.poppins(.NanumSquareOTF_acB, size: 12))
+            NavigationStack{
+                if locationManager.statusString == "notDetermined" {
+                    Text("")
+                }else{
+                    VStack{
+                        VStack {
+                            ScrollViewReader { proxy in
+                                Spacer()
+                                if messages.count == 1 {
+                                    VStack {
+                                        Image("Mongri")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 120, height: 120)
+                                            .padding(.top, 50)
+                                        
+                                        VStack(alignment: .center) {
+                                            Text("키즈존 여행 정보를 알려주는")
+                                                .font(.poppins(.NanumSquareOTF_acB, size: 12))
+                                                .padding(5)
+                                            Text("AI 챗봇 몽모리에요.")
+                                                .font(.poppins(.NanumSquareOTF_acB, size: 12))
+                                        }
+                                    }
+                                    .offset(y: -80)
+                                }
+                                Spacer()
+                                ChattingView(chatVM: chatVM, locationManager: locationManager, detailResultVM: detailResultVM, jejuSpot: detailResultVM.jejuTourList, scrollViewID: $scrollViewID, place: $place, duration: $duration, messages: $messages, currentDate: $currentDate)
+                                    .onAppear {
+                                        proxy.scrollTo(scrollViewID, anchor: .bottom)
+                                    }
+                            }
+                        }
+                        .frame(width: Screen.maxWidth)
+                        .background(Color.orange_100)
+                        .padding(.top, 5)
+                        
+                        HStack {
+                            TextField("AI 몽모리에게 메세지를 보내주세요!", text: $newMessage)
+                                .font(.poppins(.Pretendard_Regular, size: 14))
+                            //                            .kerning(18)
+                                .lineSpacing(6)
+                                .padding(10)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .stroke(Color.grey_200, lineWidth: 1.5)
+                                )
+                                .focused($textfieldFocused)
+                                .onLongPressGesture(minimumDuration: 0.0) {
+                                    textfieldFocused = true
+                                }
+                                .autocorrectionDisabled()
+                            
+                            //
+                            if !newMessage.isEmpty{
+                                Button {
+                                    if isStringValid(str: newMessage){
+                                        let result = chatVM.sendMessage(messages: messages, newMessage: newMessage, place: self.place, duration: self.duration)
+                                        messages = result.0
+                                        newMessage = result.1
+                                    }else{
+                                        messages = chatVM.sendErrorMessage(messages: messages)
+                                    }
+                                } label: {
+                                    Image("send")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
                                 }
                             }
-                            .offset(y: -80)
+                            
                         }
+                        .padding(.top, 7)
+                        .padding([.leading,.trailing] ,17)
+                    }
+                    .offset(y: -viewOffset) // 뷰의 오프셋을 설정하여 키보드와 함께 이동
+                    .onAppear{
+                        subscribeToKeyboardEvents()
+                        detailResultVM.fetchJsonData()
+                    }
+                    .onTapGesture {
+                        hideKeyboard()
+                    }
+                    .navigationBarItems(leading: HStack {
+                        Image("Mongri")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                        Text("몽모리 in Jeju")
+                            .font(.poppins(.NanumSquareOTF_acEB, size: 18))
+                            .lineSpacing(7)
+                        
                         Spacer()
-                        ChattingView(chatVM: chatVM, locationManager: locationManager, detailResultVM: detailResultVM, jejuSpot: detailResultVM.jejuTourList, scrollViewID: $scrollViewID, place: $place, duration: $duration, messages: $messages, currentDate: $currentDate)
-                            .onAppear {
-                                proxy.scrollTo(scrollViewID, anchor: .bottom)
-                            }
-                    }
+                        
+                    } .padding(.top, 3))
+                   
                 }
-                .frame(width: Screen.maxWidth)
-                .background(Color.orange_100)
-                .padding(.top, 5)
+            }
 
-                HStack {
-                    TextField("AI 몽모리에게 메세지를 보내주세요!", text: $newMessage)
-                        .font(.poppins(.Pretendard_Regular, size: 14))
-                    //                            .kerning(18)
-                        .lineSpacing(6)
-                        .padding(10)
-                        .background(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.grey_200, lineWidth: 1.5)
-                        )
-                        .focused($textfieldFocused)
-                        .onLongPressGesture(minimumDuration: 0.0) {
-                            textfieldFocused = true
-                        }
-                        .autocorrectionDisabled()
-                    
-                    //
-                    if !newMessage.isEmpty{
-                        Button {
-                            if isStringValid(str: newMessage){
-                                let result = chatVM.sendMessage(messages: messages, newMessage: newMessage, place: self.place, duration: self.duration)
-                                messages = result.0
-                                newMessage = result.1
-                            }else{
-                                messages = chatVM.sendErrorMessage(messages: messages)
-                            }
-                        } label: {
-                            Image("send")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 30)
-                        }
-                    }
-                    
-                }
-                .padding(.top, 7)
-                .padding([.leading,.trailing] ,17)
-            }
-            .offset(y: -viewOffset) // 뷰의 오프셋을 설정하여 키보드와 함께 이동
-            .onAppear{
-                subscribeToKeyboardEvents()
-                detailResultVM.fetchJsonData()
-            }
-            .onTapGesture {
-                hideKeyboard()
-            }
-            .navigationBarItems(leading: HStack {
-                Image("Mongri")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 40, height: 40)
-                Text("몽모리 in Jeju")
-                    .font(.poppins(.NanumSquareOTF_acEB, size: 18))
-                    .lineSpacing(7)
-                
-                Spacer()
-                
-            } .padding(.top, 3))
-            
-        }
         
     }
     
@@ -150,8 +156,8 @@ struct ChatBotView: View {
     }
     
     private func isStringValid(str: String) -> Bool{
-        // 바꾸기
-        //        let str = "애월로 2일"
+    
+        
 //        let str = "애월로 12월 18일부터 12월 18일까지 아이와 함께 여행할 거예요!"
         
         let placePattern = #"([가-힣]+로)"#
@@ -221,6 +227,6 @@ struct ChatBotView: View {
     }
 }
 
-#Preview {
-    ChatBotView()
-}
+//#Preview {
+//    ChatBotView()
+//}

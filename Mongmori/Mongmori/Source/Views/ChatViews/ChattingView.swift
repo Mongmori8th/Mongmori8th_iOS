@@ -77,6 +77,7 @@ struct MessageView: View {
                 
                 Text(message.content)
                     .font(.poppins(.Pretendard_Regular, size: 14))
+                    .lineSpacing(2)
 //                    .kerning(18)
                     .lineSpacing(6)
                     .padding(12)

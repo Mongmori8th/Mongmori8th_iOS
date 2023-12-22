@@ -79,7 +79,6 @@ final class ChatViewModel: ObservableObject {
     
         let lines = data.response.components(separatedBy: "\n").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
 
-
         for line in lines {
             if line.hasPrefix("Day") {
 
@@ -102,7 +101,6 @@ final class ChatViewModel: ObservableObject {
                     
                     currentDayActivities.append("\(components[0]) - \(resultString)")
                     currentPlace.append(resultString)
-
                 }
             }
         }

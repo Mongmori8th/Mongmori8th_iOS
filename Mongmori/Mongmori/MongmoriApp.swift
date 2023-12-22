@@ -11,7 +11,6 @@ import SwiftUI
 struct MongmoriApp: App {
     @State var showView : Bool = true
     
-
     var body: some Scene {
         WindowGroup {
             if showView{

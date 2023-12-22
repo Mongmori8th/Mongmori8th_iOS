@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "mapPinOrangeFill.png",
+      "filename" : "allMarker1X.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "mapPinOrangeFill@2x.png",
+      "filename" : "allMarker2X.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "mapPinOrangeFill@3x.png",
+      "filename" : "allMarker3X.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
