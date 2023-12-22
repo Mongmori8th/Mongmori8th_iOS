@@ -61,8 +61,8 @@ struct ChatBotView: View {
                 }
                 .frame(width: Screen.maxWidth)
                 .background(Color.orange_100)
-                
-                
+                .padding(.top, 5)
+
                 HStack {
                     TextField("AI 몽모리에게 메세지를 보내주세요!", text: $newMessage)
                         .font(.poppins(.Pretendard_Regular, size: 14))
@@ -121,8 +121,6 @@ struct ChatBotView: View {
                 Spacer()
                 
             } .padding(.top, 3))
-           
-            //            .keyboardAwarePadding(paddingHeight: 15)
             
         }
         
