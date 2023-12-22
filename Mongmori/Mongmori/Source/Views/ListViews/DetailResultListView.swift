@@ -43,7 +43,7 @@ struct DetailResultListView: View {
                 let userLat = locationManager.lastLocation?.coordinate.latitude
                 let userLon = locationManager.lastLocation?.coordinate.longitude
                 
-                naverApiVM.fetchNaverAPIDirections(startLocation: (userLat!,userLon!), endLocation: (jejuSpot[i].lat! , jejuSpot[i].lon! ))
+                naverApiVM.fetchNaverAPIDirections(startLocation: (userLat ?? 0.0,userLon ?? 0.0), endLocation: (jejuSpot[i].lat! , jejuSpot[i].lon! ))
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                     textDistance = naverApiVM.resultDistance ?? ""
