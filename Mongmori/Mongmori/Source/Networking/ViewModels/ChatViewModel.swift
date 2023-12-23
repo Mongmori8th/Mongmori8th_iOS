@@ -129,8 +129,10 @@ final class ChatViewModel: ObservableObject {
             return "금"
         case "Saturday":
             return "토"
-        default:
+        case "Sunday":
             return "일"
+        default:
+            return ""
         }
     }
     
@@ -138,9 +140,10 @@ final class ChatViewModel: ObservableObject {
         let increasingDate = date.addingTimeInterval(TimeInterval(((+24 * 60 * 60) * increase)))
         let formattedDate = getFormattedDate(from: increasingDate)
         
-        let dayKR = translationDay(str: getDayOfWeek(from: increasingDate.addingTimeInterval(-24 * 60 * 60)))
-//        let dayKR = translationDay(str: getDayOfWeek(from: increasingDate))
-        return formattedDate + "/" + dayKR
+//        let dayKR = translationDay(str: getDayOfWeek(from: increasingDate.addingTimeInterval(-24 * 60 * 60)))
+        let dayKR = translationDay(str: getDayOfWeek(from: increasingDate))
+        return formattedDate 
+//        return formattedDate + "/" + dayKR
     }
     
     func getFormattedDate(from date: Date) -> String {
