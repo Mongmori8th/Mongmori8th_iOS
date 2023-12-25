@@ -14,6 +14,7 @@
 		A744D1302B1E24D300F99657 /* ResultListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744D12F2B1E24D300F99657 /* ResultListView.swift */; };
 		A744D1322B1E3A5400F99657 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A744D1312B1E3A5400F99657 /* ChatViewModel.swift */; };
 		A74721462B17759500006BAE /* TestLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74721452B17759500006BAE /* TestLottieView.swift */; };
+		A75D06AD2B39E803009FD25F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A75D06AF2B39E803009FD25F /* Localizable.strings */; };
 		A77E60DE2B176F31004A36BB /* MongmoriApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E60DD2B176F31004A36BB /* MongmoriApp.swift */; };
 		A77E60E22B176F32004A36BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A77E60E12B176F32004A36BB /* Assets.xcassets */; };
 		A77E60E52B176F32004A36BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A77E60E42B176F32004A36BB /* Preview Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		A744D12F2B1E24D300F99657 /* ResultListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListView.swift; sourceTree = "<group>"; };
 		A744D1312B1E3A5400F99657 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		A74721452B17759500006BAE /* TestLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLottieView.swift; sourceTree = "<group>"; };
+		A75D06AE2B39E803009FD25F /* ko_KR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko_KR; path = ko_KR.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A77E60DA2B176F31004A36BB /* Mongmori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mongmori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77E60DD2B176F31004A36BB /* MongmoriApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongmoriApp.swift; sourceTree = "<group>"; };
 		A77E60E12B176F32004A36BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				A77E60DD2B176F31004A36BB /* MongmoriApp.swift */,
 				A77E60E12B176F32004A36BB /* Assets.xcassets */,
 				A77E60E32B176F32004A36BB /* Preview Content */,
+				A75D06AF2B39E803009FD25F /* Localizable.strings */,
 			);
 			path = Mongmori;
 			sourceTree = "<group>";
@@ -343,10 +346,10 @@
 			};
 			buildConfigurationList = A77E60D52B176F31004A36BB /* Build configuration list for PBXProject "Mongmori" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = ko;
+			developmentRegion = ko_KR;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				ko,
+				ko_KR,
 				Base,
 			);
 			mainGroup = A77E60D12B176F31004A36BB;
@@ -366,6 +369,7 @@
 			files = (
 				A7A5559A2B1782F600D5AF7F /* Config.xcconfig in Resources */,
 				A7FF2EDD2B1ACA440029ACC0 /* NanumSquareOTF_acEB.otf in Resources */,
+				A75D06AD2B39E803009FD25F /* Localizable.strings in Resources */,
 				A7FF2EDB2B19280F0029ACC0 /* NanumSquareOTF_acR.otf in Resources */,
 				A744D12A2B1DFB7300F99657 /* loadingLottie.json in Resources */,
 				A77E60E52B176F32004A36BB /* Preview Assets.xcassets in Resources */,
@@ -457,6 +461,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A75D06AF2B39E803009FD25F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A75D06AE2B39E803009FD25F /* ko_KR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A77E60E62B176F32004A36BB /* Debug */ = {
@@ -592,13 +607,16 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mongmori/Info.plist;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "지도에서 AI 몽모리가 추천하는 여행지의 위치를 확인하고 여행지까지의 길찾기 서비스를 제공하기 위해 위치 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "지도에서 AI 몽모리가 추천하는 여행지의 위치를 확인하고 여행지까지의 길찾기 서비스를 제공하기 위해 위치 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "지도에서 AI 몽모리가 추천하는 여행지의 위치를 확인하고 여행지까지의 길찾기 서비스를 제공하기 위해 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -630,13 +648,16 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mongmori/Info.plist;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "지도에서 AI 몽모리가 추천하는 여행지의 위치를 확인하고 여행지까지의 길찾기 서비스를 제공하기 위해 위치 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "지도에서 AI 몽모리가 추천하는 여행지의 위치를 확인하고 여행지까지의 길찾기 서비스를 제공하기 위해 위치 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "지도에서 AI 몽모리가 추천하는 여행지의 위치를 확인하고 여행지까지의 길찾기 서비스를 제공하기 위해 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

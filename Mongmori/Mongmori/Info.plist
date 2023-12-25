@@ -2,37 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>GPTDataURL</key>
+	<string>$(GPT_DATA_URL)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>JsonDataURL</key>
+	<string>$(JSON_DATA_URL)</string>
 	<key>KAKAO_APP_KEY</key>
 	<string>453fec5882ca034101b9f001ca861048</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaonavi</string>
 		<string>nmap</string>
 	</array>
+	<key>Localization native development region</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NMFClientId</key>
+	<string>$(NAVER_CLIENT_ID_CONFIG)</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NaverClientSecret</key>
-	<string>$(NAVER_CLIENT_SECRET_CONFIG)</string>
 	<key>NaverClientID</key>
 	<string>$(NAVER_CLIENT_ID_CONFIG)</string>
-	<key>NMFClientId</key>
-	<string>$(NAVER_CLIENT_ID_CONFIG)</string>
-	<key>JsonDataURL</key>
-	<string>$(JSON_DATA_URL)</string>
-	<key>GPTDataURL</key>
-	<string>$(GPT_DATA_URL)</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>지도에서 AI 몽모리가 추천하는 여행지의 위치를 확인하고 여행지까지의 길찾기 서비스를 제공하기 위해 위치 권한이 필요합니다.</string>
-	<key>Privacy - Location When In Use Usage Description
-</key>
-	<string>지도에서 AI 몽모리가 추천하는 여행지의 위치를 확인하고 여행지까지의 길찾기 서비스를 제공하기 위해 위치 권한이 필요합니다.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>지도에서 AI 몽모리가 추천하는 여행지의 위치를 확인하고 여행지까지의 길찾기 서비스를 제공하기 위해 위치 권한이 필요합니다.</string>
+	<key>NaverClientSecret</key>
+	<string>$(NAVER_CLIENT_SECRET_CONFIG)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NanumSquareOTF_acR.otf</string>
@@ -42,7 +37,5 @@
 		<string>Pretendard_Regular.otf</string>
 		<string>Pretendard_SemiBold.otf</string>
 	</array>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
 </dict>
 </plist>
