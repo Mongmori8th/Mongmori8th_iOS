@@ -5,16 +5,17 @@
 </p>
 
 ## 🍊 팀원
+
 <div align="center">
   <table style="font-weight: bold">
     <tr>
       <td align="center">
-        <a href="cpfkd892035@gmail.com">
+       <a href="">
           <img alt="정체랑" src="https://github.com/Mongmori8th/Mongmori8th_iOS/assets/73868968/e28362fd-2b3e-419a-bce9-758b099d9be8" width="80" />
         </a>
       </td>
       <td align="center">
-        <a href="">
+       <a href="">
           <img alt="서가영" src="https://github.com/Mongmori8th/Mongmori8th_iOS/assets/73868968/5a932c4c-59d9-4cfc-b4bc-ba358978a075" width="80" />
         </a>
       </td>
@@ -30,13 +31,14 @@
       </td>
     </tr>
     <tr>
-      <td align="center">정체랑</td>
-      <td align="center">서가영</td>
-      <td align="center">지정훈</td>
-      <td align="center">정동진</td>
+      <td align="center"><a href="mailto:cpfkd892035@gmail.com">정체랑</a></td>
+      <td align="center"><a href="mailto:seo7f@icloud.com">서가영</a></td>
+      <td align="center"><a href="https://github.com/jeonghoonji">지정훈</a></td>
+      <td align="center"><a href="https://github.com/eastsun92">정동진</a></td>
     </tr>
   </table>
 </div>
+
 
 ## 🌍 프로젝트 배경 및 문제 정의
 
