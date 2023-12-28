@@ -47,9 +47,9 @@ struct WebView: UIViewRepresentable {
                 }
             } else {
                 UIApplication.shared.open(parent.appStoreURL)
+                decisionHandler(.cancel)
+                return
             }
-            
-            
         }
     }
 }
