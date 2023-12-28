@@ -65,13 +65,13 @@ struct DetailResultListView: View {
             VStack{
                 Rectangle()
                     .fill(Color.clear)
-                    .frame(width: Screen.maxWidth, height: 250)
+                    .frame(width: Screen.maxWidth, height: Screen.maxHeight * 0.25)
                     .overlay(
                         AsyncImage(url: URL(string: jejuImage)) { image in
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: Screen.maxWidth, height: 250)
+                                .frame(width: Screen.maxWidth, height: Screen.maxHeight * 0.25)
                                 .clipped()
                         } placeholder: {
                             ProgressView()

@@ -10,6 +10,8 @@ import WebKit
 
 struct WebView: UIViewRepresentable {
     var urlString: String
+    let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")!
+    let nmap = URL(string: "nmap://actionPath?parameter=value&appname=appname=com.Mongmori.Mongmori")!
     
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
@@ -36,12 +38,19 @@ struct WebView: UIViewRepresentable {
         }
 
         func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-            if let url = navigationAction.request.url, url.scheme == "nmap" {
-                UIApplication.shared.open(url)
-                decisionHandler(.cancel)
-                return
+            
+            if UIApplication.shared.canOpenURL(parent.nmap) {
+                if let url = navigationAction.request.url, url.scheme == "nmap" {
+                    UIApplication.shared.open(url)
+                    decisionHandler(.cancel)
+                    return
+                }
+            } else {
+                UIApplication.shared.open(parent.appStoreURL)
             }
-            decisionHandler(.allow)
+            
+            
         }
     }
 }
+

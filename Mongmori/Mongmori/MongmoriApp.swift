@@ -25,9 +25,7 @@ struct MongmoriApp: App {
             }else{
                 ChatBotView()
             }
-            
         }
         
     }
 }
-

@@ -298,7 +298,7 @@ struct DetailResultListModalView: View {
             NaverNaviView(locationManager: locationManager, endLat: modalLat, endLon: modalLon, place: textName)
                 .presentationDetents([.large])
                 .onAppear{
-                    print("$isShowSheet")
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
                         isShowSheet = false
                     }

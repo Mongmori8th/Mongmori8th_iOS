@@ -49,8 +49,7 @@ struct MapView: View {
                     if locationManager.locationStatus == .denied{
                         showAlert.toggle()
                     }else{
-                        // 현재 위치 더 보여주기??
-//                        print("위치허용해서 버튼이 Alert 안 보임")
+                
                     }
                     
                 }
@@ -158,7 +157,6 @@ struct UIMapView: UIViewRepresentable,View {
 class Coordinator: NSObject, NMFMapViewTouchDelegate, NMFMapViewCameraDelegate, NMFMapViewOptionDelegate {
         
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
-//        print(#function)
     }
 
 }

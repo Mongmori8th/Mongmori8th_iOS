@@ -12,7 +12,6 @@ struct ChatBotView: View {
     @StateObject var chatVM = ChatViewModel()
     @StateObject var detailResultVM = DetailResultViewModel()
     @StateObject var locationManager = LocationManager()
-//    @ObservedObject var locationManager : LocationManager
     
     @State private var newMessage: String = ""
     
@@ -152,13 +151,21 @@ struct ChatBotView: View {
         }
 
     private var textFieldBottomPosition: CGFloat {
-        return UIScreen.main.bounds.height - 280
+        switch UIScreen.main.bounds.height{
+        case 852.0:
+            return UIScreen.main.bounds.height - 280
+        case 812.0:
+            return UIScreen.main.bounds.height - 250
+        default:
+            return UIScreen.main.bounds.height - 160
+        }
+        
     }
     
     private func isStringValid(str: String) -> Bool{
     
         
-//        let str = "애월로 12월 22일부터 12월 24일까지 아이와 함께 여행할 거예요!"
+//        let str = "애월로 12월 31일부터 1월 1일까지 아이와 함께 여행할 거예요!"
         
         let placePattern = #"([가-힣]+로)"#
         //        let durationPattern = #"(\d+일)"#
@@ -195,20 +202,30 @@ struct ChatBotView: View {
                 dateComponents1.year = currentYear
                 dateComponents1.month = Int(month1)
                 dateComponents1.day = Int(day1)
-                
                 let date1 = calendar.date(from: dateComponents1)!
                 
-                var dateComponents2 = DateComponents()
-                dateComponents2.year = currentYear
-                dateComponents2.month = Int(month2)
-                dateComponents2.day = Int(day2)
-                let date2 = calendar.date(from: dateComponents2)!
-                
-                let dateDifference = calendar.dateComponents([.day], from: date1, to: date2)
+                if month1 > month2 {
+                    var dateComponents2 = DateComponents()
+                    dateComponents2.year = currentYear + 1
+                    dateComponents2.month = Int(month2)
+                    dateComponents2.day = Int(day2)
+                    let date2 = calendar.date(from: dateComponents2)!
+                    
+                    let dateDifference = calendar.dateComponents([.day], from: date1, to: date2)
+                    self.duration = String((dateDifference.day ?? 0) + 1)
+                    
+                }else{
+                    var dateComponents2 = DateComponents()
+                    dateComponents2.year = currentYear
+                    dateComponents2.month = Int(month2)
+                    dateComponents2.day = Int(day2)
+                    let date2 = calendar.date(from: dateComponents2)!
+                    
+                    let dateDifference = calendar.dateComponents([.day], from: date1, to: date2)
+                    self.duration = String((dateDifference.day ?? 0) + 1)
+                }
                 
                 self.currentDate = date1
-                //                self.currentDate = date1.addingTimeInterval(+24 * 60 * 60)
-                self.duration = String((dateDifference.day ?? 0) + 1)
                 
                 return true
             } else {
