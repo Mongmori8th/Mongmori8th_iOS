@@ -151,10 +151,11 @@ struct ChatBotView: View {
         }
 
     private var textFieldBottomPosition: CGFloat {
+        print(UIScreen.main.bounds.height)
         switch UIScreen.main.bounds.height{
-        case 852.0:
-            return UIScreen.main.bounds.height - 280
-        case 812.0:
+        case 852.0...1000.0:
+            return UIScreen.main.bounds.height - 290
+        case 812.0..<852.0:
             return UIScreen.main.bounds.height - 250
         default:
             return UIScreen.main.bounds.height - 160
