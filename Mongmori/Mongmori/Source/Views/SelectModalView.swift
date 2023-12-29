@@ -18,10 +18,21 @@ struct SelectModalView: View {
     var endLon : Double
     
     @Binding var place : String
+    @Binding var isShowSheetSelect : Bool
     
     var body: some View {
         VStack{
-
+            HStack{
+                Spacer()
+                Image(systemName: "x.circle.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20,height: 20)
+                    .offset(x: -25, y: 30)
+                    .onTapGesture {
+                        isShowSheetSelect.toggle()
+                    }
+            }
             Text("AI 몽모리가 위치를 안내해 드릴게요")
                 .font(.poppins(.NanumSquareOTF_acEB, size: 18))
                 .padding(

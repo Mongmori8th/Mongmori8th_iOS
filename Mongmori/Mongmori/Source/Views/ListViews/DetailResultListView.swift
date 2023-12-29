@@ -295,9 +295,9 @@ struct DetailResultListView: View {
                 
             }
             .sheet(isPresented: $isShowSheetSelect) {
-                SelectModalView(locationManager: locationManager, endLat: jejuSpot[index].lat!, endLon: jejuSpot[index].lon!, place: $textName)
+                SelectModalView(locationManager: locationManager, endLat: jejuSpot[index].lat!, endLon: jejuSpot[index].lon!, place: $textName, isShowSheetSelect: $isShowSheetSelect)
                     .presentationDetents([.height(170)])
-            } 
+            }
             .onAppear{
                 showDetailData()
             }
