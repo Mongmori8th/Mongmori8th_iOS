@@ -21,7 +21,7 @@ struct DetailResultListView: View {
     
     @State var clickedButtonLoad: Bool = true
     @State var clickedButtonCall: Bool = true
-    @State var isShowSheet: Bool = false
+    @State var isShowSheetSelect: Bool = false
     
     @State var jejuImage = ""      //화면에 보여주는 여행지
     @State var textName = ""        //화면에 보여주는 여행지
@@ -164,11 +164,13 @@ struct DetailResultListView: View {
                                     )
                                 )
                                 .onTapGesture {
+                                    
+                                    
                                     clickedButtonLoad.toggle()
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
                                         clickedButtonLoad.toggle()
                                     }
-                                    isShowSheet.toggle()
+                                    isShowSheetSelect.toggle()
                                 }
                             }
                     }
@@ -292,15 +294,10 @@ struct DetailResultListView: View {
                 Spacer()
                 
             }
-            .sheet(isPresented: $isShowSheet) {
-                NaverNaviView(locationManager: locationManager, endLat: jejuSpot[index].lat!, endLon: jejuSpot[index].lon!, place: textName)
-                    .presentationDetents([.large])
-                    .onAppear{
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
-                            isShowSheet = false
-                        }
-                    }
-            }
+            .sheet(isPresented: $isShowSheetSelect) {
+                SelectModalView(locationManager: locationManager, endLat: jejuSpot[index].lat!, endLon: jejuSpot[index].lon!, place: $textName)
+                    .presentationDetents([.height(170)])
+            } 
             .onAppear{
                 showDetailData()
             }

@@ -40,6 +40,7 @@
 		A7BB12322B28825000CD66C4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB12312B28825000CD66C4 /* Message.swift */; };
 		A7BB12342B28900600CD66C4 /* NaverNaviView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB12332B28900600CD66C4 /* NaverNaviView.swift */; };
 		A7BB12362B2892D900CD66C4 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB12352B2892D900CD66C4 /* WebView.swift */; };
+		A7BF2E1F2B3EF22B000848A3 /* SelectModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BF2E1E2B3EF22B000848A3 /* SelectModalView.swift */; };
 		A7FF2ED32B1917000029ACC0 /* Pretendard_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED02B1916FF0029ACC0 /* Pretendard_Regular.otf */; };
 		A7FF2ED42B1917000029ACC0 /* Pretendard_SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED12B1916FF0029ACC0 /* Pretendard_SemiBold.otf */; };
 		A7FF2ED52B1917000029ACC0 /* Pretendard_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A7FF2ED22B1917000029ACC0 /* Pretendard_Bold.otf */; };
@@ -85,6 +86,7 @@
 		A7BB12312B28825000CD66C4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A7BB12332B28900600CD66C4 /* NaverNaviView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverNaviView.swift; sourceTree = "<group>"; };
 		A7BB12352B2892D900CD66C4 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		A7BF2E1E2B3EF22B000848A3 /* SelectModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModalView.swift; sourceTree = "<group>"; };
 		A7FF2ED02B1916FF0029ACC0 /* Pretendard_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pretendard_Regular.otf; sourceTree = "<group>"; };
 		A7FF2ED12B1916FF0029ACC0 /* Pretendard_SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pretendard_SemiBold.otf; sourceTree = "<group>"; };
 		A7FF2ED22B1917000029ACC0 /* Pretendard_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pretendard_Bold.otf; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				A7B2F20D2B32BB0900B29BCF /* ModalLoadingView.swift */,
 				A7BB12332B28900600CD66C4 /* NaverNaviView.swift */,
 				A7BB12352B2892D900CD66C4 /* WebView.swift */,
+				A7BF2E1E2B3EF22B000848A3 /* SelectModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				A77E61012B17743E004A36BB /* LottieViewManager.swift in Sources */,
 				A7BB12342B28900600CD66C4 /* NaverNaviView.swift in Sources */,
 				A7A555962B177E2600D5AF7F /* LocationManager.swift in Sources */,
+				A7BF2E1F2B3EF22B000848A3 /* SelectModalView.swift in Sources */,
 				A7A555AB2B182A5C00D5AF7F /* ResponseChatResultView.swift in Sources */,
 				A7A555A72B17D7DC00D5AF7F /* ChattingView.swift in Sources */,
 				A79E8A9D2B2E9EC200C7BFBC /* DetailResultListModalView.swift in Sources */,

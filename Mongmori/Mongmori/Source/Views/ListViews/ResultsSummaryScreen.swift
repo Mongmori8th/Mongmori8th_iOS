@@ -35,7 +35,6 @@ struct ResultsSummaryScreen: View {
     @State var modalLon: Double = 0.0
     
     @State var showAlert: Bool = false
-    
     var userLatitude: Double {
         return locationManager.lastLocation?.coordinate.latitude ?? 0.0
     }
@@ -147,7 +146,7 @@ struct ResultsSummaryScreen: View {
                         .toolbar {
                             ToolbarItem(placement: .principal) {
                                 Text("일정요약")
-                                    .font(.poppins(.NanumSquareOTF_acEB, size: 20)) //.fontWeight(.bold).font(.system(size: 20))
+                                    .font(.poppins(.NanumSquareOTF_acEB, size: 20)) 
                             }
                             ToolbarItem(placement: .navigationBarLeading) {
                                 Button {
