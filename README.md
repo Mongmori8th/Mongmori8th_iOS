@@ -2,7 +2,11 @@
 
 <p align="center">
 <img width="1838" alt="스크린샷 2023-04-12 오후 3 52 02" src="https://github.com/Mongmori8th/Mongmori8th_iOS/assets/73868968/109c0611-21d8-4cac-8e83-12a67fbfee26">
+
+## 🔗 앱스토어
+ > <A href = https://apps.apple.com/kr/app/%EB%AA%BD%EB%AA%A8%EB%A6%AC/id6473462854 >앱스토어 설치 링크</A>
 </p>
+
 
 ## 🍊 팀원
 
