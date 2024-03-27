@@ -1,4 +1,4 @@
-# 🍊 몽모리마니 - 우수상🏅
+# 🍊 몽모리 - 우수상🏅
 
 <p align="center">
 <img width="1838" alt="스크린샷 2023-04-12 오후 3 52 02" src="https://github.com/Mongmori8th/Mongmori8th_iOS/assets/73868968/109c0611-21d8-4cac-8e83-12a67fbfee26">
